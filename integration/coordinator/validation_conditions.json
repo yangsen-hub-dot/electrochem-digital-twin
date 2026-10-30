@@ -1,0 +1,13 @@
+{
+  "left_concentration_m": 0.005,
+  "right_concentration_m": 0.1,
+  "left_volume_ml": 2.0,
+  "right_volume_ml": 1.0,
+  "temperature_c": 25.0,
+  "salt_bridge_type": "KNO3",
+  "salt_bridge_concentration_m": 0.1,
+  "activity_correction_enabled": true,
+  "liquid_junction_enabled": false,
+  "errors_enabled": true,
+  "operation_error_levels": {"pipetting": "low", "tip_carryover": "low", "mixing": "low"}
+}

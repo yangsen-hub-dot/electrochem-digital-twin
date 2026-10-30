@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "library_id": "aqueous_ion_diffusion_infinite_dilution_25c_v1",
+  "name_zh": "水溶液离子扩散与迁移率参考参数（25 °C、无限稀释）",
+  "status": "reference_only_not_condition_matched",
+  "solvent": "water",
+  "reference_temperature_k": 298.15,
+  "reference_concentration_state": "infinite_dilution_limit",
+  "diffusion_coefficient_unit": "m2/s",
+  "mobility_unit": "m2/(V s)",
+  "mobility_convention": "positive_magnitude; drift direction follows charge sign",
+  "mobility_relation": "u_i = |z_i| F D_i / (R T)",
+  "mobility_values_origin": "calculated_from_diffusion_coefficients_using_Nernst_Einstein_relation",
+  "references": {
+    "vanysek_crc_2010": {
+      "citation": "P. Vanysek, Ionic Conductivity and Diffusion at Infinite Dilution, CRC Handbook of Chemistry and Physics, 91st edition (2010–2011).",
+      "url": "https://is.muni.cz/el/sci/podzim2016/C4020/um/pom/Ionic_Conductivity_and_Diffusion_at_Infinite_Dilution.pdf",
+      "data_note": "25 °C aqueous limiting ionic data; diffusion coefficients are tabulated for the infinite-dilution reference state."
+    },
+    "white_geochemistry_2007": {
+      "citation": "W. M. White, Geochemistry, Chapter 5, Table 5.3 (2007); the table attributes the ionic diffusion values to Lasaga (1997).",
+      "url": "https://www.eps.mcgill.ca/~courses/c220/WMWhiteTextBook/Chapter05.pdf",
+      "data_note": "Table 5.3 gives K+, SO4(2-) and NO3(-) diffusion coefficients in infinitely dilute aqueous solution at 25 °C."
+    }
+  },
+  "ions": {
+    "Cu": {
+      "formula": "Cu2+",
+      "charge_number": 2,
+      "diffusion_coefficient_m2_s": 7.14e-10,
+      "mobility_magnitude_m2_V_s": 5.558025e-8,
+      "reference_temperature_k": 298.15,
+      "reference_ids": ["vanysek_crc_2010"],
+      "parameter_scope": "infinite_dilution_limit",
+      "use_note": "参考极限值；不代表当前 0.0100–0.1000 M CuSO4 中的浓度相关扩散系数。"
+    },
+    "SO4": {
+      "formula": "SO4(2-)",
+      "charge_number": -2,
+      "diffusion_coefficient_m2_s": 1.065e-9,
+      "mobility_magnitude_m2_V_s": 8.290332e-8,
+      "reference_temperature_k": 298.15,
+      "reference_ids": ["vanysek_crc_2010", "white_geochemistry_2007"],
+      "parameter_scope": "infinite_dilution_limit",
+      "use_note": "参考极限值；有限浓度下受离子相互作用及 CuSO4 离子缔合影响。"
+    },
+    "K": {
+      "formula": "K+",
+      "charge_number": 1,
+      "diffusion_coefficient_m2_s": 1.957e-9,
+      "mobility_magnitude_m2_V_s": 7.616985e-8,
+      "reference_temperature_k": 298.15,
+      "reference_ids": ["vanysek_crc_2010", "white_geochemistry_2007"],
+      "parameter_scope": "infinite_dilution_limit",
+      "use_note": "参考极限值；不代表当前 0.100 M KNO3 盐桥内的精确迁移参数。"
+    },
+    "NO3": {
+      "formula": "NO3(-)",
+      "charge_number": -1,
+      "diffusion_coefficient_m2_s": 1.902e-9,
+      "mobility_magnitude_m2_V_s": 7.402916e-8,
+      "reference_temperature_k": 298.15,
+      "reference_ids": ["vanysek_crc_2010", "white_geochemistry_2007"],
+      "parameter_scope": "infinite_dilution_limit",
+      "use_note": "参考极限值；不代表当前 0.100 M KNO3 盐桥内的精确迁移参数。"
+    }
+  },
+  "limitations": [
+    "这是 25 °C 水溶液无限稀释极限参考集，不是当前 0.0100–0.1000 M CuSO4 和 0.100 M KNO3 条件的浓度匹配数据。",
+    "单离子扩散系数不等同于 CuSO4 或 KNO3 的互扩散系数；模型必须按所需参数类型取值。",
+    "有限浓度下迁移参数会随浓度、离子组成和相互作用改变；本库不进行插值或外推。",
+    "该参数库仅供后续液接电势模型参考；当前液接电势仍关闭，不用这些数值生成电压修正。"
+  ]
+}

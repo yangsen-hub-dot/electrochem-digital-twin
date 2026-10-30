@@ -1,0 +1,182 @@
+{
+  "experiment_id": "hmf_fdca_single_cell_numerical_example_v1",
+  "temperature_k": 298.15,
+  "chemical_model": {
+    "model_id": "hmf_tempo_fdca_endpoint_dargo2025_v1"
+  },
+  "containers": {
+    "hmf_stock": {
+      "volume_ml": 2,
+      "concentrations_m": {
+        "HMF": 0.3125
+      }
+    },
+    "tempo_stock": {
+      "volume_ml": 2,
+      "concentrations_m": {
+        "TEMPO": 0.015625
+      }
+    },
+    "koh_stock": {
+      "volume_ml": 5,
+      "concentrations_m": {
+        "KOH": 0.125
+      }
+    },
+    "reactor": {
+      "volume_ml": 0,
+      "capacity_ml": 6,
+      "concentrations_m": {}
+    }
+  },
+  "cell": {},
+  "error_model": {
+    "enabled": false
+  },
+  "workflow": [
+    {
+      "step_id": "s01",
+      "action": "load_tip"
+    },
+    {
+      "step_id": "s02",
+      "action": "aspirate",
+      "source": "hmf_stock",
+      "volume_ul": 500
+    },
+    {
+      "step_id": "s03",
+      "action": "dispense",
+      "target": "reactor"
+    },
+    {
+      "step_id": "s04",
+      "action": "discard_tip"
+    },
+    {
+      "step_id": "s05",
+      "action": "load_tip"
+    },
+    {
+      "step_id": "s06",
+      "action": "aspirate",
+      "source": "tempo_stock",
+      "volume_ul": 500
+    },
+    {
+      "step_id": "s07",
+      "action": "dispense",
+      "target": "reactor"
+    },
+    {
+      "step_id": "s08",
+      "action": "discard_tip"
+    },
+    {
+      "step_id": "s09",
+      "action": "load_tip"
+    },
+    {
+      "step_id": "s10",
+      "action": "aspirate",
+      "source": "koh_stock",
+      "volume_ul": 1000
+    },
+    {
+      "step_id": "s11",
+      "action": "dispense",
+      "target": "reactor"
+    },
+    {
+      "step_id": "s12",
+      "action": "aspirate",
+      "source": "koh_stock",
+      "volume_ul": 1000
+    },
+    {
+      "step_id": "s13",
+      "action": "dispense",
+      "target": "reactor"
+    },
+    {
+      "step_id": "s14",
+      "action": "aspirate",
+      "source": "koh_stock",
+      "volume_ul": 1000
+    },
+    {
+      "step_id": "s15",
+      "action": "dispense",
+      "target": "reactor"
+    },
+    {
+      "step_id": "s16",
+      "action": "aspirate",
+      "source": "koh_stock",
+      "volume_ul": 1000
+    },
+    {
+      "step_id": "s17",
+      "action": "dispense",
+      "target": "reactor"
+    },
+    {
+      "step_id": "s18",
+      "action": "discard_tip"
+    },
+    {
+      "step_id": "s19",
+      "action": "mix",
+      "target": "reactor",
+      "duration_s": 10
+    },
+    {
+      "step_id": "s20",
+      "action": "grasp_electrode",
+      "electrode_id": "positive"
+    },
+    {
+      "step_id": "s21",
+      "action": "install_electrode",
+      "electrode_id": "positive",
+      "target": "reactor",
+      "role": "anode",
+      "material": "graphite"
+    },
+    {
+      "step_id": "s22",
+      "action": "connect_electrode",
+      "electrode_id": "positive",
+      "device_id": "potentiostat"
+    },
+    {
+      "step_id": "s23",
+      "action": "grasp_electrode",
+      "electrode_id": "negative"
+    },
+    {
+      "step_id": "s24",
+      "action": "install_electrode",
+      "electrode_id": "negative",
+      "target": "reactor",
+      "role": "cathode",
+      "material": "stainless_steel"
+    },
+    {
+      "step_id": "s25",
+      "action": "connect_electrode",
+      "electrode_id": "negative",
+      "device_id": "potentiostat"
+    },
+    {
+      "step_id": "s26",
+      "action": "electrolyze",
+      "target": "reactor",
+      "current_a": 0.01,
+      "duration_s": 9045.49988625,
+      "mode": "constant_current",
+      "electrolyte": "aqueous_koh",
+      "cell_configuration": "paper_single_vial"
+    }
+  ]
+}

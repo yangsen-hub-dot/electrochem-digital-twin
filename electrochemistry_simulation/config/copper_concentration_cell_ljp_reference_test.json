@@ -1,0 +1,83 @@
+{
+  "experiment_id": "copper_concentration_cell_liquid_junction_reference_estimate_test_v1",
+  "experiment_name_zh": "铜离子浓差电池_液接电势参考估算测试",
+  "result_category_zh": "液接修正测试",
+  "experiment_name_short_zh": "铜电池_液接估算",
+  "result_category_short_zh": "单",
+  "description": "单独测试 Henderson 液接电势修正；迁移参数来自 25 °C 无限稀释参考数据，与当前有限浓度条件不匹配，仅作探索性估算。",
+  "protocol_file": "protocols/copper_concentration_cell_stock_dilution.json",
+  "temperature_k": 298.15,
+  "species": {
+    "Cu": {"name": "Cu²⁺", "formula": "Cu", "charge": 2},
+    "SO4": {"name": "SO₄²⁻", "formula": "SO4", "charge": -2},
+    "K": {"name": "K⁺", "formula": "K", "charge": 1},
+    "NO3": {"name": "NO₃⁻", "formula": "NO3", "charge": -1}
+  },
+  "containers": {
+    "copper_stock": {"name_zh": "铜母液", "volume_ml": 5.0, "concentrations_m": {"Cu": 0.1, "SO4": 0.1}},
+    "water": {"name_zh": "水", "volume_ml": 10.0, "concentrations_m": {"Cu": 0.0, "SO4": 0.0}},
+    "left_half_cell": {"name_zh": "左侧半电池", "volume_ml": 0.0, "concentrations_m": {"Cu": 0.0, "SO4": 0.0}},
+    "right_half_cell": {"name_zh": "右侧半电池", "volume_ml": 0.0, "concentrations_m": {"Cu": 0.0, "SO4": 0.0}}
+  },
+  "cell": {
+    "left_container": "left_half_cell",
+    "right_container": "right_half_cell",
+    "active_species": "Cu",
+    "equilibrium_model": "reaction_quotient_concentration_cell_nernst",
+    "electrons_transferred": 2,
+    "redox_reaction": {
+      "name_zh": "Cu²⁺/Cu",
+      "reduction_reaction_zh": "Cu²⁺ + 2e⁻ → Cu(s)",
+      "display_species": "Cu",
+      "electrons_transferred": 2,
+      "reaction_quotient_terms": {"Cu": -1}
+    },
+    "activity_correction": {
+      "enabled": true,
+      "model": "davies_single_ion_convention",
+      "ionic_strength_source": "tracked_species",
+      "ionic_strength_species": ["Cu", "SO4"],
+      "nominal_ionic_strength_molal_by_side": {"left": 0.04, "right": 0.4},
+      "A": 0.509,
+      "A_reference_temperature_k": 298.15,
+      "scenario_assumption": "水溶液；CuSO4 完全解离；暂不考虑离子缔合；稀溶液近似 M≈mol/kg"
+    },
+    "liquid_junction_potential": {
+      "enabled": true,
+      "model": "henderson_approximation",
+      "status": "exploratory_reference_estimate_test",
+      "solution_ions_by_side": {"left": ["Cu", "SO4"], "right": ["Cu", "SO4"]},
+      "bridge_electrolyte": {
+        "electrolytes": [
+          {
+            "formula": "KNO3",
+            "concentration_m": 0.1,
+            "ion_stoichiometry": {"K": 1, "NO3": 1}
+          }
+        ]
+      },
+      "transport_parameter_library": "ion_transport/aqueous_ion_diffusion_infinite_dilution_25c_v1.json",
+      "parameter_use_policy": "allow_reference_estimate",
+      "test_warning_zh": "参数库为无限稀释参考迁移率，未匹配 0.0100–0.1000 M CuSO4 与 0.100 M KNO3 条件；输出仅观察模型影响，不作为真实预测或测量值。"
+    }
+  },
+  "cell_setup": {
+    "electrodes": {"material": "Cu", "status": "not_physically_modeled"},
+    "salt_bridge": {
+      "type": "KNO3",
+      "concentration_m": 0.1,
+      "status": "assumed_for_simulation",
+      "junction_potential_model": true
+    }
+  },
+  "error_model": {
+    "enabled": false,
+    "selection_note": "本次只隔离测试电化学液接电势修正，不启用操作误差。",
+    "profile_file": "error_profiles/copper_cell_aqueous_100_500_900ul_reference_v2.json",
+    "factors": {
+      "pipetting": {"model": "shared_bounded_bias_gaussian_repeatability", "level": "low"},
+      "tip_carryover": {"model": "truncated_gaussian_residual_volume", "level": "low", "status": "provisional_engineering_prior", "tip_type": "generic_disposable_aqueous_tip_assumption"},
+      "mixing": {"model": "truncated_gaussian_rate_per_second", "level": "low", "status": "provisional_engineering_prior"}
+    }
+  }
+}

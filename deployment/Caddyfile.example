@@ -1,0 +1,14 @@
+# Replace these example domains with API domains you own and have configured.
+hmf.example.org {
+    reverse_proxy 127.0.0.1:8766
+}
+numerical.example.org {
+    reverse_proxy 127.0.0.1:50005
+}
+# Optional GPU and media services:
+# simulation.example.org {
+#     reverse_proxy 127.0.0.1:50007
+# }
+# video.example.org {
+#     reverse_proxy 127.0.0.1:50006
+# }

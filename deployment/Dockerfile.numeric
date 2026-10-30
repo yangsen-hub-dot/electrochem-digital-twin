@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY . /app
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+RUN useradd --create-home --uid 10001 scientist && mkdir -p /app/var && chown scientist:scientist /app/var
+USER scientist
+EXPOSE 8766
+CMD ["python", "integration/web/hmf_local_server.py", "--host", "0.0.0.0", "--port", "8766", "--history-dir", "/app/var/hmf-history", "--token-file", "/app/var/access-token.txt", "--allowed-origin", "https://yangsen-hub-dot.github.io"]

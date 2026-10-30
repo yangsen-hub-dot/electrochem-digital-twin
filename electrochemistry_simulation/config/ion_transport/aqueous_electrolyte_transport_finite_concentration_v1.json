@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "database_id": "aqueous_electrolyte_transport_finite_concentration_v1",
+  "name_zh": "水溶液电解质有限浓度输运性质文献库",
+  "status": "literature_reference_data_not_condition_matched",
+  "solvent": "water",
+  "purpose_zh": "按参数类型分别保存电解质有限浓度下的文献输运数据及适用条件；不把电解质互扩散系数、迁移数、单离子扩散系数和液接电势混为一类。",
+  "data_policy": {
+    "interpolation": "not_performed",
+    "extrapolation": "not_performed",
+    "automatic_liquid_junction_use": false,
+    "note_zh": "本库数据是模型输入的文献依据，不是当前电池条件下直接测得的液接电势。除非后续模型显式实现相应参数换算并校验适用条件，否则不得直接当作离子迁移率输入 Henderson 模型。"
+  },
+  "units": {
+    "concentration_molarity": "mol/L",
+    "concentration_molality": "mol/kg solvent",
+    "mutual_diffusion_coefficient": "m2/s",
+    "transference_number": "dimensionless"
+  },
+  "references": {
+    "koryta_dvorak_kavan_1993": {
+      "citation": "J. Koryta, J. Dvořák, L. Kavan, Principles of Electrochemistry, 2nd ed. (1993), Table 2.5; table attributes aqueous electrolyte diffusion data to H. A. Robinson and R. H. Stokes, Electrolyte Solutions, 2nd ed.",
+      "url": "https://eva.fcien.udelar.edu.uy/pluginfile.php/187466/mod_resource/content/2/Principles-of-electrochemistry.pdf",
+      "data_note_zh": "表中给出多种水溶液电解质在 25 °C、低浓度区的互扩散系数，浓度点为 0–0.010 mol/L；原表单位为 10^-5 cm2/s，已换算为 m2/s。浓度 0 作为表列极限/参考点保存，不当作有限浓度测点。"
+    },
+    "bard_faulkner_2001": {
+      "citation": "A. J. Bard, L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed. (2001), Table 2.3.1, p. 68; table cites D. A. MacInnes, The Principles of Electrochemistry (1961), p. 85 and references therein.",
+      "url": "https://test.uoh.edu.iq/admin/ebooks/30186-electrochemical-methods---fundamentals-and-applns-2nd-ed----a.-bard%2C-l.-faulkner-%28wiley%2C-2001%29-ww.pdf",
+      "data_note_zh": "KNO3 水溶液 25 °C 的阳离子迁移数汇编值；表中浓度为当量浓度。KNO3 为 1:1 电解质，数值上等于 mol/L。该表是二次汇编，未在此库中补造测量不确定度。"
+    },
+    "sinha_bhat_1988": {
+      "citation": "A. Sinha, S. N. Bhat, Transference numbers in aqueous cupric sulfate solution: effect of concentration and temperature at constant pH, Journal of Chemical and Engineering Data 33(4) (1988), 393–394. DOI: 10.1021/je00054a001.",
+      "url": "https://doi.org/10.1021/je00054a001",
+      "data_note_zh": "Hittorf 法测得的 CuSO4 表观阳离子迁移数。论文讨论了酸性 CuSO4 溶液中 H+ 对表观迁移数的影响；表格还列有随浓度变化的 pH。与未记录 pH/酸度的本项目配方不匹配，只作文献记录。"
+    },
+    "miller_rard_eppstein_robinson_1980": {
+      "citation": "D. G. Miller, J. A. Rard, L. B. Eppstein, R. A. Robinson, Mutual diffusion coefficients, electrical conductances, osmotic coefficients, and ionic transport coefficients for aqueous CuSO4 at 25 °C, Journal of Solution Chemistry 9 (1980), 467–496. DOI: 10.1007/BF00647737.",
+      "url": "https://doi.org/10.1007/BF00647737",
+      "data_note_zh": "摘要确认该研究覆盖低浓度至近饱和的 CuSO4 水溶液，包含互扩散、电导、渗透系数和经比较的迁移数数据；当前仅登记数据覆盖信息，未从全文表格逐点数字化，不能据此插值。"
+    },
+    "daniel_albright_1991": {
+      "citation": "V. Daniel, J. G. Albright, Measurement of mutual-diffusion coefficients for the system KNO3–H2O at 25 °C, Journal of Solution Chemistry 20 (1991), 633–642. DOI: 10.1007/BF00647073.",
+      "url": "https://doi.org/10.1007/BF00647073",
+      "data_note_zh": "原摘要报告浓度范围 0.025–2.61 mol/L，并给出扩散系数随浓度总体下降的端点摘要；摘要没有给出 0.100 M 的精确测点值。"
+    }
+  },
+  "datasets": [
+    {
+      "dataset_id": "binary_aqueous_electrolyte_mutual_diffusion_table_2_5_v1",
+      "property_type": "binary_electrolyte_mutual_diffusion_coefficient",
+      "property_name_zh": "二元电解质互扩散系数",
+      "data_status": "tabulated_reference_points",
+      "source_ids": ["koryta_dvorak_kavan_1993"],
+      "concentration_basis": "molarity",
+      "point_concentrations_mol_l": [0.0, 0.001, 0.002, 0.003, 0.005, 0.007, 0.010],
+      "original_value_scale": "1e-5 cm2/s",
+      "conversion_to_si": "1 original unit = 1e-9 m2/s",
+      "series": [
+        {"electrolyte_formula": "LiCl", "temperature_c": 25, "values_1e-9_m2_s": [1.366, 1.345, 1.337, 1.331, 1.323, 1.318, 1.312]},
+        {"electrolyte_formula": "NaCl", "temperature_c": 25, "values_1e-9_m2_s": [1.610, 1.585, 1.576, 1.570, 1.560, 1.555, 1.545]},
+        {"electrolyte_formula": "KCl", "temperature_c": 20, "values_1e-9_m2_s": [1.763, 1.739, 1.729, 1.722, 1.708, null, 1.692]},
+        {"electrolyte_formula": "KCl", "temperature_c": 25, "values_1e-9_m2_s": [1.993, 1.964, 1.954, 1.945, 1.934, 1.925, 1.917]},
+        {"electrolyte_formula": "KCl", "temperature_c": 30, "values_1e-9_m2_s": [2.230, null, null, 2.174, 2.161, 2.152, 2.144]},
+        {"electrolyte_formula": "RbCl", "temperature_c": 25, "values_1e-9_m2_s": [2.051, null, 2.011, 2.007, 1.995, 1.984, 1.973]},
+        {"electrolyte_formula": "CsCl", "temperature_c": 25, "values_1e-9_m2_s": [2.004, 2.013, 2.000, 1.992, 1.978, 1.969, 1.958]},
+        {"electrolyte_formula": "LiNO3", "temperature_c": 25, "values_1e-9_m2_s": [1.336, null, null, 1.296, 1.289, 1.283, 1.276]},
+        {"electrolyte_formula": "NaNO3", "temperature_c": 25, "values_1e-9_m2_s": [1.568, null, 1.535, null, 1.516, 1.513, 1.503]},
+        {"electrolyte_formula": "KClO4", "temperature_c": 25, "values_1e-9_m2_s": [1.871, 1.845, 1.841, 1.835, 1.829, 1.821, 1.790]},
+        {"electrolyte_formula": "KNO3", "temperature_c": 25, "values_1e-9_m2_s": [1.928, 1.899, 1.884, 1.879, 1.866, 1.857, 1.846]},
+        {"electrolyte_formula": "AgNO3", "temperature_c": 25, "values_1e-9_m2_s": [1.765, null, null, 1.719, 1.708, 1.698, null]},
+        {"electrolyte_formula": "MgCl2", "temperature_c": 25, "values_1e-9_m2_s": [1.249, 1.187, 1.169, 1.158, null, null, null]},
+        {"electrolyte_formula": "CaCl2", "temperature_c": 25, "values_1e-9_m2_s": [1.335, 1.263, 1.243, 1.230, 1.213, 1.201, 1.188]},
+        {"electrolyte_formula": "SrCl2", "temperature_c": 25, "values_1e-9_m2_s": [1.334, 1.269, 1.248, 1.236, 1.219, 1.209, null]},
+        {"electrolyte_formula": "BaCl2", "temperature_c": 25, "values_1e-9_m2_s": [1.385, 1.320, 1.298, 1.283, 1.265, null, null]},
+        {"electrolyte_formula": "Li2SO4", "temperature_c": 25, "values_1e-9_m2_s": [1.041, 0.990, 0.974, 0.965, 0.950, null, null]},
+        {"electrolyte_formula": "Na2SO4", "temperature_c": 25, "values_1e-9_m2_s": [1.230, 1.175, 1.160, 1.147, 1.123, null, null]},
+        {"electrolyte_formula": "Cs2SO4", "temperature_c": 25, "values_1e-9_m2_s": [1.569, 1.489, 1.454, 1.437, 1.420, null, null]},
+        {"electrolyte_formula": "MgSO4", "temperature_c": 25, "values_1e-9_m2_s": [0.849, 0.768, 0.740, 0.727, 0.710, null, null]},
+        {"electrolyte_formula": "ZnSO4", "temperature_c": 25, "values_1e-9_m2_s": [0.846, 0.748, 0.733, 0.724, 0.705, null, null]},
+        {"electrolyte_formula": "LaCl3", "temperature_c": 25, "values_1e-9_m2_s": [1.293, 1.175, 1.145, 1.126, 1.105, 1.084, null]},
+        {"electrolyte_formula": "K4Fe(CN)6", "temperature_c": 25, "values_1e-9_m2_s": [1.468, null, null, 1.213, 1.184, null, null]}
+      ],
+      "limitations_zh": [
+        "这些是整种二元电解质的互扩散系数，不是 Cu2+、SO4(2-) 等单离子的扩散系数或电迁移率。",
+        "表中 0 mol/L 是极限/参考端点；只有正浓度列属于有限浓度数据。缺失值保持 null，不补值。",
+        "多数数据只覆盖至 0.010 mol/L，不能外推至当前 0.100 M KNO3 盐桥，也不能直接代入液接电势的单离子迁移率。"
+      ]
+    },
+    {
+      "dataset_id": "kno3_cation_transference_number_25c_v1",
+      "property_type": "cation_transference_number",
+      "property_name_zh": "KNO3 中 K+ 阳离子迁移数",
+      "data_status": "tabulated_reference_points",
+      "source_ids": ["bard_faulkner_2001"],
+      "electrolyte_formula": "KNO3",
+      "solvent": "water",
+      "temperature_k": 298.15,
+      "concentration_basis": "equivalent_concentration_molarity_for_1_to_1_electrolyte",
+      "points": [
+        {"concentration_mol_l": 0.01, "cation": "K+", "value": 0.5084},
+        {"concentration_mol_l": 0.05, "cation": "K+", "value": 0.5093},
+        {"concentration_mol_l": 0.10, "cation": "K+", "value": 0.5103},
+        {"concentration_mol_l": 0.20, "cation": "K+", "value": 0.5120}
+      ],
+      "limitations_zh": [
+        "迁移数表示电流分担比例，不是单离子迁移率，也不是扩散系数。",
+        "0.100 M 点可作为 KNO3 二元水溶液参考；液接区含 CuSO4 与 KNO3 的混合离子，不能将纯 KNO3 迁移数直接当作混合液接区参数。",
+        "来源为文献汇编表，未给本库可核实的逐点不确定度。"
+      ]
+    },
+    {
+      "dataset_id": "cuso4_apparent_cation_transference_number_v1",
+      "property_type": "apparent_cation_transference_number",
+      "property_name_zh": "CuSO4 表观阳离子迁移数",
+      "data_status": "reported_experimental_points_condition_sensitive",
+      "source_ids": ["sinha_bhat_1988"],
+      "electrolyte_formula": "CuSO4",
+      "solvent": "water",
+      "measurement_method": "Hittorf method",
+      "concentration_basis": "molality",
+      "reported_pH_column_values": true,
+      "points": [
+        {"concentration_mol_kg": 0.1, "temperature_c": 25, "reported_pH": 4.51, "value": 0.3255},
+        {"concentration_mol_kg": 0.2, "temperature_c": 25, "reported_pH": 4.05, "value": 0.3287},
+        {"concentration_mol_kg": 0.3, "temperature_c": 25, "reported_pH": 3.81, "value": 0.3325},
+        {"concentration_mol_kg": 0.4, "temperature_c": 25, "reported_pH": 3.65, "value": 0.3377},
+        {"concentration_mol_kg": 0.5, "temperature_c": 25, "reported_pH": 3.51, "value": 0.3445},
+        {"concentration_mol_kg": 0.6, "temperature_c": 25, "reported_pH": 3.43, "value": 0.3495},
+        {"concentration_mol_kg": 0.7, "temperature_c": 25, "reported_pH": 3.37, "value": 0.3558},
+        {"concentration_mol_kg": 0.8, "temperature_c": 25, "reported_pH": 3.30, "value": 0.3620},
+        {"concentration_mol_kg": 0.9, "temperature_c": 25, "reported_pH": 3.25, "value": 0.3680},
+        {"concentration_mol_kg": 1.0, "temperature_c": 25, "reported_pH": 3.20, "value": 0.3737},
+        {"concentration_mol_kg": 0.1, "temperature_c": 35, "reported_pH": 4.51, "value": 0.3446},
+        {"concentration_mol_kg": 0.2, "temperature_c": 35, "reported_pH": 4.05, "value": 0.3490},
+        {"concentration_mol_kg": 0.3, "temperature_c": 35, "reported_pH": 3.81, "value": 0.3583},
+        {"concentration_mol_kg": 0.4, "temperature_c": 35, "reported_pH": 3.65, "value": 0.3573},
+        {"concentration_mol_kg": 0.5, "temperature_c": 35, "reported_pH": 3.51, "value": 0.3609},
+        {"concentration_mol_kg": 0.6, "temperature_c": 35, "reported_pH": 3.43, "value": 0.3655},
+        {"concentration_mol_kg": 0.7, "temperature_c": 35, "reported_pH": 3.37, "value": 0.3703},
+        {"concentration_mol_kg": 0.8, "temperature_c": 35, "reported_pH": 3.30, "value": 0.3749},
+        {"concentration_mol_kg": 0.9, "temperature_c": 35, "reported_pH": 3.25, "value": 0.3794},
+        {"concentration_mol_kg": 1.0, "temperature_c": 35, "reported_pH": 3.20, "value": 0.3840},
+        {"concentration_mol_kg": 0.1, "temperature_c": 45, "reported_pH": 4.51, "value": 0.3630},
+        {"concentration_mol_kg": 0.2, "temperature_c": 45, "reported_pH": 4.05, "value": 0.3668},
+        {"concentration_mol_kg": 0.3, "temperature_c": 45, "reported_pH": 3.81, "value": 0.3706},
+        {"concentration_mol_kg": 0.4, "temperature_c": 45, "reported_pH": 3.65, "value": 0.3744},
+        {"concentration_mol_kg": 0.5, "temperature_c": 45, "reported_pH": 3.51, "value": 0.3780},
+        {"concentration_mol_kg": 0.6, "temperature_c": 45, "reported_pH": 3.43, "value": 0.3805},
+        {"concentration_mol_kg": 0.7, "temperature_c": 45, "reported_pH": 3.37, "value": 0.3840},
+        {"concentration_mol_kg": 0.8, "temperature_c": 45, "reported_pH": 3.30, "value": 0.3875},
+        {"concentration_mol_kg": 0.9, "temperature_c": 45, "reported_pH": 3.25, "value": 0.3911},
+        {"concentration_mol_kg": 1.0, "temperature_c": 45, "reported_pH": 3.20, "value": 0.3945},
+        {"concentration_mol_kg": 0.1, "temperature_c": 55, "reported_pH": 4.51, "value": 0.3785},
+        {"concentration_mol_kg": 0.2, "temperature_c": 55, "reported_pH": 4.05, "value": 0.3810},
+        {"concentration_mol_kg": 0.3, "temperature_c": 55, "reported_pH": 3.81, "value": 0.3834},
+        {"concentration_mol_kg": 0.4, "temperature_c": 55, "reported_pH": 3.65, "value": 0.3860},
+        {"concentration_mol_kg": 0.5, "temperature_c": 55, "reported_pH": 3.51, "value": 0.3886},
+        {"concentration_mol_kg": 0.6, "temperature_c": 55, "reported_pH": 3.43, "value": 0.3912},
+        {"concentration_mol_kg": 0.7, "temperature_c": 55, "reported_pH": 3.37, "value": 0.3938},
+        {"concentration_mol_kg": 0.8, "temperature_c": 55, "reported_pH": 3.30, "value": 0.3964},
+        {"concentration_mol_kg": 0.9, "temperature_c": 55, "reported_pH": 3.25, "value": 0.3996},
+        {"concentration_mol_kg": 1.0, "temperature_c": 55, "reported_pH": 3.20, "value": 0.4018}
+      ],
+      "applicability_zh": "数据覆盖 0.1–1.0 mol/kg；当前配方约 0.01–0.09 M 且未指定 pH，低于/接近其起始点并且条件不同，不得插值外推或直接用于本次液接电势。文中说明了 pH 条件，同时表列 pH 随浓度变化；在未核实原文表注前保留该冲突提示。",
+      "limitations_zh": [
+        "这是表观 Cu 阳离子迁移数，不是单离子电迁移率。",
+        "CuSO4 溶液酸性，H+ 可能影响 Hittorf 表观迁移数；不能视作纯 Cu2+/SO4(2-) 二离子系统的无条件通用值。",
+        "该数据不直接计算液接电势，也不代表本项目当前浓度条件匹配。"
+      ]
+    },
+    {
+      "dataset_id": "kno3_mutual_diffusion_25c_range_summary_v1",
+      "property_type": "binary_electrolyte_mutual_diffusion_coefficient",
+      "property_name_zh": "KNO3 水溶液互扩散系数范围摘要",
+      "data_status": "abstract_range_only_exact_points_not_digitized",
+      "source_ids": ["daniel_albright_1991"],
+      "electrolyte_formula": "KNO3",
+      "solvent": "water",
+      "temperature_k": 298.15,
+      "concentration_basis": "molarity",
+      "reported_concentration_range_mol_l": {"minimum": 0.025, "maximum": 2.61},
+      "reported_diffusion_coefficient_range_m2_s": {"minimum": 1.166e-9, "maximum": 1.928e-9},
+      "reported_trend_zh": "浓度升高时互扩散系数总体下降。",
+      "exact_point_values": [],
+      "limitations_zh": [
+        "摘要所给端点范围不能确定 0.100 M 处的精确值；该数据库不据此线性插值。",
+        "这是 KNO3 整体互扩散系数，不是 K+、NO3- 的独立扩散系数或迁移率。"
+      ]
+    },
+    {
+      "dataset_id": "cuso4_transport_property_coverage_25c_v1",
+      "property_type": "transport_property_bundle",
+      "property_name_zh": "CuSO4 25 °C 有限浓度输运数据覆盖记录",
+      "data_status": "source_identified_numeric_tables_not_digitized",
+      "source_ids": ["miller_rard_eppstein_robinson_1980"],
+      "electrolyte_formula": "CuSO4",
+      "solvent": "water",
+      "temperature_k": 298.15,
+      "reported_concentration_scope_zh": "摘要描述为低浓度至近饱和；当前尚未从全文表格逐点提取具体边界和数值。",
+      "available_property_types": [
+        "mutual_diffusion_coefficient",
+        "electrical_conductance",
+        "osmotic_coefficient",
+        "ionic_transport_coefficients",
+        "transference_number_literature_review"
+      ],
+      "points": [],
+      "limitations_zh": [
+        "此条是待数字化数据集的来源索引，不是可直接计算的参数表。",
+        "在提取原文表格并核验单位、浓度基准和适用范围之前，不用于数值插值或液接电势计算。"
+      ]
+    }
+  ]
+}

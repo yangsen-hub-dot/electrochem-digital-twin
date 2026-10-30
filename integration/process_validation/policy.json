@@ -1,0 +1,33 @@
+{
+  "policy_id": "copper_demo_process_review_v1",
+  "minimum_video_size": [1920, 1080],
+  "video_analysis_size": [160, 90],
+  "black_luma_threshold_0_255": 12,
+  "black_fraction_review": 0.97,
+  "black_duration_review_s": 0.5,
+  "freeze_mean_difference_0_255": 0.15,
+  "freeze_duration_review_s": 2.0,
+  "geometry_numeric_tolerance_m": 0.000001,
+  "near_fixture_review_m": 0.001,
+  "max_hand_mesh_extent_m": 0.3,
+  "max_vertical_closing_axis_component": 0.5,
+  "minimum_downward_approach_component": 0.85,
+  "max_evidence_frames": 12,
+  "threshold_basis": {
+    "minimum_video_size": "用户动作视频长期规范：至少1920×1080原生编码",
+    "image_metrics": "黑屏/疑似停帧仅为图像筛查阈值，命中后待复核，不单凭亮度认定动作错误",
+    "geometry_numeric_tolerance_m": "1微米计算容差，只用于排除浮点擦边；不是机器人定位精度或安全间隙",
+    "near_fixture_review_m": "1毫米诊断预警带；不是经校准安全距离，不自动宣称无碰撞或安全",
+    "grasp_orientation": "电极从上方接近，指端朝下分量至少0.85；两指闭合轴竖直分量不超过0.5。分别描述接近方向与闭合方向，是本项目流程姿态约束，不是通用机器人安全阈值",
+    "mesh_units": "本场景Franka手部网格的单位健全性检查：任一轴包围尺寸超过0.3米，先判采集数据未覆盖，禁止把厘米误当米后的巨大网格报告成碰撞。更换机器人需适配",
+    "temporal_coverage": "仅按实际记录的仿真帧检查；可能穿过障碍的帧间运动单独标记待复核，禁止当作连续碰撞检查通过"
+  },
+  "obstacle_path_tokens": ["/DualCellElectrodeSupport/", "/CopperElectrodeRack/", "/PipetteStand_", "/SaltBridgeRack/", "/MeasurementLeadRack/"],
+  "robot_path_tokens": ["panda_hand", "panda_leftfinger", "panda_rightfinger"],
+  "uncovered_checks": [
+    "完整机器人手臂自碰撞、桌面与所有设备的通用连续碰撞检测",
+    "真实接触力、夹持稳定性和实际仪器/流体精度",
+    "透明液体折射观感、文字语义/OCR与所有遮挡的可靠视觉识别",
+    "所有器皿内壁和被夹工具的精细网格接触规则"
+  ]
+}

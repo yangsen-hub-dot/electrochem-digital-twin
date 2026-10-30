@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "library_id": "davies_debye_huckel_A_water_nea_1bar_v1",
+  "name_zh": "水溶液 Debye–Hückel 常数 A 温度表（NEA，1 bar）",
+  "status": "published_temperature_values_with_bounded_interpolation",
+  "solvent": "water",
+  "pressure_bar": 1.0,
+  "parameter": "Debye-Huckel A",
+  "parameter_unit": "kg^(1/2) mol^(-1/2)",
+  "temperature_unit": "K",
+  "tabulated_temperature_unit": "degC",
+  "interpolation": "linear_between_adjacent_published_values_only",
+  "extrapolation": "not_allowed",
+  "references": {
+    "oecd_nea_tdb_2020": {
+      "citation": "OECD Nuclear Energy Agency, Thermochemical Database (TDB) Project, revised TDB report, Table 2: Debye-Hückel constant A as a function of temperature.",
+      "url": "https://oecdnea.org/upload/docs/application/pdf/2020-09/tdb2_2020-09-02_11-51-54_735.pdf",
+      "data_note": "Published aqueous values at 1 bar from 0 to 50 °C; A(25 °C)=0.509, matching the existing project value."
+    }
+  },
+  "values": [
+    {"temperature_c": 0, "A": 0.491},
+    {"temperature_c": 5, "A": 0.494},
+    {"temperature_c": 10, "A": 0.498},
+    {"temperature_c": 15, "A": 0.501},
+    {"temperature_c": 20, "A": 0.505},
+    {"temperature_c": 25, "A": 0.509},
+    {"temperature_c": 30, "A": 0.513},
+    {"temperature_c": 35, "A": 0.518},
+    {"temperature_c": 40, "A": 0.525},
+    {"temperature_c": 50, "A": 0.534}
+  ]
+}

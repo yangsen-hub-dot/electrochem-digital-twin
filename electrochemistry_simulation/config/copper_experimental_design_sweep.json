@@ -1,0 +1,52 @@
+{
+  "design_id": "copper_concentration_cell_factor_matrix_v1",
+  "batch_name_zh": "铜离子浓差电池_可选实验条件组合扫描",
+  "batch_name_short_zh": "铜电池_条件扫描",
+  "description": "列表中单个值表示固定条件；需要扫描某个因素时给出多个值。默认仍为温度×左侧浓度 15 组。右侧浓度未配置时沿用基础流程。",
+  "temperatures_k": [
+    293.15,
+    298.15,
+    303.15,
+    308.15,
+    313.15
+  ],
+  "left_concentrations_m": [
+    0.005,
+    0.01,
+    0.02
+  ],
+  "left_total_volume_ml": 1.0,
+  "stock_aspirate_step_id": "02_aspirate_low_stock",
+  "water_aspirate_step_id": "06_aspirate_water",
+  "salt_bridge_types": [
+    "KNO3"
+  ],
+  "salt_bridge_concentrations_m": [
+    0.1
+  ],
+  "activity_correction_enabled": [
+    true
+  ],
+  "liquid_junction_enabled": [
+    false
+  ],
+  "liquid_junction_models": [
+    "henderson_approximation"
+  ],
+  "errors_enabled": [
+    false
+  ],
+  "operation_error_levels": {
+    "pipetting": [
+      "low"
+    ],
+    "tip_carryover": [
+      "low"
+    ],
+    "mixing": [
+      "low"
+    ]
+  },
+  "replicates": 1,
+  "max_scenarios": 500
+}

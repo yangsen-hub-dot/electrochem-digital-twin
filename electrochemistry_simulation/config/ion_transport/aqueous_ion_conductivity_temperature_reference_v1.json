@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.1",
+  "library_id": "aqueous_ion_equivalent_conductivity_temperature_reference_v1",
+  "name_zh": "水溶液无限稀释离子电导温度参考估算",
+  "status": "infinite_dilution_walden_reference_estimate",
+  "solvent": "water",
+  "reference_temperature_k": 298.15,
+  "reference_concentration_state": "infinite_dilution_limit",
+  "property_type": "limiting_equivalent_ionic_conductivity",
+  "property_unit": "S cm2/equivalent",
+  "temperature_model": {
+    "model_id": "walden_water_viscosity_ratio_reference_v1",
+    "formula": "lambda_eq(T) = lambda_eq_25 * (eta_water_25/eta_water_T)",
+    "valid_temperature_range_c": [0.0, 95.0],
+    "method_note_zh": "以 25°C 无限稀释当量电导为锚点，采用理想 Walden 型 λ·η≈常数近似，按水黏度比进行温度修正。此关系只作跨温区参考估算；不同离子实际的 Walden 乘积会随温度变化，本库没有 Cu²⁺、SO₄²⁻ 等离子的全温区直接数据，也不匹配有限浓度混合液接条件。",
+    "reference_ids": ["matsuyama_motoyoshi_2018"]
+  },
+  "water_viscosity_model": {
+    "model_id": "iapws_sr6_08_liquid_water_0_1_mpa",
+    "reference_temperature_k": 300.0,
+    "formula": "eta_water_uPa_s = sum(coefficient_i * (T/300 K)^exponent_i)",
+    "valid_temperature_range_c": [0.0, 95.0],
+    "viscosity_unit": "uPa s",
+    "terms": [
+      {"coefficient": 280.68, "exponent": -1.9},
+      {"coefficient": 511.45, "exponent": -7.7},
+      {"coefficient": 61.131, "exponent": -19.6},
+      {"coefficient": 0.45903, "exponent": -40.0}
+    ],
+    "reference_ids": ["iapws_sr6_08_2011"]
+  },
+  "mobility_conversion": {
+    "formula": "u = lambda_eq * 1e-4 / F",
+    "mobility_unit": "m2/(V s)",
+    "note_zh": "由当量离子电导率换算单离子电迁移率；使用无限稀释近似，换算值仍是参考估算。"
+  },
+  "data_policy": {
+    "automatic_use": false,
+    "required_parameter_use_policy": "allow_reference_estimate",
+    "condition_matched": false,
+    "extrapolation": "not_performed"
+  },
+  "references": {
+    "vanysek_crc_2010": {
+      "citation": "P. Vanysek, Ionic Conductivity and Diffusion at Infinite Dilution, CRC Handbook of Chemistry and Physics, 91st edition (2010–2011).",
+      "url": "https://is.muni.cz/el/sci/podzim2016/C4020/um/pom/Ionic_Conductivity_and_Diffusion_at_Infinite_Dilution.pdf",
+      "data_note_zh": "25°C 水溶液无限稀释扩散/电导参考值；本库 25°C 当量离子电导锚点与现有离子扩散库一致。"
+    },
+    "matsuyama_motoyoshi_2018": {
+      "citation": "H. Matsuyama and K. Motoyoshi, An empirical relation between the limiting ionic molar conductivities and self-diffusion coefficients of pure solvents, Chemical Physics Letters 699 (2018), 162–166. DOI: 10.1016/j.cplett.2018.03.063.",
+      "url": "https://doi.org/10.1016/j.cplett.2018.03.063",
+      "data_note_zh": "讨论了无限稀释离子电导、溶剂黏度/Walden 乘积及温度依赖。离子间存在差异，研究没有提供本库所有目标离子的全温区参数；本库仅采用理想 λ·η≈常数作为标注清楚的第一版估算。"
+    },
+    "iapws_sr6_08_2011": {
+      "citation": "IAPWS, Revised Supplementary Release on Properties of Liquid Water at 0.1 MPa (SR6-08(2011)), Section 3, Eq. (7), Table 5.",
+      "url": "https://www.iapws.org/relguide/LiquidWater.pdf",
+      "data_note_zh": "使用官方简化关联式计算常压附近纯水动力黏度；关联式原适用范围为 253.15–383.15 K，本库为避免相态边界问题，仅开放 0–95°C。"
+    }
+  },
+  "ions": {
+    "Cu": {
+      "formula": "Cu2+",
+      "charge_number": 2,
+      "lambda_eq_25_s_cm2_mol_equiv": 53.6,
+      "reference_ids": ["vanysek_crc_2010"]
+    },
+    "SO4": {
+      "formula": "SO4(2-)",
+      "charge_number": -2,
+      "lambda_eq_25_s_cm2_mol_equiv": 80.0,
+      "reference_ids": ["vanysek_crc_2010"]
+    },
+    "K": {
+      "formula": "K+",
+      "charge_number": 1,
+      "lambda_eq_25_s_cm2_mol_equiv": 73.5,
+      "reference_ids": ["vanysek_crc_2010"]
+    },
+    "NO3": {
+      "formula": "NO3(-)",
+      "charge_number": -1,
+      "lambda_eq_25_s_cm2_mol_equiv": 71.4,
+      "reference_ids": ["vanysek_crc_2010"]
+    }
+  },
+  "limitations_zh": [
+    "只有 25°C 无限稀释离子电导锚点是离子特异参考数据；其他温度采用理想 Walden 黏度比例估算，不代表各离子的真实温度响应完全相同，实际 Walden 乘积可能随温度变化。",
+    "参考迁移率不匹配当前 CuSO4 溶液及 0.100 M KNO3 盐桥的有限浓度混合条件；液接电势仍是探索性近似。",
+    "液接修正默认关闭；只有显式允许参考估算时才使用本库，并将结果标记为非条件匹配估算。",
+    "本库只覆盖 0–95°C；温度范围外拒绝液接温度估算，不外推。"
+  ]
+}

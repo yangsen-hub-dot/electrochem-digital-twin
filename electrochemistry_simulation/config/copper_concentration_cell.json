@@ -1,0 +1,88 @@
+{
+  "experiment_id": "copper_concentration_cell_stock_dilution_v1",
+  "experiment_name_zh": "铜离子浓差电池_母液稀释流程",
+  "result_category_zh": "单次仿真",
+  "experiment_name_short_zh": "铜电池_母液稀释",
+  "result_category_short_zh": "单",
+  "description": "纯仿真示例：低侧用 0.1000 M 母液稀释，高侧使用同批母液；未执行真实设备",
+  "protocol_file": "protocols/copper_concentration_cell_stock_dilution.json",
+  "temperature_k": 298.15,
+  "species": {
+    "Cu": {"name": "Cu²⁺", "formula": "Cu", "charge": 2},
+    "SO4": {"name": "SO₄²⁻", "formula": "SO4", "charge": -2},
+    "K": {"name": "K⁺", "formula": "K", "charge": 1},
+    "NO3": {"name": "NO₃⁻", "formula": "NO3", "charge": -1}
+  },
+  "containers": {
+    "copper_stock": {"name_zh": "铜母液", "volume_ml": 5.0, "concentrations_m": {"Cu": 0.1, "SO4": 0.1}},
+    "water": {"name_zh": "水", "volume_ml": 10.0, "concentrations_m": {"Cu": 0.0, "SO4": 0.0}},
+    "left_half_cell": {"name_zh": "左侧半电池", "volume_ml": 0.0, "concentrations_m": {"Cu": 0.0, "SO4": 0.0}},
+    "right_half_cell": {"name_zh": "右侧半电池", "volume_ml": 0.0, "concentrations_m": {"Cu": 0.0, "SO4": 0.0}}
+  },
+  "cell": {
+    "left_container": "left_half_cell",
+    "right_container": "right_half_cell",
+    "active_species": "Cu",
+    "equilibrium_model": "reaction_quotient_concentration_cell_nernst",
+    "electrons_transferred": 2,
+    "redox_reaction": {
+      "name_zh": "Cu²⁺/Cu",
+      "reduction_reaction_zh": "Cu²⁺ + 2e⁻ → Cu(s)",
+      "display_species": "Cu",
+      "electrons_transferred": 2,
+      "reaction_quotient_terms": {"Cu": -1}
+    },
+    "activity_correction": {
+      "enabled": true,
+      "model": "davies_single_ion_convention",
+      "ionic_strength_source": "tracked_species",
+      "ionic_strength_species": ["Cu", "SO4"],
+      "nominal_ionic_strength_molal_by_side": {"left": 0.04, "right": 0.4},
+      "A": 0.509,
+      "A_reference_temperature_k": 298.15,
+      "scenario_assumption": "水溶液；CuSO4 完全解离；暂不考虑离子缔合；稀溶液近似 M≈mol/kg"
+    },
+    "liquid_junction_potential": {
+      "enabled": false,
+      "model": "henderson_approximation",
+      "status": "reserved_solver_pending_condition_matched_parameters",
+      "solution_ions_by_side": {"left": ["Cu", "SO4"], "right": ["Cu", "SO4"]},
+      "bridge_electrolyte": {
+        "electrolytes": [
+          {
+            "formula": "KNO3",
+            "concentration_m": 0.1,
+            "ion_stoichiometry": {"K": 1, "NO3": 1}
+          }
+        ]
+      },
+      "transport_parameter_library": "ion_transport/aqueous_ion_diffusion_infinite_dilution_25c_v1.json",
+      "parameter_use_policy": "allow_reference_estimate",
+      "reference_estimate_authorization": {
+        "authorized_on": "2026-10-16",
+        "source": "explicit_project_user_consent",
+        "scope": "Existing liquid-junction reference parameters only; not calibrated or measured. Missing-ion and temperature checks remain enforced."
+      }
+    }
+  },
+  "cell_setup": {
+    "electrodes": {"material": "Cu", "status": "not_physically_modeled"},
+    "salt_bridge": {
+      "type": "KNO3",
+      "concentration_m": 0.1,
+      "status": "assumed_for_simulation",
+      "junction_potential_model": false
+    }
+  },
+  "error_model": {
+    "enabled": false,
+    "selection_note": "参数档案已配置；为保留理想基线，当前未启用误差注入。移液参考覆盖 P200 20–200 μL 与 P1000 >200–1000 μL 的连续设定值，厂家锚点之间按绝对 μL 误差插值；系统误差按枪型每轮共享，重复性逐次抽样。低/中/高倍率为 1.0/1.5/2.0 的参考/敏感性情景，不是当前设备校准。枪头残留使用截断高斯工程先验；混匀速率 k 按有界截断高斯先验每轮抽样，效率由设定混匀时间换算；均非当前设备校准，残液按物料守恒建模。",
+    "profile_file": "error_profiles/gilson_pipetman_p200_p1000_continuous_v1.json",
+    "factors": {
+      "pipetting": {"model": "continuous_commercial_pipette_reference", "level": "low"},
+      "tip_carryover": {"model": "truncated_gaussian_residual_volume", "level": "low", "status": "provisional_engineering_prior", "tip_type": "generic_disposable_aqueous_tip_assumption"},
+      "mixing": {"model": "truncated_gaussian_rate_per_second", "level": "low", "status": "provisional_engineering_prior"}
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+# Isaac Sim 5.0 / Python 3.11 environment prepared on this server.
+# Do not replace its verified torch/Isaac Sim during deployment.
+isaacsim==5.0.0.0
+torch==2.7.0
+torchvision==0.22.0
+numpy==1.26.0
+click==8.1.7
+idna==3.10
+onnx==1.18.0
+protobuf==4.25.9
+pillow==11.2.1
+wheel==0.43.0
+setuptools==80.9.0
+packaging==23.0
+pytest==8.4.2
+opencv-python==4.11.0.86
+transformers==4.44.2
+huggingface-hub==0.34.4
+tokenizers==0.19.1
+pydantic==2.11.10
+isaaclab==2.2.0
+isaaclab-assets==0.2.2
+isaaclab-tasks==0.10.45

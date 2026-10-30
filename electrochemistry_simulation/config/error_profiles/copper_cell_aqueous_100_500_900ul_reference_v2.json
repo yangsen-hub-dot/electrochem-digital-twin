@@ -1,0 +1,307 @@
+{
+  "profile_id": "copper_cell_aqueous_100_500_900ul_reference_v2",
+  "profile_name": "铜浓差电池水系100_500_900微升操作误差参考档案（截断高斯先验版）",
+  "source": "published_measurements_and_manufacturer_specs",
+  "classification": {
+    "taxonomy_note": "误差类别、误差因子、数学模型、参数档案和强度档位分层保存；pipetting下的systematic_bias与repeatability是两个误差因子，不能与tip_carryover或mixing混为一类。",
+    "error_categories": {
+      "pipetting": "移液体积误差",
+      "tip_carryover": "枪头残液/带液误差",
+      "mixing": "混匀不完全误差"
+    },
+    "error_factors": {
+      "pipetting.systematic_bias": {"parent_category": "pipetting", "scope": "同一体积档、同一轮运行共享"},
+      "pipetting.repeatability": {"parent_category": "pipetting", "scope": "每次吸液单独变化"},
+      "tip_carryover.residual_liquid": {"parent_category": "tip_carryover", "scope": "排液后留在枪头中的液体；通过物料转移计算"},
+      "mixing.incomplete_homogenization": {"parent_category": "mixing", "scope": "混匀后仍存在的浓度不均匀"}
+    },
+    "model": "误差产生机制",
+    "level": "同一误差模型下的数据强度档位",
+    "profile": "带有适用范围和来源的参数集合"
+  },
+  "applicability": {
+    "equipment_class": "自动化移液工作站；参考资料包含固定枪头系统和单通道活塞式移液模块",
+    "liquid_class": "水及水系缓冲/盐溶液；不代表所有铜盐配方的实测表现",
+    "transfer_volume_ul_range": [99, 901],
+    "tested_volume_bands_ul": [[99, 101], [499, 501], [899, 901]],
+    "volume_scope_note": "只对约100、500和900 µL三个目标点附近的吸液操作应用；不是99–901 µL连续全量程认证。不同目标点分开取参数，不跨体积外推。",
+    "evidence_scope_note": "公开数据是少数指定设备/设置的测量或厂家规格，不是所有工作站的统计样本；档位是这些公开证据的参考级别，不代表设备市场分位数。"
+  },
+  "parameter_interpretation": {
+    "systematic_bias": {"parameter": "systematic_relative_bias_range", "mechanism": "校准/准确度偏差", "scope": "同一体积档本轮共享", "sampling": "仅有界限时在边界内均匀抽取一个本轮参数；这是参数不确定性的暂定表达，不是设备误差的实测概率分布。"},
+    "repeatability": {"parameter": "repeatability_cv_range", "mechanism": "单次吸液重复性", "scope": "每次吸液独立", "sampling": "先按档案选择本轮CV，再按零均值高斯近似生成各次吸液偏差；若结果导致非正体积则重抽。高斯只用于此因子，且是近似假设，不是来源证明的分布。"},
+    "tip_carryover": {"mechanism": "枪头排液后的正体积残留；残留溶液所含物质随液体守恒转移", "sampling": "每轮仿真按该档位单独配置的均值和标准差，从有上下界的截断高斯分布抽取一个残液体积，并在本轮排液中复用。均值和标准差是缺少当前设备实测分布时采用的先验假设，不是校准结果。"},
+    "mixing": {"mechanism": "混匀作用于剩余浓度不均匀程度；与混匀循环、液体体积及容器几何相关。双池同时搅拌时，设备/运行共同因素影响两侧，同时为每侧保留独立局部差异。", "sampling": "单池按该档位从截断高斯先验抽取一个效率；双池同步搅拌时，以同一档位的均值、标准差和边界构造相关的两侧效率（共同潜变量 + 各侧独立潜变量）。双池相关系数 0.8 为待校准的工程假设，不是实测结果。"},
+    "level_basis": "低/中/高是按公开实测或厂家规格锚点建立的参考强度区间，不是行业标准分档或市场分位数；不同体积分别取证，不跨体积外推。来源包含厂家上限规格和不同工作站实测，区间仅用于情景比较，不是当前节点设备的实测置信区间。未有足够锚点的体积档位明确标为insufficient_evidence。"
+  },
+  "sampling_convention": {
+    "truncated_gaussian": "均值和标准差是截断前母体正态分布的参数；抽样超出该档范围时重抽。截断后实际标准差会小于母体标准差。本版均值暂取各档范围中点作为无方向偏好的先验中心；标准差按误差因子和档位分别配置，均为工程先验假设。",
+    "run_scope": "枪头残液体积和混匀效率各自在每轮仿真开始时抽取一次，写入运行记录，并在该轮对应操作中复用。"
+  },
+  "models": {
+    "pipetting": {
+      "shared_bounded_bias_gaussian_repeatability": {
+        "low": {
+          "systematic_relative_bias_range": [-0.0022, 0.0022],
+          "repeatability_cv_range": [0.002, 0.004],
+          "applicable_volume_ul_range": [99, 901],
+          "level_basis": "低档参考区间0.20–0.40%：厂家公开的500 µL规格锚点包括Opentrons CV≤0.20%、Eppendorf epMotion CV≤0.30%、Accuris AutoMATE 96 CV≤0.40%；Tecan实测确认运行CV 0.31%落在区间内。厂家值是性能上限规格，不是独立实测分布。",
+          "volume_profiles": [
+            {"volume_band_id": "100ul", "applicable_volume_ul_range": [99, 101], "status": "parameterized", "systematic_relative_bias_range": [-0.01, 0.012], "repeatability_cv_range": [0.003, 0.005], "evidence_note": "Tecan Freedom EVO典型规格100 µL：CV 0.5%、准确度±1%；Tecan Genesis单次分配研究100 µL：均值101.16 µL、CV 0.3%。区间跨来源包络，仅作参考档位。"},
+            {"volume_band_id": "500ul", "applicable_volume_ul_range": [499, 501], "status": "parameterized", "systematic_relative_bias_range": [-0.0022, 0.0022], "repeatability_cv_range": [0.002, 0.004], "evidence_note": "当前约500 µL低档参考参数；来源见500 µL实测和厂家规格。"},
+            {"volume_band_id": "900ul", "applicable_volume_ul_range": [899, 901], "status": "parameterized", "systematic_relative_bias_range": [-0.0019, -0.0004], "repeatability_cv_range": [0.0016, 0.0023], "evidence_note": "仅Tecan Freedom EVO水液体类别校准/确认实测的低误差参考点：900 µL报告DEV约0.19%/0.04%，CV约0.23%/0.16%；负偏差方向由报告均值低于目标值确定。只代表该设备和校准设置。"}
+          ]
+        },
+        "medium": {
+          "systematic_relative_bias_range": [-0.01, 0.01],
+          "repeatability_cv_range": [0.004, 0.01],
+          "applicable_volume_ul_range": [99, 901],
+          "level_basis": "中档参考区间CV 0.40–1.00%：Tecan Freedom EVO 200约500 µL调整/确认实测CV为0.62%和0.89%，落在区间内。系统偏差±1.00%取Opentrons OT-2 P1000在500 µL的厂家准确度规格。区间边界是跨来源情景分层，不是行业统一阈值。",
+          "volume_profiles": [
+            {"volume_band_id": "100ul", "applicable_volume_ul_range": [99, 101], "status": "parameterized", "systematic_relative_bias_range": [-0.02, 0.02], "repeatability_cv_range": [0.005, 0.01], "evidence_note": "100 µL区间以Tecan Freedom EVO典型准确度±1%/CV 0.5%与Opentrons OT-2 P1000 100 µL规格准确度±2%/CV 1%为锚点；区间为仿真强度分层，不是某台设备的概率范围。"},
+            {"volume_band_id": "500ul", "applicable_volume_ul_range": [499, 501], "status": "parameterized", "systematic_relative_bias_range": [-0.01, 0.01], "repeatability_cv_range": [0.004, 0.01], "evidence_note": "当前约500 µL中档参考参数；来源见500 µL实测和厂家规格。"},
+            {"volume_band_id": "900ul", "applicable_volume_ul_range": [899, 901], "status": "insufficient_evidence", "evidence_note": "目前只找到单一工作站/校准条件的低误差实测锚点，不足以定义中档。"}
+          ]
+        },
+        "high": {
+          "systematic_relative_bias_range": [-0.015, 0.015],
+          "repeatability_cv_range": [0.01, 0.02],
+          "applicable_volume_ul_range": [99, 901],
+          "level_basis": "高档参考区间1.00–2.00%：独立自动分装验证研究报告500 µL工作流程实测CV约1.1–1.2%；Biotage Extrahera HV-5000厂家规格为500 µL CV 2.0%。系统偏差边界±1.50%取该设备500 µL准确度规格作高档参考上限；这些来源设备/流程不同，不代表当前设备。",
+          "volume_profiles": [
+            {"volume_band_id": "100ul", "applicable_volume_ul_range": [99, 101], "status": "parameterized", "systematic_relative_bias_range": [-0.025, 0.025], "repeatability_cv_range": [0.01, 0.0125], "evidence_note": "100 µL高档上限以Accuris AutoMATE96厂家规格准确度≤±2.5%、精密度≤1.25%为锚点；区间为分档参考，不代表设备实测分布。"},
+            {"volume_band_id": "500ul", "applicable_volume_ul_range": [499, 501], "status": "parameterized", "systematic_relative_bias_range": [-0.015, 0.015], "repeatability_cv_range": [0.01, 0.02], "evidence_note": "当前约500 µL高档参考参数；来源见500 µL应用实测与厂家规格。"},
+            {"volume_band_id": "900ul", "applicable_volume_ul_range": [899, 901], "status": "insufficient_evidence", "evidence_note": "未找到同类水系工作站900 µL的中/高误差强度数据；不从500 µL外推。"}
+          ]
+        }
+      }
+    },
+    "tip_carryover": {
+      "truncated_gaussian_residual_volume": {
+        "prior_note": "先验中心暂取本档范围中点，避免在没有方向性证据时偏向上下限；各档标准差独立设置。该截断高斯是工程先验，不是枪头残液实测分布。",
+        "low": {
+          "residual_volume_ul_range": [0.05, 0.20],
+          "residual_volume_ul_prior_mean": 0.125,
+          "residual_volume_ul_prior_sd": 0.03,
+          "sampling_rule": "one_absolute_truncated_gaussian_residual_volume_per_run_reused_for_dispenses_relative_share_computed_against_each_planned_aliquot",
+          "status": "provisional_engineering_prior",
+          "meaning": "每次排液后留在枪头内的体积；本轮流程更换枪头时最终进入废液，复用枪头时按实际液体组成带入后续操作。",
+          "assumptions": "水系溶液、常规一次性工作站枪头、按完整排液执行；枪头型号未确认，范围是可调整的初始情景，不是设备规格。绝对残留暂不随分液量变化；事件另记录残留体积/计划分液量，因此小剂量对应更高的相对影响。未按枪头型号、液体黏度/表面张力或排液方式校准。"
+        },
+        "medium": {
+          "residual_volume_ul_range": [0.20, 0.60],
+          "residual_volume_ul_prior_mean": 0.40,
+          "residual_volume_ul_prior_sd": 0.08,
+          "sampling_rule": "one_absolute_truncated_gaussian_residual_volume_per_run_reused_for_dispenses_relative_share_computed_against_each_planned_aliquot",
+          "status": "provisional_engineering_prior",
+          "meaning": "每次排液后留在枪头内的体积；本轮流程更换枪头时最终进入废液，复用枪头时按实际液体组成带入后续操作。",
+          "assumptions": "水系溶液、常规一次性工作站枪头、按完整排液执行；枪头型号未确认，范围是可调整的初始情景，不是设备规格。绝对残留暂不随分液量变化；事件另记录残留体积/计划分液量，因此小剂量对应更高的相对影响。未按枪头型号、液体黏度/表面张力或排液方式校准。"
+        },
+        "high": {
+          "residual_volume_ul_range": [0.60, 1.00],
+          "residual_volume_ul_prior_mean": 0.80,
+          "residual_volume_ul_prior_sd": 0.10,
+          "sampling_rule": "one_absolute_truncated_gaussian_residual_volume_per_run_reused_for_dispenses_relative_share_computed_against_each_planned_aliquot",
+          "status": "provisional_engineering_prior",
+          "meaning": "每次排液后留在枪头内的体积；本轮流程更换枪头时最终进入废液，复用枪头时按实际液体组成带入后续操作。",
+          "assumptions": "水系溶液、常规一次性工作站枪头、按完整排液执行；枪头型号未确认，范围是可调整的初始情景，不是设备规格。绝对残留暂不随分液量变化；事件另记录残留体积/计划分液量，因此小剂量对应更高的相对影响。未按枪头型号、液体黏度/表面张力或排液方式校准。"
+        }
+      }
+    },
+    "mixing": {
+      "truncated_gaussian_efficiency_per_action": {
+        "prior_note": "保留历史固定效率模型以复现旧配置；新运行可选时间速率模型。均为未校准工程先验。",
+        "low": {"efficiency_range":[0.98,0.995],"efficiency_prior_mean":0.9875,"efficiency_prior_sd":0.003,"paired_cell_correlation":0.8,"status":"provisional_engineering_prior"},
+        "medium": {"efficiency_range":[0.9,0.98],"efficiency_prior_mean":0.94,"efficiency_prior_sd":0.015,"paired_cell_correlation":0.8,"status":"provisional_engineering_prior"},
+        "high": {"efficiency_range":[0.7,0.9],"efficiency_prior_mean":0.8,"efficiency_prior_sd":0.04,"paired_cell_correlation":0.8,"status":"provisional_engineering_prior"}
+      },
+      "truncated_gaussian_rate_per_second": {
+        "prior_note": "将既有10秒参考混匀效率情景换算为一阶混匀速率k的截断高斯工程先验；速率与效率均未在当前装置上实测校准。实际效率按eta(t)=1-exp(-k*t)计算。",
+        "low": {
+          "rate_range_s_inv": [0.391202, 0.529832],
+          "rate_prior_mean_s_inv": 0.438203,
+          "rate_prior_sd_s_inv": 0.024,
+          "sampling_rule": "draw_truncated_gaussian_k_once_per_run; evaluate_eta=1-exp(-k*t)_at_configured_duration; paired_cells_use_correlated_k_draws",
+          "paired_cell_correlation": 0.8,
+          "paired_cell_correlation_status": "provisional_uncalibrated_assumption",
+          "status": "provisional_engineering_prior",
+          "meaning": "一阶混匀速率k；效率按设置的混匀时间计算，10秒是换算旧先验的参考时长。"
+        },
+        "medium": {
+          "rate_range_s_inv": [0.230259, 0.391202],
+          "rate_prior_mean_s_inv": 0.281072,
+          "rate_prior_sd_s_inv": 0.025,
+          "sampling_rule": "draw_truncated_gaussian_k_once_per_run; evaluate_eta=1-exp(-k*t)_at_configured_duration; paired_cells_use_correlated_k_draws",
+          "paired_cell_correlation": 0.8,
+          "paired_cell_correlation_status": "provisional_uncalibrated_assumption",
+          "status": "provisional_engineering_prior",
+          "meaning": "一阶混匀速率k；效率按设置的混匀时间计算，10秒是换算旧先验的参考时长。"
+        },
+        "high": {
+          "rate_range_s_inv": [0.120397, 0.230259],
+          "rate_prior_mean_s_inv": 0.160944,
+          "rate_prior_sd_s_inv": 0.020,
+          "sampling_rule": "draw_truncated_gaussian_k_once_per_run; evaluate_eta=1-exp(-k*t)_at_configured_duration; paired_cells_use_correlated_k_draws",
+          "paired_cell_correlation": 0.8,
+          "paired_cell_correlation_status": "provisional_uncalibrated_assumption",
+          "status": "provisional_engineering_prior",
+          "meaning": "一阶混匀速率k；效率按设置的混匀时间计算，10秒是换算旧先验的参考时长。"
+        }
+      }
+    }
+  },
+  "factor_evidence": {
+    "tip_carryover": {
+      "status": "provisional_engineering_prior",
+      "reason": "为原型配置低/中/高残留体积范围及每档独立的截断高斯先验均值、标准差；数值用于情景仿真并按物料守恒进入模拟，并非当前节点枪头的校准值。",
+      "subfactors": {
+        "dispense_residual_volume": {"status": "provisional_engineering_prior", "reason": "使用本档案中的正体积范围、先验均值和标准差；暂按通用水系一次性工作站枪头情景设置，待确认枪头规格后调整。"},
+        "cross_sample_analyte_carryover": {"status": "reference_data_only", "reason": "已有固定枪头清洗后的分析物带入实测，但条件不匹配当前未知枪头与铜离子体系。"}
+      },
+      "reference_cases_not_transferable": [
+        {"tip_type": "固定可重复使用不锈钢枪头，FP1氟聚合物涂层", "analyte": "荧光素", "wash_protocol": "按研究标准流程清洗；总清洗体积3.5 mL", "measured_carryover_pct": 0.00002, "status": "published_measurement_reference_only"},
+        {"tip_type": "固定可重复使用枪头；涂层依研究条件", "analyte": "IgG", "wash_protocol": "按研究标准流程清洗；总清洗体积3.5 mL", "measured_carryover_pct": 0.036, "status": "published_measurement_reference_only"},
+        {"tip_type": "固定可重复使用枪头，SSG涂层", "analyte": "HBsAg", "wash_protocol": "按研究标准流程清洗；总清洗体积3.5 mL", "measured_carryover_pct": 0.006, "status": "published_measurement_reference_only"}
+      ],
+      "disposable_tip_wash_liquid_reference_range": {
+        "status": "published_reference_range_not_current_protocol_parameter",
+        "tip_sizes_ul": [50, 100, 200],
+        "mean_retained_wash_liquid_volume_ul_range": [0.04, 0.11],
+        "maximum_observed_wash_liquid_volume_ul_range": [0.68, 0.86],
+        "replicates_per_tip_size": 12,
+        "condition": "一次性枪头清洗后将残留洗液带入样品的研究；不是常规水系铜盐溶液排液后留在当前未知枪头中的体积。仅作为量级参考，不用于当前模拟参数。",
+        "source_url": "https://doi.org/10.1016/j.jala.2007.10.007"
+      },
+      "current_protocol_note": "流程在更换液体来源时弃置枪头；当前动作表没有在铜盐液与水之间复用同一枪头。枪头残留造成的少排液和跨样本带入是不同效应，不能用上列分析物带入百分比替代残液体积。"
+    },
+    "mixing": {
+      "status": "provisional_engineering_prior",
+      "reason": "将既有10秒参考混匀效率情景换算为低/中/高一阶速率k的截断高斯先验；η(t)=1-exp(-k*t)，当前参数尚未按当前容器和操作校准。",
+      "reference_note": "现有96孔板方法资料显示，明确写出的移液混匀次数约2–20次，模型结果表明达到均匀度还取决于喷流强度与扫掠体积；这只能支持把混匀方式、循环数和容器几何纳入条件，不能直接当作本流程的混匀误差参数。",
+      "published_reference_ranges": {
+        "protocol_cycle_count_range": [2, 20],
+        "range_type": "literature_protocol_practice_not_error_magnitude",
+        "modeled_aggressive_96well_case": {"normalized_concentration_variance_below_0_05_cycles": [3, 4], "normalized_concentration_variance_below_0_01_cycles": [6, 8]},
+        "modeled_case_note": "上述均匀度结果来自96孔单孔简化流体模型的特定强喷流情景，不是当前容器的实测混匀效率；不作为当前误差范围。",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12776400/"
+      }
+    }
+  },
+  "sources": [
+    {
+      "source_id": "tecan_freedom_evo_500ul_empirical_2016",
+      "source_type": "peer_reviewed_empirical_measurement",
+      "citation": "Bessemans et al., Automated Gravimetric Calibration to Optimize the Accuracy and Precision of TECAN Freedom EVO Liquid Handler, Journal of Laboratory Automation, 2016, Table 5.",
+      "url": "https://doi.org/10.1177/2211068216632349",
+      "device_and_method": "TECAN Freedom EVO 200；固定枪头；PBS使用水液体类别；重力法；500.0–501.0 µL附近。",
+      "usable_observations": [
+        {"target_volume_ul": 500.0, "mean_volume_ul": 498.9, "reported_deviation_pct": 0.22, "reported_cv_pct": 0.31, "run": "confirmation"},
+        {"target_volume_ul": 501.0, "mean_volume_ul": 499.9, "reported_deviation_pct": 0.22, "reported_cv_pct": 0.62, "run": "adjustment"},
+        {"target_volume_ul": 501.0, "mean_volume_ul": 501.7, "reported_deviation_pct": 0.14, "reported_cv_pct": 0.89, "run": "confirmation"}
+      ],
+      "exclusion_note": "同表另一个500 µL行的报告均值与报告偏差不一致，未用于档位计算。"
+    },
+    {
+      "source_id": "automated_aliquoting_500ul_validation_2018",
+      "source_type": "peer_reviewed_application_validation",
+      "citation": "Validation of an automated system for aliquoting of HIV-1 Env-pseudotyped virus stocks, 2018.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5754138/",
+      "device_and_method": "自动分装系统；验证包含500 µL蒸馏水与Orange G水溶液分配的光度检查。",
+      "usable_observations": [
+        {"target_volume_ul": 500, "reported_cv_pct_range": [1.1, 1.2], "measurement": "automated distributed-volume photometric check", "acceptance_criterion_cv_pct": 3.0}
+      ],
+      "use_note": "作为高重复性误差情景的应用实测锚点；不视为与Tecan设备同条件的直接比较。"
+    },
+    {
+      "source_id": "opentrons_ot2_p1000_spec_500ul",
+      "source_type": "manufacturer_specification",
+      "citation": "Opentrons OT-2 P1000 single-channel pipette accuracy and precision specifications, 500 µL setting.",
+      "url": "https://docs.opentrons.com/ot-2/pipettes/",
+      "reported_limits_by_volume": [
+        {"target_volume_ul": 100, "systematic_error_pct": 2.0, "random_error_cv_pct": 1.0},
+        {"target_volume_ul": 500, "systematic_error_pct": 1.0, "random_error_cv_pct": 0.2}
+      ],
+      "use_note": "500 µL厂家性能规格；用于低档CV与中档系统偏差的跨设备参考锚点，不视为用户设备校准值。"
+    },
+    {
+      "source_id": "tecan_freedom_evo_typical_disposable_tip_100ul",
+      "source_type": "manufacturer_operating_manual_typical_performance",
+      "citation": "Tecan Freedom EVO Operating Manual, technical data table 3-42; typical values for disposable tips and tap water.",
+      "url": "https://www.tecan.com/hubfs/OM/OM_FreedomEVO_EN_392886_V10_0.pdf",
+      "reported_limits": {"target_volume_ul": 100, "systematic_error_pct": 1.0, "repeatability_cv_pct": 0.5},
+      "use_note": "厂家典型值，条件为水、指定DiTi规格与通道配置；作为100 µL参考锚点，不是当前节点设备校准值。"
+    },
+    {
+      "source_id": "tecan_genesis_100ul_empirical",
+      "source_type": "peer_reviewed_empirical_measurement",
+      "citation": "Ouyang et al., Dilution Effect in Multichannel Liquid-Handling System Equipped with Fixed Tips, Journal of Laboratory Automation, 2008, Table 1.",
+      "url": "https://doi.org/10.1016/j.jala.2007.10.007",
+      "usable_observations": [{"target_volume_ul": 100, "mean_volume_ul": 101.16, "reported_deviation_pct": 1.2, "reported_cv_pct": 0.3, "replicates": 36}],
+      "device_and_method": "Tecan Genesis RSP 150固定枪头系统；水/PBS液体设置；与当前一次性枪头配置不等同。",
+      "additional_tip_wash_residue_observations": [
+        {"tip_size_ul": 50, "mean_wash_liquid_carried_ul": 0.11, "maximum_observed_ul": 0.86, "replicates": 12},
+        {"tip_size_ul": 100, "mean_wash_liquid_carried_ul": 0.08, "maximum_observed_ul": 0.68, "replicates": 12},
+        {"tip_size_ul": 200, "mean_wash_liquid_carried_ul": 0.04, "maximum_observed_ul": 0.75, "replicates": 12}
+      ],
+      "tip_wash_residue_condition": "一次性枪头清洗后带入样品的洗液体积；不可解释为常规排液后的残液或铜离子跨样本污染参数。"
+    },
+    {
+      "source_id": "tecan_freedom_evo_900ul_water_reference",
+      "source_type": "peer_reviewed_empirical_measurement",
+      "citation": "Bessemans et al., Automated Gravimetric Calibration to Optimize the Accuracy and Precision of TECAN Freedom EVO Liquid Handler, 2016, water liquid-class gravimetric results.",
+      "url": "https://doi.org/10.1177/2211068216632349",
+      "usable_observations": [
+        {"target_volume_ul": 900, "mean_volume_ul": 898.3, "reported_deviation_pct": 0.19, "reported_cv_pct": 0.23, "run": "adjustment"},
+        {"target_volume_ul": 900, "mean_volume_ul": 899.6, "reported_deviation_pct": 0.04, "reported_cv_pct": 0.16, "run": "confirmation"}
+      ],
+      "device_and_method": "TECAN Freedom EVO 200固定枪头；水液体类别；校准调整与确认数据。只能定义该体积附近的低误差参考情景。"
+    },
+    {
+      "source_id": "eppendorf_epmotion_5070_tm1000_8_500ul_spec",
+      "source_type": "manufacturer_specification",
+      "citation": "Eppendorf epMotion 5070 technical data, TM 1000-8 dispensing tool, 500 µL test volume.",
+      "url": "https://www.eppendorf.com/product-media/doc/en/70264/Automated-Liquid-Handling_Operating-manual_epMotion-5070-f.pdf",
+      "reported_limits": {"systematic_error_pct": 1.5, "random_error_cv_pct": 0.3},
+      "use_note": "多通道工具的厂家最大允许误差；CV规格作为低档范围参考，不视为独立实测分布或用户设备校准值。"
+    },
+    {
+      "source_id": "accuris_automate96_500ul_spec",
+      "source_type": "manufacturer_specification",
+      "citation": "Accuris AutoMATE 96 pipetting head specifications, MP9600-1000PH at 500 µL.",
+      "url": "https://laboratory-equipment.com/media/asset-library/a/u/automate-96-microplate-pipetting-workstation-mp9604-brochure-accuris.pdf",
+      "reported_limits_by_volume": [
+        {"target_volume_ul": 100, "systematic_error_pct": 2.5, "random_error_cv_pct": 1.25},
+        {"target_volume_ul": 500, "systematic_error_pct": 0.4, "random_error_cv_pct": 0.4}
+      ],
+      "use_note": "厂家性能规格，作为低档范围锚点，不等同于本设备的实测值。"
+    },
+    {
+      "source_id": "biotage_extrahera_hv5000_500ul_spec",
+      "source_type": "manufacturer_specification",
+      "citation": "Biotage Extrahera HV-5000 pipetting specifications for 500 µL.",
+      "url": "https://www.biotage.com/products/extrahera-hv-5000-sample-prep-workstation",
+      "reported_limits": {"systematic_error_pct": 1.5, "random_error_cv_pct": 2.0},
+      "use_note": "特定高容量样品制备工作站厂家规格，用作高档外沿锚点；液路/应用与本实验并不相同。"
+    },
+    {
+      "source_id": "tecan_carryover_application_guidance",
+      "source_type": "manufacturer_application_guidance",
+      "citation": "Tecan Good Usage Guidelines: carryover must be measured using reference samples under conditions identical to the application.",
+      "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/Tecan_GoodUsageGuidelines_e.pdf"
+    },
+    {
+      "source_id": "weibel_fixed_tip_carryover_empirical_2010",
+      "source_type": "peer_reviewed_empirical_measurement",
+      "citation": "Weibel et al., Development of Standard Test Procedures for Quantifying Carry over from Fixed Pipetting Tips in Liquid-Handling Systems, Journal of Laboratory Automation, 2010.",
+      "url": "https://doi.org/10.1016/j.jala.2009.08.004",
+      "use_note": "固定可重复使用枪头的实测；报告结果随分析物、涂层和清洗强度变化。本文数值只留作有明确条件的参考案例，不作为通用枪头档位。"
+    },
+    {
+      "source_id": "pipette_mixing_cycles_96well_model_and_survey_2025",
+      "source_type": "peer_reviewed_model_and_protocol_survey",
+      "citation": "Pipette, mix, repeat: A reduced-order fluid model and protocol survey to evaluate 96-well mixing protocols.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12776400/",
+      "use_note": "可支持混匀循环数及几何/喷流依赖性；不提供当前半电池容器可直接复用的实测效率参数。"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "experiment_id": "zinc_concentration_cell_stock_dilution_v1",
+  "experiment_name_zh": "锌离子浓差电池_母液稀释流程",
+  "result_category_zh": "单次仿真",
+  "experiment_name_short_zh": "锌电池_母液稀释",
+  "result_category_short_zh": "单",
+  "description": "非铜示例：两侧均按 Zn²⁺/Zn 半反应建模；水溶液、完全解离和 25 °C Davies 参数为仿真假设，不代表实测验证",
+  "protocol_file": "protocols/zinc_concentration_cell_stock_dilution.json",
+  "temperature_k": 298.15,
+  "species": {
+    "Zn": {"name": "Zn²⁺", "formula": "Zn", "charge": 2},
+    "SO4": {"name": "SO₄²⁻", "formula": "SO4", "charge": -2},
+    "K": {"name": "K⁺", "formula": "K", "charge": 1},
+    "NO3": {"name": "NO₃⁻", "formula": "NO3", "charge": -1}
+  },
+  "containers": {
+    "zinc_stock": {"name_zh": "锌盐母液", "volume_ml": 5.0, "concentrations_m": {"Zn": 0.1, "SO4": 0.1}},
+    "water": {"name_zh": "水", "volume_ml": 10.0, "concentrations_m": {"Zn": 0.0, "SO4": 0.0}},
+    "left_half_cell": {"name_zh": "左侧半电池", "volume_ml": 0.0, "concentrations_m": {"Zn": 0.0, "SO4": 0.0}},
+    "right_half_cell": {"name_zh": "右侧半电池", "volume_ml": 0.0, "concentrations_m": {"Zn": 0.0, "SO4": 0.0}}
+  },
+  "cell": {
+    "left_container": "left_half_cell",
+    "right_container": "right_half_cell",
+    "active_species": "Zn",
+    "equilibrium_model": "reaction_quotient_concentration_cell_nernst",
+    "redox_reaction": {
+      "name_zh": "Zn²⁺/Zn",
+      "reduction_reaction_zh": "Zn²⁺ + 2e⁻ → Zn(s)",
+      "display_species": "Zn",
+      "electrons_transferred": 2,
+      "reaction_quotient_terms": {"Zn": -1}
+    },
+    "electrons_transferred": 2,
+    "activity_correction": {
+      "enabled": true,
+      "model": "davies_single_ion_convention",
+      "ionic_strength_source": "tracked_species",
+      "ionic_strength_species": ["Zn", "SO4"],
+      "A": 0.509,
+      "A_reference_temperature_k": 298.15,
+      "scenario_assumption": "水溶液；ZnSO4 完全解离；暂不考虑离子缔合；稀溶液近似 M≈mol/kg"
+    },
+    "liquid_junction_potential": {
+      "enabled": false,
+      "model": "henderson_approximation",
+      "status": "not_enabled_for_zinc_example",
+      "solution_ions_by_side": {"left": ["Zn", "SO4"], "right": ["Zn", "SO4"]},
+      "bridge_electrolyte": {
+        "electrolytes": [
+          {"formula": "KNO3", "concentration_m": 0.1, "ion_stoichiometry": {"K": 1, "NO3": 1}}
+        ]
+      },
+      "transport_parameter_library": "ion_transport/aqueous_ion_diffusion_infinite_dilution_25c_v1.json",
+      "parameter_use_policy": "reference_only_no_concentration_interpolation_or_extrapolation"
+    }
+  },
+  "cell_setup": {
+    "electrodes": {"material": "Zn", "status": "assumed_for_simulation_not_physically_modeled"},
+    "salt_bridge": {"type": "KNO3", "concentration_m": 0.1, "status": "assumed_for_simulation", "junction_potential_model": false}
+  },
+  "error_model": {"enabled": false, "note": "此示例先验证非铜反应对的确定性流程；移液误差档案仍需确认对该溶液和设备条件适用后再启用。"}
+}

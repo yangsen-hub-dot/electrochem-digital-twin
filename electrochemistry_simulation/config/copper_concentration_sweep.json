@@ -1,0 +1,17 @@
+{
+  "sweep_id": "copper_cell_low_concentration_sweep_v1",
+  "batch_name_zh": "铜离子浓差电池_左侧浓度扫描",
+  "batch_name_short_zh": "铜电池_左浓度扫描",
+  "description": "固定右侧 0.1000 M 和其他条件，比较左侧浓度对理想开路电压的影响。纯仿真情景，不代表实测数据。",
+  "left_total_volume_ml": 1.0,
+  "low_concentrations_m": [
+    0.001,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1
+  ],
+  "stock_aspirate_step_id": "02_aspirate_low_stock",
+  "water_aspirate_step_id": "06_aspirate_water"
+}

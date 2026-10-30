@@ -1,0 +1,43 @@
+{
+  "policy_id": "electrochem_lab_physical_constraints_v2",
+  "motion": {
+    "position_deadband_m": 0.005,
+    "orientation_deadband_deg": 2.0,
+    "significant_reversals_before_stop": 3,
+    "maximum_local_corrections": 3,
+    "transit_clearance_m": 0.005,
+    "registered_transit_z_m": [0.42, 0.55],
+    "registered_xy_m": [[0.15, 0.85], [-0.45, 0.30]],
+    "numeric_tolerance": 0.000001
+  },
+  "priorities": ["no_unplanned_contact", "stable_accurate_operation", "smooth_motion", "short_route_few_turns", "time_and_energy"],
+  "rules": {
+    "posture": "Choose bending for the action target, obstacles, joint margin and smooth motion. Elbow extension for electrode pickup is a soft preference; never impose a universal elbow height or direction.",
+    "support_and_release": "Release only after the action-specific fixture/support geometry checks; support cannot be invented or moved during an action.",
+    "grasp_and_attachment": "Use existing measured gap/alignment gates before attachment; preserve the held orientation unless an explicitly supported rigid attachment rotation is implemented.",
+    "motion": "Reject nonfinite/looping plans; stop significant repeated oscillation, nonconvergent corrections, declared joint-limit violations, or modeled hardware clearance violations; require the robot asset to enable PhysX self-collision solving.",
+    "cables": "Preserve the declared cable arc length, segment length, endpoints and static obstacle clearance; do not claim calibrated tension, self-contact or bend-force validation.",
+    "liquid_and_material": "Keep existing transfer-session receipt gates, actual quantities, residues, waste and conservation checks; never change inventory for appearance.",
+    "causality": "Commit experiment state only after successful action receipts; retain failed/uncertain state and original evidence."
+  },
+  "parameter_basis": {
+    "position_deadband_m": "Existing 5 mm controller convergence scale; a numerical anti-oscillation setting, not calibrated hardware precision.",
+    "orientation_deadband_deg": "Existing 2 degree registered-pose reuse threshold; used to avoid unrequested held-object turns.",
+    "significant_reversals_before_stop": "Project engineering stop policy: three excursions larger than the deadband. Not a universal physical constant.",
+    "maximum_local_corrections": "Project engineering attempt budget including the first observed arrival; stop and replan instead of repeated physical trial motions.",
+    "transit_clearance_m": "Conservative 5 mm planning allowance based on the existing controller scale; not manufacturer clearance or calibration.",
+    "registered_transit_z_m": "Preserve the previously registered high-route workspace; geometry selects a height within it, never raises the ceiling silently.",
+    "numeric_tolerance": "Floating-point tolerance only; cannot be used as an operational clearance.",
+    "self_collision": "Require the selected robot asset to explicitly enable PhysX self-collision solving; this does not certify continuous inter-step collision avoidance."
+  },
+  "uncovered": [
+    "calibrated_grasp_force_friction_and_load_stability",
+    "calibrated_cable_tension_friction_bend_stiffness_hysteresis_and_self_contact",
+    "cable_contact_with_robot_and_exact_mesh_contact",
+    "exact_mesh_contact_for_all_imported_hardware",
+    "generic_carried_tool_collision_outside_existing_action_specific_geometry",
+    "continuous_interstep_robot_collision_certificate_and_full_dynamics",
+    "hardware_acceleration_torque_and_jerk_limits_without_device_data",
+    "CFD_and_real_electrochemical_or_instrument_calibration"
+  ]
+}

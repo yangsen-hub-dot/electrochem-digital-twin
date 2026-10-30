@@ -1,0 +1,100 @@
+{
+  "profile_id": "gilson_pipetman_p200_p1000_continuous_v1",
+  "profile_name": "Gilson PIPETMAN P200/P1000 连续量程参考情景 v1",
+  "source": "gilson_manufacturer_specifications",
+  "classification": {
+    "error_category": "pipetting",
+    "model": "continuous_commercial_pipette_reference",
+    "evidence_status": "manufacturer_specification_reference_not_project_calibration",
+    "interpolation": "piecewise_linear_in_absolute_error_ul_between_published_volume_anchors; no extrapolation"
+  },
+  "applicability": {
+    "liquid_class": "water_and_dilute_aqueous_solutions_reference_only",
+    "transfer_volume_ul_range": [20, 1000],
+    "pipette_selection_policy": "P200 for 20–200 μL; P1000 for >200–1000 μL; overlap resolves to the narrower-range P200",
+    "tip_rack_note": "The existing D1200ST 50–1200 μL rack does not extend the P1000 pipette's 100–1000 μL operating range. P200 uses its own recommended D200 tips.",
+    "scope_note": "Only continuous interpolation between each selected pipette's manufacturer specification points is applied. The specifications are maximum permissible performance limits, not measured probability distributions and not calibration data for the simulated robot or current setup."
+  },
+  "parameter_interpretation": {
+    "systematic_error_limit_ul": "manufacturer maximum systematic error magnitude; a per-run latent signed fraction is sampled uniformly in [-1, 1] and shared across all actions using the same pipette model",
+    "repeatability_sd_limit_ul": "manufacturer random error specification interpreted as a conservative repeatability standard-deviation scale for the simulation; each aspiration samples a zero-mean Gaussian approximation",
+    "scenario_levels": "low uses the manufacturer reference envelope; medium and high multiply both error scales by 1.5 and 2.0 as sensitivity scenarios. The multipliers are project scenario choices, not literature-derived device-performance tiers.",
+    "limitations": "Linear interpolation is an explicit between-anchor estimate. No behavior is claimed outside a pipette's nominal range or beyond its published anchors. Tip compatibility and the kinematic robot's ability to actuate each commercial pipette remain to be visually/operationally validated."
+  },
+  "sources": [
+    {
+      "source_id": "gilson_pipetman_specifications_lt801628",
+      "source_type": "manufacturer_specification",
+      "citation": "Gilson, PIPETMAN Specifications, document LT801628, single-channel P200 and P1000; manufacturer maximum permissible systematic and random errors.",
+      "url": "https://row.gilson.com/pub/media/docs/PIPETMAN_SPECIFICATIONS_LT801628-B.pdf",
+      "use_note": "Reference anchors only; the specification is conditional on recommended PIPETMAN DIAMOND tips and is not a measurement of the current virtual/robotic setup."
+    }
+  ],
+  "models": {
+    "pipetting": {
+      "continuous_commercial_pipette_reference": {
+        "low": {
+          "scenario_multiplier": 1.0,
+          "pipette_profiles": [
+            {
+              "pipette_id": "gilson_pipetman_p200",
+              "pipette_name": "Gilson PIPETMAN P200",
+              "nominal_volume_range_ul": [20, 200],
+              "recommended_tip_id": "PIPETMAN_DIAMOND_D200",
+              "manufacturer_specification_anchors": [
+                {"volume_ul": 20, "systematic_error_limit_ul": 0.50, "repeatability_sd_limit_ul": 0.20},
+                {"volume_ul": 100, "systematic_error_limit_ul": 0.80, "repeatability_sd_limit_ul": 0.25},
+                {"volume_ul": 200, "systematic_error_limit_ul": 1.60, "repeatability_sd_limit_ul": 0.30}
+              ]
+            },
+            {
+              "pipette_id": "gilson_pipetman_p1000",
+              "pipette_name": "Gilson PIPETMAN P1000",
+              "nominal_volume_range_ul": [100, 1000],
+              "recommended_tip_id": "PIPETMAN_DIAMOND_D1200",
+              "manufacturer_specification_anchors": [
+                {"volume_ul": 100, "systematic_error_limit_ul": 3.0, "repeatability_sd_limit_ul": 0.60},
+                {"volume_ul": 500, "systematic_error_limit_ul": 4.0, "repeatability_sd_limit_ul": 1.00},
+                {"volume_ul": 1000, "systematic_error_limit_ul": 8.0, "repeatability_sd_limit_ul": 1.50}
+              ]
+            }
+          ]
+        },
+        "medium": {
+          "scenario_multiplier": 1.5,
+          "inherits": "low"
+        },
+        "high": {
+          "scenario_multiplier": 2.0,
+          "inherits": "low"
+        }
+      }
+    },
+    "tip_carryover": {
+      "truncated_gaussian_residual_volume": {
+        "prior_note": "沿用 100/500/900 μL 参考档案中的枪头残液工程先验；它独立于新移液误差曲线，未按本项目枪头校准。",
+        "low": {"residual_volume_ul_range": [0.05, 0.20], "residual_volume_ul_prior_mean": 0.125, "residual_volume_ul_prior_sd": 0.03, "sampling_rule": "one_absolute_truncated_gaussian_residual_volume_per_run_reused_for_dispenses_relative_share_computed_against_each_planned_aliquot", "status": "provisional_engineering_prior", "meaning": "每次排液后留在枪头内的体积。", "assumptions": "通用水系一次性枪头情景；未按枪头型号、液体或排液动作校准。"},
+        "medium": {"residual_volume_ul_range": [0.20, 0.60], "residual_volume_ul_prior_mean": 0.40, "residual_volume_ul_prior_sd": 0.08, "sampling_rule": "one_absolute_truncated_gaussian_residual_volume_per_run_reused_for_dispenses_relative_share_computed_against_each_planned_aliquot", "status": "provisional_engineering_prior", "meaning": "每次排液后留在枪头内的体积。", "assumptions": "通用水系一次性枪头情景；未按枪头型号、液体或排液动作校准。"},
+        "high": {"residual_volume_ul_range": [0.60, 1.00], "residual_volume_ul_prior_mean": 0.80, "residual_volume_ul_prior_sd": 0.10, "sampling_rule": "one_absolute_truncated_gaussian_residual_volume_per_run_reused_for_dispenses_relative_share_computed_against_each_planned_aliquot", "status": "provisional_engineering_prior", "meaning": "每次排液后留在枪头内的体积。", "assumptions": "通用水系一次性枪头情景；未按枪头型号、液体或排液动作校准。"}
+      }
+    },
+    "mixing": {
+      "truncated_gaussian_efficiency_per_action": {
+        "prior_note": "历史固定效率模型，供旧配置复现；未校准工程先验。",
+        "low": {"efficiency_range":[0.98,0.995],"efficiency_prior_mean":0.9875,"efficiency_prior_sd":0.003,"paired_cell_correlation":0.8,"status":"provisional_engineering_prior"},
+        "medium": {"efficiency_range":[0.9,0.98],"efficiency_prior_mean":0.94,"efficiency_prior_sd":0.015,"paired_cell_correlation":0.8,"status":"provisional_engineering_prior"},
+        "high": {"efficiency_range":[0.7,0.9],"efficiency_prior_mean":0.8,"efficiency_prior_sd":0.04,"paired_cell_correlation":0.8,"status":"provisional_engineering_prior"}
+      },
+      "truncated_gaussian_rate_per_second": {
+        "prior_note": "将既有10秒参考混匀效率情景换算为k的截断高斯先验；未在当前装置实测校准。",
+        "low": {"rate_range_s_inv": [0.391202, 0.529832], "rate_prior_mean_s_inv": 0.438203, "rate_prior_sd_s_inv": 0.024, "sampling_rule": "one_rate_draw_per_run; paired_cells_correlated_rate_draws; efficiency=1-exp(-k*t)", "paired_cell_correlation": 0.8, "paired_cell_correlation_status": "provisional_uncalibrated_assumption", "status": "provisional_engineering_prior", "meaning": "一阶混匀速率k，效率由实际混匀时间计算。"},
+        "medium": {"rate_range_s_inv": [0.230259, 0.391202], "rate_prior_mean_s_inv": 0.281072, "rate_prior_sd_s_inv": 0.025, "sampling_rule": "one_rate_draw_per_run; paired_cells_correlated_rate_draws; efficiency=1-exp(-k*t)", "paired_cell_correlation": 0.8, "paired_cell_correlation_status": "provisional_uncalibrated_assumption", "status": "provisional_engineering_prior", "meaning": "一阶混匀速率k，效率由实际混匀时间计算。"},
+        "high": {"rate_range_s_inv": [0.120397, 0.230259], "rate_prior_mean_s_inv": 0.160944, "rate_prior_sd_s_inv": 0.020, "sampling_rule": "one_rate_draw_per_run; paired_cells_correlated_rate_draws; efficiency=1-exp(-k*t)", "paired_cell_correlation": 0.8, "paired_cell_correlation_status": "provisional_uncalibrated_assumption", "status": "provisional_engineering_prior", "meaning": "一阶混匀速率k，效率由实际混匀时间计算。"}
+      }
+    }
+  },
+  "factor_evidence": {
+    "tip_carryover": {"status": "provisional_engineering_prior", "reason": "保留既有通用水系枪头残留先验；非当前枪头的实测校准。"},
+    "mixing": {"status": "provisional_engineering_prior", "reason": "将10秒参考混匀效率情景转换为一阶k先验；非当前装置和容器的实测校准。"}
+  }
+}

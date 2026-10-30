@@ -1,0 +1,12 @@
+.git
+integration/reference
+var
+work
+dist
+**/__pycache__
+**/results
+**/validation
+*.tar.gz
+*.mp4
+*.hdf5
+.env

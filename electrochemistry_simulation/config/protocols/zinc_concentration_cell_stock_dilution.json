@@ -1,0 +1,24 @@
+{
+  "protocol_id": "zinc_concentration_cell_stock_dilution_v1",
+  "description": "由锌盐母液和水配制两侧溶液，再记录电极与盐桥组装步骤",
+  "steps": [
+    {"step_id": "01_load_stock_tip", "action": "load_tip"},
+    {"step_id": "02_aspirate_low_stock", "action": "aspirate", "source": "zinc_stock", "volume_ul": 100.0},
+    {"step_id": "03_dispense_low_stock", "action": "dispense", "target": "left_half_cell"},
+    {"step_id": "04_discard_stock_tip", "action": "discard_tip"},
+    {"step_id": "05_load_water_tip", "action": "load_tip"},
+    {"step_id": "06_aspirate_water", "action": "aspirate", "source": "water", "volume_ul": 900.0},
+    {"step_id": "07_dispense_water", "action": "dispense", "target": "left_half_cell"},
+    {"step_id": "08_discard_water_tip", "action": "discard_tip"},
+    {"step_id": "09_mix_left", "action": "mix", "target": "left_half_cell"},
+    {"step_id": "10_load_high_stock_tip", "action": "load_tip"},
+    {"step_id": "11_aspirate_high_stock_first", "action": "aspirate", "source": "zinc_stock", "volume_ul": 500.0},
+    {"step_id": "12_dispense_high_stock_first", "action": "dispense", "target": "right_half_cell"},
+    {"step_id": "13_aspirate_high_stock_second", "action": "aspirate", "source": "zinc_stock", "volume_ul": 500.0},
+    {"step_id": "14_dispense_high_stock_second", "action": "dispense", "target": "right_half_cell"},
+    {"step_id": "15_discard_high_stock_tip", "action": "discard_tip"},
+    {"step_id": "16_mix_right", "action": "mix", "target": "right_half_cell"},
+    {"step_id": "17_place_electrodes", "action": "place_electrodes"},
+    {"step_id": "18_connect_salt_bridge", "action": "connect_salt_bridge", "component": "KNO3"}
+  ]
+}

@@ -1,0 +1,17 @@
+services:
+  hmf:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.numeric
+    command: ["python", "integration/web/hmf_local_server.py", "--host", "0.0.0.0", "--port", "8766", "--history-dir", "/app/var/hmf-history", "--token-file", "/app/var/access-token.txt", "--allowed-origin", "${FRONTEND_ORIGIN:-https://yangsen-hub-dot.github.io}"]
+    ports: ["127.0.0.1:8766:8766"]
+    volumes: ["../var:/app/var"]
+    restart: unless-stopped
+  concentration:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.numeric
+    command: ["python", "copper_cell_node.py", "--host", "0.0.0.0", "--port", "50005", "--output-dir", "/app/var/concentration", "--token-file", "/app/var/access-token.txt", "--allowed-origin", "${FRONTEND_ORIGIN:-https://yangsen-hub-dot.github.io}"]
+    ports: ["127.0.0.1:50005:50005"]
+    volumes: ["../var:/app/var"]
+    restart: unless-stopped

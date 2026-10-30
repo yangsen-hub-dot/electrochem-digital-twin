@@ -1,0 +1,1346 @@
+{
+  "source": "existing_local_electrochem_project",
+  "export_date": "2026-10-30",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "d2b8a239b7c084281b06157531e56ea0001aef07da42c1c508973be74552322c",
+      "bytes": 108
+    },
+    {
+      "path": ".env.example",
+      "sha256": "d80dfedb1d8acf4cfbccea3e384ee599e6e3d07fcc1187c7b382ce3a7fbdaa3e",
+      "bytes": 302
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "sha256": "9e8c7fd701a6b501c2d019d8941211665ca725a778055049d883c0a3a7f57198",
+      "bytes": 779
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "2bf1cfe12e9a702440f010461c88bdaffaccd088e4aa6574de3cb82aa17c54e5",
+      "bytes": 340
+    },
+    {
+      "path": "copper_cell_node.py",
+      "sha256": "5940a522f8ff3a77fa11b9b2db068e7051ec5d12e910b8709091e503a6020a40",
+      "bytes": 49485
+    },
+    {
+      "path": "deployment/Caddyfile.example",
+      "sha256": "c5d1c2b6cdef9dde78627175a74283b65f923ea28cd4e79aa6dddae35964ff13",
+      "bytes": 355
+    },
+    {
+      "path": "deployment/compose.yaml",
+      "sha256": "02365c9fdb232f1fbd1040f81167ab3226f4b11de5fe68a8035a0a000cc58d8a",
+      "bytes": 898
+    },
+    {
+      "path": "deployment/Dockerfile.numeric",
+      "sha256": "66ce1af6c5c32976a561485c548b1df2eb2da08734c15899bb96ed7e5151b8df",
+      "bytes": 466
+    },
+    {
+      "path": "docs/dependencies.md",
+      "sha256": "d638dbad60846a95bdfa878b510ea37df787424af801ab78479145c0b0eeec01",
+      "bytes": 1517
+    },
+    {
+      "path": "docs/deployment.md",
+      "sha256": "01ebdfef2cab807dfd43438ea20df34674c110991ac00af6e0a8b939ec40cd49",
+      "bytes": 3893
+    },
+    {
+      "path": "docs/models.md",
+      "sha256": "6b09dd8fe27c83040bd8685de41dbd77d55044b860b76ab1b468d98ddfd22e8d",
+      "bytes": 1397
+    },
+    {
+      "path": "docs/node-contract.md",
+      "sha256": "1aeb773331414d9cee79eec6234770ef5f1b500cc807f0e0d54f5f09cddda1f9",
+      "bytes": 1445
+    },
+    {
+      "path": "electrochemistry_simulation/config/activity/davies_debye_huckel_A_water_neA_v1.json",
+      "sha256": "a987a9c46de6500a6bcb8addc8a4588cbfd75044ce502134ea2cfc199384ff13",
+      "bytes": 1394
+    },
+    {
+      "path": "electrochemistry_simulation/config/copper_concentration_cell.json",
+      "sha256": "941ebccba5091069dec27ff6ad6b40c9fd7952a2a6e0e41f7bed48ae51dac878",
+      "bytes": 4472
+    },
+    {
+      "path": "electrochemistry_simulation/config/copper_concentration_cell_ljp_reference_test.json",
+      "sha256": "a6613f2ec2ba78a13e74587cf52de5cad5cc7679eb0f14d66c5f40a456482776",
+      "bytes": 3989
+    },
+    {
+      "path": "electrochemistry_simulation/config/copper_concentration_sweep.json",
+      "sha256": "c17b8d1b3e86a95238c5e02c6db22ebd128a8ce6870548a1053e152c21efea6a",
+      "bytes": 556
+    },
+    {
+      "path": "electrochemistry_simulation/config/copper_experimental_design_sweep.json",
+      "sha256": "2a740961fc3696f2e0026d88dc94eac117fa25e159d8422d7e3615763e146e2f",
+      "bytes": 1144
+    },
+    {
+      "path": "electrochemistry_simulation/config/copper_temperature_concentration_sweep.json",
+      "sha256": "68a41bb0980d10012693da9fe0d3ba8282cb61a54f6863f55c7b64d0de3df0f8",
+      "bytes": 662
+    },
+    {
+      "path": "electrochemistry_simulation/config/error_profiles/copper_cell_aqueous_100_500_900ul_reference_v1.json",
+      "sha256": "ebdf7bee38345797064c0eda0f642c20f43b369e9cccd7d57131bd1682477e77",
+      "bytes": 23788
+    },
+    {
+      "path": "electrochemistry_simulation/config/error_profiles/copper_cell_aqueous_100_500_900ul_reference_v2.json",
+      "sha256": "c50bebe8285242691ce0e8559ee099f50e1eed01b5e5ab3c48797805db9bb8b0",
+      "bytes": 27698
+    },
+    {
+      "path": "electrochemistry_simulation/config/error_profiles/gilson_pipetman_p200_p1000_continuous_v1.json",
+      "sha256": "30cd9cf64cc10f23793ad5f8d52bdb50f55841e0e0c2a9c86a004743426337a7",
+      "bytes": 8853
+    },
+    {
+      "path": "electrochemistry_simulation/config/error_profiles/README.md",
+      "sha256": "2104c8a97c25129c7cf6acc1b94e53abd3394bac539567cda3ebc5d6fc4914fa",
+      "bytes": 3877
+    },
+    {
+      "path": "electrochemistry_simulation/config/hmf_fdca_single_cell_workflow.json",
+      "sha256": "92ddbfd9dee610ab81b242a05b4b559a061e15490c218f7cb57c1fb6f86beaac",
+      "bytes": 3788
+    },
+    {
+      "path": "electrochemistry_simulation/config/ion_transport/aqueous_electrolyte_transport_finite_concentration_v1.json",
+      "sha256": "a5b04a961cc73ea5955184dd664df121cf75757fca18bf8d7a9ec742866f59e3",
+      "bytes": 16641
+    },
+    {
+      "path": "electrochemistry_simulation/config/ion_transport/aqueous_ion_conductivity_temperature_reference_v1.json",
+      "sha256": "ba7aa16c1420824ec0630f1cabef5aa52c7823c1a84f250cbdb77edf0bb09675",
+      "bytes": 4869
+    },
+    {
+      "path": "electrochemistry_simulation/config/ion_transport/aqueous_ion_diffusion_infinite_dilution_25c_v1.json",
+      "sha256": "65b3ec639a56f0c01b721931ad10f813e76168a0f565b8cfab3d34fe8c903790",
+      "bytes": 3804
+    },
+    {
+      "path": "electrochemistry_simulation/config/protocols/copper_concentration_cell_stock_dilution.json",
+      "sha256": "41e02890b453f2f3552210b20cab05861c1f1268f5e6ed6d5406c81c3e454fe6",
+      "bytes": 1716
+    },
+    {
+      "path": "electrochemistry_simulation/config/protocols/zinc_concentration_cell_stock_dilution.json",
+      "sha256": "f38c4f6893a895e63a617ec63729bb68c8ae0ad426aed0b2fbe9273d707089dc",
+      "bytes": 1711
+    },
+    {
+      "path": "electrochemistry_simulation/config/reaction_templates.json",
+      "sha256": "5e1042bbf47935a279c020a5766e720c4536726f26a82af175edf6e83a40408e",
+      "bytes": 572
+    },
+    {
+      "path": "electrochemistry_simulation/config/zinc_concentration_cell.json",
+      "sha256": "abefab84473f473a26f755045e875e77702b8124c0823e4a4754c4b3e6a2df9b",
+      "bytes": 3150
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/__init__.py",
+      "sha256": "d61e465b4d19f73d6fb52321a90d7dccf38dc1a2730851a0d12e96749a2a019d",
+      "bytes": 78
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/__main__.py",
+      "sha256": "94bf62e27404c78ea994aa25729162148468bad60d38db67d27e21d1ca530121",
+      "bytes": 87
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/activity.py",
+      "sha256": "bf5a055324444a6fef00c11c3fd26d778931a7b63ca4a2166b6972cd922899b4",
+      "bytes": 9401
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/activity_temperature.py",
+      "sha256": "2513d1299b2da6cc93d080e96f9a46960ad82e536e3b8da024fce26ebfe971df",
+      "bytes": 3037
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/batch.py",
+      "sha256": "48a7be6c4a54bd8107e41dafe747c731aad97b3fe027dec5228168070b9bcc1e",
+      "bytes": 9649
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/cell_assembly.py",
+      "sha256": "a5b42c208628813b4dc4fbffdeba70ca4ff42ad04c44d83076a23c4307fe4dc2",
+      "bytes": 990
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/chemical_models.py",
+      "sha256": "b4889453d25ea70f828037e123c6aa0042038809ac057d922bfe0adac729f498",
+      "bytes": 6799
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/condition_input.py",
+      "sha256": "f7ac6ad4cbd9bf3a04676eaf8c8c4a6cc8ed3ad17af8e8172e8717d940c835af",
+      "bytes": 17310
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/conservation.py",
+      "sha256": "5e3cecf5801d8f7b32cdd796cbc678b5b098af7c3e596655afa19963aabbb416",
+      "bytes": 945
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/electrochemistry.py",
+      "sha256": "4fecd4a040adabdfa84ee67857dc06124411dc9a55147c375ca745b9059ed160",
+      "bytes": 17964
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/error_chain_validation.py",
+      "sha256": "36c5738a3c247789ae9b1488ed916c8afbbfaf07bf159b04523afb98b4ea4e63",
+      "bytes": 13284
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/error_model.py",
+      "sha256": "005fd37b7c91c7f704e0d2e574545745a10c201495ea7eb9ba633883e1d3ea0c",
+      "bytes": 39275
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/experimental_design_batch.py",
+      "sha256": "6516f4e34f7e54264496b6d9193c6295b91fe7e9d0615d30659b2c58431bd836",
+      "bytes": 21375
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/hmf_fdca_model.py",
+      "sha256": "101e3386948a40f855ad7e32c514c3bda45ab758af9d10755d88bef9de32f9a2",
+      "bytes": 6216
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/ion_transport.py",
+      "sha256": "7878a4e4bbe9be4d19fb7ff4ca99bd0d8184665eef51bd39c3d278e745c2b4c7",
+      "bytes": 6432
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/ion_transport_temperature.py",
+      "sha256": "26d3065804a16c22a65a2e3e7c2ebde2060839d856737b30c2aff45ffb2d4581",
+      "bytes": 7838
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/liquid_junction.py",
+      "sha256": "222809df5e4cf677f67907d853faa18eb4901a1c2c29f0aa73f7bab08966b59b",
+      "bytes": 19711
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/liquid_transfer.py",
+      "sha256": "4c01a33a9109bf240b9986af0a5231729a8e647070ff464ac66f825753b3f931",
+      "bytes": 7839
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/mixing.py",
+      "sha256": "8f44c0d7f2510197963eb05cb3c30a2cc79cacd7c50dbd69b9bea72e50963393",
+      "bytes": 4577
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/nernst.py",
+      "sha256": "2e56973f0571abcc1c38b7d6a9acbfc0de5d745c39e3dc09dfed8213eb321bdf",
+      "bytes": 1062
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/pipette_reference_model.py",
+      "sha256": "f9b95475e2e5652f25f5f6b4bbdd9a9c9d3f88b1e61dff58af94e17db39f0586",
+      "bytes": 5124
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/pipetting.py",
+      "sha256": "3be04eeac863785f45589f78b28140bf5f1c955cbf6a1f405e0db0dcd3715295",
+      "bytes": 150
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/protocol.py",
+      "sha256": "15090e960f1ebe2cf81711592d87ce4bd1373b44d5db976d43e1dbefb91d0ef3",
+      "bytes": 5211
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/result_recorder.py",
+      "sha256": "cfc8e23c58d3bf205e29a0ab2328f6a38176e1467526e001d3baf4a4785ff566",
+      "bytes": 2689
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/simulator.py",
+      "sha256": "f64b9912364a0adc130bdc581d296353ef8e3b831bf7b8604c31dbfd7309f1be",
+      "bytes": 11055
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/state.py",
+      "sha256": "37d66e8e5e70bb23e15bfc976f1ba694443c423cea3db2eb4c0560a8864b76fa",
+      "bytes": 10315
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/state_ledger.py",
+      "sha256": "286c71cfdb7447bb7f0f4f0c744e675d1b79541cd1d467ba2568ce016f09cf87",
+      "bytes": 13292
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/temperature_concentration_batch.py",
+      "sha256": "1193c0d2ad4bc43ac0de367f6229b94e3fa8dd0099d001abb37ef8910d22451d",
+      "bytes": 24344
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/tool_assembly.py",
+      "sha256": "6dfd3694d6d40aa2e358ffed93dadb230705fb66662230b9fcb67d941e3d1b40",
+      "bytes": 6483
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/workflow_actions.py",
+      "sha256": "9ade8180537d02b3c8be93ce65ec6615b272d73deb36098d3a1c6847d019030a",
+      "bytes": 7353
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/workflow_checkpoint.py",
+      "sha256": "d3408a8b8dd7052677ded07273dcd9ef41fe1a9e8a5a00bf4f81d2b7f90fa518",
+      "bytes": 1226
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/workflow_checks.py",
+      "sha256": "c5fb05082d83a214e21e21c80be6f30ab5d7cad0c14ef1d64efef85cbedbf8bb",
+      "bytes": 692
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/workflow_cli.py",
+      "sha256": "5b51eb51bbe64b84669dfb56370017302f8b7e47368cc64a9005e8f3cb4b3fc1",
+      "bytes": 1227
+    },
+    {
+      "path": "electrochemistry_simulation/electrochem_sim/workflow_runner.py",
+      "sha256": "66d3e3628364af7b1a926c76b370ad8017e2d0c744cc2e0fb9aca985ab457600",
+      "bytes": 7373
+    },
+    {
+      "path": "electrochemistry_simulation/HMF电氧化模型_首版说明.md",
+      "sha256": "142d255deeda4c0d170870bc74c35ce758d68a30e0155b9b4a49656cae7f8586",
+      "bytes": 2090
+    },
+    {
+      "path": "electrochemistry_simulation/README.md",
+      "sha256": "f79c360597d179320151c5c84d9f8e946eb687304028fe04f31558eee38733cd",
+      "bytes": 32725
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_activity_temperature.py",
+      "sha256": "d6f718e118fbc6a2b73b0db03d9fb53115f92d570c04243d96923afac0370552",
+      "bytes": 1404
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_condition_input.py",
+      "sha256": "85749c11be7d4488f54457daddddb6b02e1d555d2126e772a3a2a95867267305",
+      "bytes": 9962
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_copper_concentration_cell.py",
+      "sha256": "c6794845bd8da290358b94fc5f4ecdbad4088c5c2a8fba5652fa6d99b173b31a",
+      "bytes": 32428
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_error_chain_validation.py",
+      "sha256": "cf55d4055dffc921c29fd77225eb0632279b0ee2d8ae5bf671136d9aa2d50435",
+      "bytes": 10265
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_experimental_design_batch.py",
+      "sha256": "6c91ea91279671f296f3c216249feee9b6f30d6aa369c540d18dc6db34e29757",
+      "bytes": 5874
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_hmf_fdca_model.py",
+      "sha256": "848c43eb95d71aee75a944363995fab50290f64e47f35036f504a1d21c5b1443",
+      "bytes": 4061
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_ion_transport.py",
+      "sha256": "b672287ac02914c20bb3f945e914cd419d3ee118c29a09c5980fcde062db5e42",
+      "bytes": 3905
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_ion_transport_temperature.py",
+      "sha256": "3c17e791c83e3f2d1ac8939f1a738df7b25dcb1adea34835bffeb572470f3577",
+      "bytes": 2786
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_node_service.py",
+      "sha256": "31d6832ae7ac08ba298928d4bf7bf6709609d7a6b0773be06e41ba660264f0f1",
+      "bytes": 33680
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_pipette_reference_model.py",
+      "sha256": "e3b81fed0b113a3ffed49e62f1421d20d0f63f86bcc768ab577b4a49ba7c5023",
+      "bytes": 5891
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_pipette_transfer_validation.py",
+      "sha256": "dd40b5e5141208218d1627ddc52ac5d41ee53e8ae10fa74ac1632e36237ec548",
+      "bytes": 9398
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_temperature_concentration_batch.py",
+      "sha256": "b29007cd2973b373b31c2b00bf50aa6a4abb3840fa9918887ed3bc043f20ba37",
+      "bytes": 16212
+    },
+    {
+      "path": "electrochemistry_simulation/tests/test_workflow_runner.py",
+      "sha256": "97fe3a5904db8229bdce940dd8739deff4d7cb7097a2a8f3178c5eea9742e9c5",
+      "bytes": 5228
+    },
+    {
+      "path": "electrochemistry_simulation/通用流程编排_本地说明.md",
+      "sha256": "679f6926897cb15e12cba085060f36dc39848f6d1181d0923e513a7d05f3114d",
+      "bytes": 3778
+    },
+    {
+      "path": "frontend/assets/home.css",
+      "sha256": "b0d2e3a9d1776ee9519fbff0153f132c9ec8d3d4f6d5f1147d302c25378d87ac",
+      "bytes": 15119
+    },
+    {
+      "path": "frontend/assets/home.js",
+      "sha256": "733536c605a65752a816dd76994fbe479fc93743a32de529e5366d33d77bfdf5",
+      "bytes": 3307
+    },
+    {
+      "path": "frontend/assets/public-connection.js",
+      "sha256": "6cf2a93099adb7dd0e9a7bd3449136c236bd5fda459c02d795d003bcfdc6f61b",
+      "bytes": 4794
+    },
+    {
+      "path": "frontend/assets/workbench.css",
+      "sha256": "fbd6f7731ab6124ee4c1187b74684667dbcb9062610e458b671d49c6e34b38a2",
+      "bytes": 2496
+    },
+    {
+      "path": "frontend/index.html",
+      "sha256": "67d83a507f2f772ca2ed4b1700683a95b22557af9ac33edf3ed071624f49012b",
+      "bytes": 9596
+    },
+    {
+      "path": "integration/coordinator/batch_jobs.py",
+      "sha256": "1493d6dcca1ee17da8dc1951cd045c0df05695cbaee37dcf245ff3d39ee5184f",
+      "bytes": 17536
+    },
+    {
+      "path": "integration/coordinator/cloud_experiment_server.py",
+      "sha256": "a651c6ca7003c9383209fdbfa7e0e7e9efdccb6487ee2e63a6dbacc0839be9ca",
+      "bytes": 60657
+    },
+    {
+      "path": "integration/coordinator/history_records.py",
+      "sha256": "0eba18a40e381ba63bb749a2059a60beab89068f2251c39f7877de6fe34e69e2",
+      "bytes": 11315
+    },
+    {
+      "path": "integration/coordinator/numerical_worker.py",
+      "sha256": "3ed5bf7ed12b759862b6a6e1baadbd51a1dcc3e245b29f1dd918828cf186598f",
+      "bytes": 1753
+    },
+    {
+      "path": "integration/coordinator/preview_reader.py",
+      "sha256": "28a9b2c9673d5fc1b37d521d875f32fdb8f755b1077bd1eda684fe8ed2ba1b56",
+      "bytes": 2712
+    },
+    {
+      "path": "integration/coordinator/reaction_catalog.py",
+      "sha256": "83e492884626e571ecd451ae5e298e9c6122f0d528acbb7e7b386f3db64ff467",
+      "bytes": 9061
+    },
+    {
+      "path": "integration/coordinator/test_cloud_batch.py",
+      "sha256": "13692aa382e9032c9ba8addb37b55d43bbf22eb4d5a67ff02b7baa15d4e39c50",
+      "bytes": 11593
+    },
+    {
+      "path": "integration/coordinator/test_cloud_experiment_server.py",
+      "sha256": "f3b39dc475ccd4afa80b54655cb64844d9ce9fa73d6009f6a60126c8b805dc5a",
+      "bytes": 16124
+    },
+    {
+      "path": "integration/coordinator/validation_conditions.json",
+      "sha256": "f3a712376d7ef242d705d4fb7863944e62a1b689181f7928a676a046f575012e",
+      "bytes": 404
+    },
+    {
+      "path": "integration/coordinator/verify_cloud_run.py",
+      "sha256": "8e585e5096c3de182d6963dd1501f548e422858826925df6ebf02d6c93828bf2",
+      "bytes": 4259
+    },
+    {
+      "path": "integration/deployment/build_runtime_bundle.py",
+      "sha256": "c934f13985d185fd3781298f354c01ef50f32207d0c2cf82a9209e40c04b63ae",
+      "bytes": 5612
+    },
+    {
+      "path": "integration/deployment/create_scene_check_inputs.py",
+      "sha256": "fdfbf77463711076fe37bcb8ff643b6e60bf581f43346fd26222f542ef53abd5",
+      "bytes": 1715
+    },
+    {
+      "path": "integration/deployment/runtime_constraints.txt",
+      "sha256": "15c61342f48cb816114e18cf6021791046bcac8bc2ed30866d512ca9f6cc0c4d",
+      "bytes": 499
+    },
+    {
+      "path": "integration/deployment/test_runtime_web_assets.py",
+      "sha256": "6147b63a90d59caff303f2b930c1b1af7c398672aa594b951c1ffece51d6a1f5",
+      "bytes": 1438
+    },
+    {
+      "path": "integration/deployment/verify_render_runtime.py",
+      "sha256": "7cf633f802e32b199f8e4c99a1f513d9723314aa6a0dc62364dca95f59e9fb70",
+      "bytes": 2514
+    },
+    {
+      "path": "integration/device_adapters/__init__.py",
+      "sha256": "a0fd8a35d82377d74a3e12dda7f0fa682e76d1444c862b634a3c2aea13b3421c",
+      "bytes": 414
+    },
+    {
+      "path": "integration/device_adapters/contracts.py",
+      "sha256": "57ac726635bca0bd6a16c8f0be9d49dff2442c67841ac3d317a0ab5631a3b195",
+      "bytes": 8489
+    },
+    {
+      "path": "integration/device_adapters/matterix_adapter.py",
+      "sha256": "23e2dc44f63657cdb3babcc870ba5a53274478fbb25ac3495352af94a9665f54",
+      "bytes": 3521
+    },
+    {
+      "path": "integration/device_adapters/registry.py",
+      "sha256": "98c61c3726b22ec869017c94786c4769c91f6e004b29bda2c2049c54ce76c43c",
+      "bytes": 2092
+    },
+    {
+      "path": "integration/first_transfer/action_camera.py",
+      "sha256": "f8fa00408c0de5f4c5fb61980e068edccdbd273d952eadcbe20c33f1c231e5c9",
+      "bytes": 2654
+    },
+    {
+      "path": "integration/first_transfer/action_first_panel.py",
+      "sha256": "e0de3ea89d1e016f893133860c51007aabca003b545a26ad91504e7887b60c87",
+      "bytes": 14461
+    },
+    {
+      "path": "integration/first_transfer/bench_layout.py",
+      "sha256": "14a13fb51e224b8e3cbcfec6e1223486291871a4ccc406a69a170041e8d82e76",
+      "bytes": 1895
+    },
+    {
+      "path": "integration/first_transfer/cable_constraints.py",
+      "sha256": "d5f8151001e337ed1318f9a908cdcc2491ddeb9b88b0dfe56e157b5701d646d1",
+      "bytes": 17530
+    },
+    {
+      "path": "integration/first_transfer/conditions.example.json",
+      "sha256": "5995db4a4cd03b8ce5dba72089d51ce7f359632c72ae9a41899c40fb6b34a9e5",
+      "bytes": 312
+    },
+    {
+      "path": "integration/first_transfer/desktop_fixtures.py",
+      "sha256": "d2b42206ade68fb892ac5911ecc8b5963d514c82b7e053cba618159c2802377c",
+      "bytes": 132
+    },
+    {
+      "path": "integration/first_transfer/electrode_visuals.py",
+      "sha256": "a54b083060577b6ed11cc189d9e1a4e70f06ae0c65e889c1db4d9772c966d271",
+      "bytes": 14762
+    },
+    {
+      "path": "integration/first_transfer/high_probe_gate.py",
+      "sha256": "49e2e394f7bd3aa1fd1cf1e411ffa4b82a5354ef323ff2fc87d97eb7197388a8",
+      "bytes": 1082
+    },
+    {
+      "path": "integration/first_transfer/inspect_tip_disposal.py",
+      "sha256": "a126d6349735ec788a54c4a241fc56f1474982fc45cbb7271206a3dc03f96238",
+      "bytes": 4270
+    },
+    {
+      "path": "integration/first_transfer/joint_aware_ik.py",
+      "sha256": "879decee63a226688ae7adecfb3ef5ff0d6b95ffa69873f9efa91ad58903572f",
+      "bytes": 10754
+    },
+    {
+      "path": "integration/first_transfer/labware_presentation.py",
+      "sha256": "21b8d463077ece1ad85a54a27ffe803cd596fba8a993def0b87d5f07a7e6869f",
+      "bytes": 8850
+    },
+    {
+      "path": "integration/first_transfer/lead_route_search.py",
+      "sha256": "60d16064c88ed88869971a59bd4ed82c26d7277b9567a59cacf514f12998f3c1",
+      "bytes": 3162
+    },
+    {
+      "path": "integration/first_transfer/liquid_presentation.py",
+      "sha256": "4ce724f0807c00dc516f6ffcc34b6af18634dc9f91c5d97157e3c45b1d97cae6",
+      "bytes": 13229
+    },
+    {
+      "path": "integration/first_transfer/matterix_first_transfer.py",
+      "sha256": "3c9b5b5fa0525024be5dc588acd57a718568b41c4e06ac3fbad2d9bf3f7aa7e5",
+      "bytes": 183343
+    },
+    {
+      "path": "integration/first_transfer/matterix_ik_target_compensation.py",
+      "sha256": "dec8ddbb9f0c06f88f9bf7871a7d55e7eb64ab2b7efac42459e0e2d98e5266a0",
+      "bytes": 1239
+    },
+    {
+      "path": "integration/first_transfer/measurement_session.py",
+      "sha256": "5048efa2795dd5c8f33daeb5366104d621d70c43f85661fd38a580f9a364f453",
+      "bytes": 7846
+    },
+    {
+      "path": "integration/first_transfer/measurement_visuals.py",
+      "sha256": "c3708ab2eaa29363838c1c3de3b2e3eeda8ab908c781cca5eca3dcfc297a2e59",
+      "bytes": 13743
+    },
+    {
+      "path": "integration/first_transfer/microcell_labware.py",
+      "sha256": "9db201b1226570be4f539bc14ff7da617044fe1bdb066b2f901cd0c2aac32463",
+      "bytes": 8536
+    },
+    {
+      "path": "integration/first_transfer/mixer_presentation.py",
+      "sha256": "a3d20128f1d2913daa8d0a037a9e582c5b46f87a93435ac9fe9164adf7587613",
+      "bytes": 8221
+    },
+    {
+      "path": "integration/first_transfer/motion_constraints.py",
+      "sha256": "45603cc829e48f51f2cfc5849bb35aeb3db98a452a1953c0e23a0c4d535eb7e9",
+      "bytes": 10835
+    },
+    {
+      "path": "integration/first_transfer/physical_constraints.json",
+      "sha256": "00977e9feecf2a4389f667f42133140cedc200945cfcc2e806e1ea4b668b7288",
+      "bytes": 3634
+    },
+    {
+      "path": "integration/first_transfer/pipette_visuals.py",
+      "sha256": "936ca55fc8eca0e5452572516759ff17f09cd67666a9f2bc8d4dc6d23291438d",
+      "bytes": 3182
+    },
+    {
+      "path": "integration/first_transfer/pipette_workflow.py",
+      "sha256": "6acf19419ed334344e5f5c83b458a4dcea2307de42c8531a6755cc8fdd05d6d7",
+      "bytes": 1599
+    },
+    {
+      "path": "integration/first_transfer/pregrasp_planner.py",
+      "sha256": "f35843c96fa2dcc73add0abe81e282598abc6e7e27e81f5b7a7c2629957a185f",
+      "bytes": 3291
+    },
+    {
+      "path": "integration/first_transfer/preview_frames.py",
+      "sha256": "c979fafcd12060f29aa890b7e86efd7b47a62ec9478f3158db2841260a7a0fc6",
+      "bytes": 7015
+    },
+    {
+      "path": "integration/first_transfer/repair_execution.py",
+      "sha256": "fae2b63c5a195adc57731903e1b3b95f8ea2e67a83d7b02251cac6dd7ba26cbc",
+      "bytes": 2806
+    },
+    {
+      "path": "integration/first_transfer/resume_checkpoint.py",
+      "sha256": "e44e23d62356d912f55264df708a07dd852fcd2bc3d63a8b82004306b2882254",
+      "bytes": 6921
+    },
+    {
+      "path": "integration/first_transfer/robot_checkpoint.py",
+      "sha256": "e218d7de85f99a8a4af0068431d8b611b9101c59772029873051e3be52204a63",
+      "bytes": 7798
+    },
+    {
+      "path": "integration/first_transfer/runtime_assets.py",
+      "sha256": "ef332258922cd84f407cc75c501095ab74a3ecf4f51162db3087c9a727cb3d7b",
+      "bytes": 882
+    },
+    {
+      "path": "integration/first_transfer/runtime_scene_constraints.py",
+      "sha256": "86e642d793fc8b613c1f68e1a2cea4d8df33b3ae4d6b26a142e1c9cbab4c2150",
+      "bytes": 12351
+    },
+    {
+      "path": "integration/first_transfer/salt_bridge_visuals.py",
+      "sha256": "977f6f0204ad8f4c23df1540d5364bd16a9cde6e036997196ec4831f8fd504bf",
+      "bytes": 9023
+    },
+    {
+      "path": "integration/first_transfer/scene_presentation.py",
+      "sha256": "a812003b8153eaa86041bacd96fd0b270120c9f31f897e823d81177fa5673b4f",
+      "bytes": 2391
+    },
+    {
+      "path": "integration/first_transfer/simulator_runtime.py",
+      "sha256": "ed1c9530e9e2910703f577d48993748630501b7ac1be3b0426d0d8f6be711b0b",
+      "bytes": 2669
+    },
+    {
+      "path": "integration/first_transfer/swept_mesh_constraints.py",
+      "sha256": "111d47b3afca4af98599c62fcde64d9b2d77d5e19d4d7d4e2f77aebe8264db32",
+      "bytes": 2138
+    },
+    {
+      "path": "integration/first_transfer/test_action_camera.py",
+      "sha256": "736f281ead0b942ed1f82cfdde6c8609e1caea9379b9c95554ead29a5e068960",
+      "bytes": 1789
+    },
+    {
+      "path": "integration/first_transfer/test_bench_layout.py",
+      "sha256": "d92166b4668a950213ab5ed229fd38480b2573131cf2b31ce5adb3c862eb5c54",
+      "bytes": 1914
+    },
+    {
+      "path": "integration/first_transfer/test_cable_constraints.py",
+      "sha256": "aedca59abd481283354f7b10e318edb638d67cb9f01bc417c94257e614e2d789",
+      "bytes": 5784
+    },
+    {
+      "path": "integration/first_transfer/test_high_probe_gate.py",
+      "sha256": "18590b24e9fb39845c03b8441fea8d077649e0328ee65ad693f7804fbb4579e2",
+      "bytes": 1396
+    },
+    {
+      "path": "integration/first_transfer/test_joint_aware_ik.py",
+      "sha256": "80bab3bd60ebe814c4ec098d7e767996ccb7cd9660b7d706828345de67fb46b3",
+      "bytes": 2988
+    },
+    {
+      "path": "integration/first_transfer/test_labware_presentation.py",
+      "sha256": "2f2bdf790691a31cfd5bca336bcd7899509c354d702f301130846851ee873aa7",
+      "bytes": 1726
+    },
+    {
+      "path": "integration/first_transfer/test_lead_route_search.py",
+      "sha256": "95492fe9c8e572d7bd5c7360d58da9f8e729b3a27065c7e01dcb274c6a0ade04",
+      "bytes": 1627
+    },
+    {
+      "path": "integration/first_transfer/test_liquid_presentation.py",
+      "sha256": "162c0c333e1936fa280e1be36ebf258fc289921bd5058ecd07989f6c60b45a03",
+      "bytes": 4914
+    },
+    {
+      "path": "integration/first_transfer/test_matterix_ik_target_compensation.py",
+      "sha256": "9b3ee16476df0b4742f2e9a1aa11c4fcf294d460f4ab90f6a23fbb0ed3511c27",
+      "bytes": 1163
+    },
+    {
+      "path": "integration/first_transfer/test_measurement.py",
+      "sha256": "badbb704c9fe82d63bcd19004cf7000784afea92df2f11e699651def794f357d",
+      "bytes": 9219
+    },
+    {
+      "path": "integration/first_transfer/test_microcell_labware.py",
+      "sha256": "126924b8a7d07070173c204208af31d3d5c6743fa9a318dec8eba8d00c73fc8b",
+      "bytes": 669
+    },
+    {
+      "path": "integration/first_transfer/test_mixer_presentation.py",
+      "sha256": "09a2cb92847f359d1b32a2172a2f8de02805dcfe5c9831dc6e1f04092a0f11ea",
+      "bytes": 1769
+    },
+    {
+      "path": "integration/first_transfer/test_motion_constraints.py",
+      "sha256": "744f04a0a549ee68e623241663f1a33c30ace113c2b614f3472e73decc8b287d",
+      "bytes": 6352
+    },
+    {
+      "path": "integration/first_transfer/test_native_runtime_compatibility.py",
+      "sha256": "6856416ed096183b8e432765c8c510224b751de307ced4fd1832b841395c08e7",
+      "bytes": 1638
+    },
+    {
+      "path": "integration/first_transfer/test_pregrasp_planner.py",
+      "sha256": "b0c6503134483d55b6c6e950963c7bb879c6320e57e1cb6a3d5375aa7c173a32",
+      "bytes": 1672
+    },
+    {
+      "path": "integration/first_transfer/test_robot_checkpoint.py",
+      "sha256": "200f5c7941ab7ada58b7463438ed57a634345efc3e2940bfd423b337752a205e",
+      "bytes": 6602
+    },
+    {
+      "path": "integration/first_transfer/test_runtime_assets.py",
+      "sha256": "cb2c055285a74aed6975c9848c64737b376a2918d96826fde448ed9c6b2097e3",
+      "bytes": 1058
+    },
+    {
+      "path": "integration/first_transfer/test_salt_bridge_visuals.py",
+      "sha256": "37f8dd5cb150540d7ef40059f3edba2ea92c35b243bc89c8aef361bbcd98ad87",
+      "bytes": 2571
+    },
+    {
+      "path": "integration/first_transfer/test_simulator_runtime.py",
+      "sha256": "07d70753f7dd2dc2feecde7bf7678b52c74e4d82280f8303e5176798a600b45d",
+      "bytes": 2566
+    },
+    {
+      "path": "integration/first_transfer/test_swept_mesh_constraints.py",
+      "sha256": "fee282eae73b6999c41cd83beb3794b9272a3e00c8169738308d2e9116ef20e7",
+      "bytes": 2896
+    },
+    {
+      "path": "integration/first_transfer/test_tip_disposal.py",
+      "sha256": "b35bb527988ca34ed0756612be9fb819ef1cdf7e4b030a87b3cd1e9e843d234b",
+      "bytes": 6783
+    },
+    {
+      "path": "integration/first_transfer/test_tip_rack_visuals.py",
+      "sha256": "efdea868c5efbd6b40d35a73f1608cdf223814728151fd9ad54c401afe19fa3c",
+      "bytes": 2734
+    },
+    {
+      "path": "integration/first_transfer/test_tool_and_electrode_visuals.py",
+      "sha256": "09e0937c76151f142262dc0de1eff22e5bdbf0116701b2250f2313f01fd2af37",
+      "bytes": 2655
+    },
+    {
+      "path": "integration/first_transfer/test_transfer_session.py",
+      "sha256": "b04a11c4ee51cb05916c9d513f15c772f667096a883c426497b000a9ca069de3",
+      "bytes": 24230
+    },
+    {
+      "path": "integration/first_transfer/test_video_presentation.py",
+      "sha256": "7a3bf60526c16d2a4f307c130486bbcb604b156f9b72a724e6639dbf4c041ced",
+      "bytes": 10786
+    },
+    {
+      "path": "integration/first_transfer/tip_disposal_visuals.py",
+      "sha256": "e0fd1ae1286943cc9e844d7e357bbd9f739a726e325ae1a6a4ca36ef46aa2071",
+      "bytes": 2739
+    },
+    {
+      "path": "integration/first_transfer/tip_rack_visuals.py",
+      "sha256": "f7cf3c6b0985cafb77c2778d1e7b1c439c43d2dc237a46e2f7929e14e7c9b28c",
+      "bytes": 5825
+    },
+    {
+      "path": "integration/first_transfer/transfer_session.py",
+      "sha256": "0b3d23c8287b0357f4585a2302265d178cef9484f146cecf9a838976fe7ac5c1",
+      "bytes": 51266
+    },
+    {
+      "path": "integration/first_transfer/video_presentation.py",
+      "sha256": "070466534b285a3727292aebe404a5ec158abfbc53be109df353e589d736ff03",
+      "bytes": 12446
+    },
+    {
+      "path": "integration/first_transfer/voltage_measurement_model.py",
+      "sha256": "ad890f308e18d69bf4a932ed1f5c88972bf20b1c253da499c1daa7f29af20d9b",
+      "bytes": 2709
+    },
+    {
+      "path": "integration/first_transfer/workflow_display.py",
+      "sha256": "d4573dcd2cbbf67e7b939b70e12e4587fa228b58deae05dfd124d06339613c4b",
+      "bytes": 1965
+    },
+    {
+      "path": "integration/live_preview/launch_partial_check.py",
+      "sha256": "b30d9dfe86a96819227c4f877a6f6557ddff7cbff99c519d360cb6d8bb7c5686",
+      "bytes": 3915
+    },
+    {
+      "path": "integration/live_preview/observe_partial_check.py",
+      "sha256": "6d91af02a9dd8062b6211a32fd246780c50ea482274d01127d25ca976b588f57",
+      "bytes": 4594
+    },
+    {
+      "path": "integration/live_preview/prepare_overlay.py",
+      "sha256": "b452ce435af269824bd6c2c7dd4720ab911fba30547b608105d281854fa9673c",
+      "bytes": 7878
+    },
+    {
+      "path": "integration/live_preview/preview_client.js",
+      "sha256": "477ea1abff4f4bfa3fa375602f51fdd53826e20ec983d0af138f281d6761b69a",
+      "bytes": 8517
+    },
+    {
+      "path": "integration/live_preview/preview_frames.py",
+      "sha256": "c979fafcd12060f29aa890b7e86efd7b47a62ec9478f3158db2841260a7a0fc6",
+      "bytes": 7015
+    },
+    {
+      "path": "integration/live_preview/preview_panel.css",
+      "sha256": "8ac5a2c9aab3e16334ac40a43a9bf84f4e06c7f20946822a164c2643da18e358",
+      "bytes": 893
+    },
+    {
+      "path": "integration/live_preview/preview_reader.py",
+      "sha256": "28a9b2c9673d5fc1b37d521d875f32fdb8f755b1077bd1eda684fe8ed2ba1b56",
+      "bytes": 2712
+    },
+    {
+      "path": "integration/live_preview/test_preview.py",
+      "sha256": "7cc4da35b0561e4964e68dddeffcfe39e5281e224fda29518273cc829e8247ea",
+      "bytes": 10827
+    },
+    {
+      "path": "integration/live_preview/verify_partial_check.py",
+      "sha256": "b7825b53262bacf2c62f31bfeccfc30cf55a66194d456c041b4e1ea9cc85ca19",
+      "bytes": 5130
+    },
+    {
+      "path": "integration/media_service/cloud_video_server.py",
+      "sha256": "4e6b23d5d38b7008fd86ebf568802aebed480285fa3cdc02e7dd965ecf41015a",
+      "bytes": 13567
+    },
+    {
+      "path": "integration/media_service/test_cloud_video_server.py",
+      "sha256": "cbc54e9ca1dfede3e13f12332adfa3859103019c5feed17af53e746243109b28",
+      "bytes": 7066
+    },
+    {
+      "path": "integration/process_validation/__init__.py",
+      "sha256": "576c2b725d0b222f0dfc9dd5258fdb2e2b8b7b9bd20fedcba63af12bd380c26d",
+      "bytes": 165
+    },
+    {
+      "path": "integration/process_validation/audit_run.py",
+      "sha256": "071971f25da0235fc6fd65afb11be454a133b0ad75f5f889165a86aa620c911b",
+      "bytes": 4884
+    },
+    {
+      "path": "integration/process_validation/cable_checks.py",
+      "sha256": "2941f6b7858e090fbba9dfe3cf83715435737b4078a98c40b47b1d5677905f80",
+      "bytes": 8296
+    },
+    {
+      "path": "integration/process_validation/check_node.py",
+      "sha256": "bad3e31c1fd6640780797e7ed91ef52d464dccb3139eb16b5f8ba5eb74ec2486",
+      "bytes": 3222
+    },
+    {
+      "path": "integration/process_validation/chemistry_checks/__init__.py",
+      "sha256": "55f1a62918b2ab150a74a0223ead09dd05d593061a2bfb2085dcb2e177ca2592",
+      "bytes": 151
+    },
+    {
+      "path": "integration/process_validation/chemistry_checks/audit.py",
+      "sha256": "e57d16097b680b4af42e7b7c2c49003cb19cb17e518d727917dc4bfb088a4406",
+      "bytes": 7524
+    },
+    {
+      "path": "integration/process_validation/chemistry_checks/numbers.py",
+      "sha256": "872481cd14e2a7d14a9a63c03ff609d87404d700037e857effff306f1c3a8806",
+      "bytes": 3601
+    },
+    {
+      "path": "integration/process_validation/chemistry_checks/states.py",
+      "sha256": "1c8d8134a24a68e04db8d932ac097e7edb5390725722b12a3cb8ed7026539bbe",
+      "bytes": 5615
+    },
+    {
+      "path": "integration/process_validation/chemistry_checks/transfers.py",
+      "sha256": "5078f8c45baaaab4f7c3a741076356d494891f7bfadfc71b1d937c89f66a454b",
+      "bytes": 2809
+    },
+    {
+      "path": "integration/process_validation/chemistry_checks/voltage.py",
+      "sha256": "fb895ef225ee4e260909a75ce7a041b28a79dff7d0ba381c1ab7106232b07ae3",
+      "bytes": 4172
+    },
+    {
+      "path": "integration/process_validation/continuation.py",
+      "sha256": "2cdf8aed681373a836e13ebf8f84de59a7018d8eb2f125bb814d1e42bd0fe2e3",
+      "bytes": 20199
+    },
+    {
+      "path": "integration/process_validation/correction.py",
+      "sha256": "d42b01236a3710d606d63834956d6c5e75125c7860c6edd3ea874a0429c9cc70",
+      "bytes": 108667
+    },
+    {
+      "path": "integration/process_validation/geometry.py",
+      "sha256": "33835e4053c7d908d5aa34c482cf311db355cd024371bde50541fdf83c3d446c",
+      "bytes": 3944
+    },
+    {
+      "path": "integration/process_validation/geometry_checks.py",
+      "sha256": "dc850122aee3c2ff36bec8af45c29881715a93e60c3fcf92e2afc680b382fffe",
+      "bytes": 13887
+    },
+    {
+      "path": "integration/process_validation/geometry_evidence.py",
+      "sha256": "0f82a3166b5204325d8825375d326bbf9f64271a60c9d9a17a1cbbf25ee0cf20",
+      "bytes": 4800
+    },
+    {
+      "path": "integration/process_validation/policy.json",
+      "sha256": "7be2441816e9f01f30cfd51cef0cf9d02577a123ea87a6562b003831d5d8927d",
+      "bytes": 2222
+    },
+    {
+      "path": "integration/process_validation/preflight_collision.py",
+      "sha256": "369a391ed6666b08c43301182b69c481cca8d4c477c4d7dff072680c57770228",
+      "bytes": 1107
+    },
+    {
+      "path": "integration/process_validation/record_checks.py",
+      "sha256": "1ccb4a33a27c2a9a6a2042db611ea13243e52e4912b81b5f62f3382b700e43ee",
+      "bytes": 12597
+    },
+    {
+      "path": "integration/process_validation/repair_advice.py",
+      "sha256": "2cf48d91ffae75d47a67855ae3875ceafb862347abcc500dffdad2664a5f73d3",
+      "bytes": 3406
+    },
+    {
+      "path": "integration/process_validation/repairs/__init__.py",
+      "sha256": "be8430caba3d7dd6f1fad2397a5a38890a88c83b660d5d7d5fe4930510bd038c",
+      "bytes": 155
+    },
+    {
+      "path": "integration/process_validation/repairs/classifier.py",
+      "sha256": "9e45cce502ae90206ea90a423c1c60799a4b5cfc767af5c68a7f152fd6c14dcb",
+      "bytes": 6274
+    },
+    {
+      "path": "integration/process_validation/repairs/cycle.py",
+      "sha256": "cea260c7c05d4fbd4680b7eca5557d4195ea3ccdd0fb0306da9fc543a8417d1e",
+      "bytes": 1866
+    },
+    {
+      "path": "integration/process_validation/repairs/dependency_graph.py",
+      "sha256": "2d7d8e18e0e84b2bd568fb6d61ba06b0cb78707f58f184e3d0d2858231686288",
+      "bytes": 2169
+    },
+    {
+      "path": "integration/process_validation/repairs/dependency_plan.py",
+      "sha256": "af78ab9e2a79d619a0cdeae726378f9f299e6431add5a0d360abf42fb3c3dd35",
+      "bytes": 7252
+    },
+    {
+      "path": "integration/process_validation/repairs/dependency_rules.py",
+      "sha256": "056fe875c5f8119be5cfe908fa9bd383d2b16db71545efa2710b5fd9882e0aa3",
+      "bytes": 2900
+    },
+    {
+      "path": "integration/process_validation/repairs/effects/__init__.py",
+      "sha256": "b54427896e85e5547a2080a052b485d330ae268f67c35a651a5b30baaa7c2bbb",
+      "bytes": 80
+    },
+    {
+      "path": "integration/process_validation/repairs/effects/comparison.py",
+      "sha256": "8320ec7e7f3c0f5385a44ecd410983e3c64835b07ffeb640fa77553590c9c254",
+      "bytes": 7839
+    },
+    {
+      "path": "integration/process_validation/repairs/effects/fingerprints.py",
+      "sha256": "8467c7fa7890c9353ee121068b1447de8dadc4f458e08b793234bf292b740ec5",
+      "bytes": 2238
+    },
+    {
+      "path": "integration/process_validation/repairs/effects/history.py",
+      "sha256": "481f925fd060937ac788f0063090f2a016bb15ed485db0990ca12637b8f698f2",
+      "bytes": 2486
+    },
+    {
+      "path": "integration/process_validation/repairs/effects/identities.py",
+      "sha256": "be47b76b866813535f0afcf33aaa29fd943f421bb7eeb2d58477c3871e8a08bc",
+      "bytes": 1636
+    },
+    {
+      "path": "integration/process_validation/repairs/effects/storage.py",
+      "sha256": "1d9be730d6b0e29b39ec8f2ba580046b692e0c6b3ba58fb0063c159a8f341c5c",
+      "bytes": 2435
+    },
+    {
+      "path": "integration/process_validation/repairs/effects/version_compatibility.py",
+      "sha256": "5b711650738f9e717781bc48b4dadef98fded2554646bea29f784e2139407b82",
+      "bytes": 12184
+    },
+    {
+      "path": "integration/process_validation/repairs/evidence.py",
+      "sha256": "42ba23a9236f06e711aa7f264d72f994a47b82c8b7c12a978da2d522f4b4d02d",
+      "bytes": 2934
+    },
+    {
+      "path": "integration/process_validation/repairs/failed_retry.py",
+      "sha256": "f9f0b9dad770b68d63f64f85e8578c3bcd25c922752294918137c9c541039327",
+      "bytes": 1174
+    },
+    {
+      "path": "integration/process_validation/repairs/hmf/__init__.py",
+      "sha256": "93233cf48be201f1f2ab4b99d972dced16bd09860cdc4307baec5f1fc1b55bec",
+      "bytes": 74
+    },
+    {
+      "path": "integration/process_validation/repairs/hmf/execute.py",
+      "sha256": "5627a0c8d028e9b35665cbc0a01c3ee93a13cffe903a53416e5e04551c0ade11",
+      "bytes": 5396
+    },
+    {
+      "path": "integration/process_validation/repairs/hmf/planner.py",
+      "sha256": "99e20a5e689e282d501bc2a27967a69fb935cbf8fb2508a0c4469cf09b361393",
+      "bytes": 5649
+    },
+    {
+      "path": "integration/process_validation/repairs/hmf/verify.py",
+      "sha256": "2139fb001b6567c94bc52007c60ff2c0ebcc21424dbdb2165388a1fc5dc9d9b2",
+      "bytes": 2018
+    },
+    {
+      "path": "integration/process_validation/repairs/lineage_queue.py",
+      "sha256": "04de06b151235ef0e6108b8a65f87e97b8dbf9a117a9c731bc112370e771aa82",
+      "bytes": 1414
+    },
+    {
+      "path": "integration/process_validation/repairs/models.py",
+      "sha256": "c2c3e98e45a13f4c9b0363a4206006cbba1b2b512aafd0fecfbd64526245ef5a",
+      "bytes": 352
+    },
+    {
+      "path": "integration/process_validation/repairs/pipeline.py",
+      "sha256": "b69d418f9d78d5dc4265f32dbcb30216bcb1309b69f5e17dd41e1bc06faa714f",
+      "bytes": 14358
+    },
+    {
+      "path": "integration/process_validation/repairs/pose_checks.py",
+      "sha256": "ee32db22743e7ed7ecbab594b6d81982d9efc0afe154ab52c3166033d7f5e1e4",
+      "bytes": 2131
+    },
+    {
+      "path": "integration/process_validation/repairs/profile.py",
+      "sha256": "7bd4991c321439200edbcc46f3847ed6f28c04e4059c6b4a88c762d56867dd5b",
+      "bytes": 13870
+    },
+    {
+      "path": "integration/process_validation/repairs/registry.py",
+      "sha256": "7aa5aa7741b17f12a7b36e2de9c805eadff6626de656af6b91142248ee560d05",
+      "bytes": 459
+    },
+    {
+      "path": "integration/process_validation/repairs/sequence.py",
+      "sha256": "307933148c8366058dcef5ae61a49f5c55ca68fad33ba83395455081a8c2098b",
+      "bytes": 1876
+    },
+    {
+      "path": "integration/process_validation/repairs/strategies/__init__.py",
+      "sha256": "9153bfcf81957ffbe33d8e7349d7fc2391f3ece077ff54f25cdba5e8727b4390",
+      "bytes": 66
+    },
+    {
+      "path": "integration/process_validation/repairs/strategies/electrode_probe.py",
+      "sha256": "9c851ee6e07cfa0aeba8c4dd8f7c377c7f995ace79dda214b72169456d18ab0c",
+      "bytes": 10240
+    },
+    {
+      "path": "integration/process_validation/repairs/strategies/horizontal_grasp.py",
+      "sha256": "ff440eb80fa2bacb5c133dd947281303ad41ee20e53426558410ef83bccf8eb0",
+      "bytes": 2214
+    },
+    {
+      "path": "integration/process_validation/repairs/strategies/measurement_lead.py",
+      "sha256": "945ef50e24cb2560fcfd1afc56812648243f4c28e2dd84c48feb21d3a0ef10f9",
+      "bytes": 2213
+    },
+    {
+      "path": "integration/process_validation/repairs/strategies/palm_clearance.py",
+      "sha256": "864c70fa2e0a980cc0d7558f5aec6e6779abf599cc766ae6ce23abe6ec116dde",
+      "bytes": 6033
+    },
+    {
+      "path": "integration/process_validation/repairs/strategies/salt_bridge.py",
+      "sha256": "a012be7c9fb2a2c967176dc82effc1a2d8be6302a0de97fa0290cc5272c4f687",
+      "bytes": 1566
+    },
+    {
+      "path": "integration/process_validation/repairs/strategies/top_down_grasp.py",
+      "sha256": "b4a5b46137cb80bc1f1474875a09dc06e4b68a56713e5bee188254039df7be58",
+      "bytes": 15446
+    },
+    {
+      "path": "integration/process_validation/replay/__init__.py",
+      "sha256": "002af25b4ce4e0e43331516d18886fa1945f3d1d7fb551a6bcbf150602b26935",
+      "bytes": 83
+    },
+    {
+      "path": "integration/process_validation/replay/runner.py",
+      "sha256": "6fffa24dba20706a01359df4633161ca243bdd8ab39d22c839c2c0f7e579b9ee",
+      "bytes": 6650
+    },
+    {
+      "path": "integration/process_validation/report.py",
+      "sha256": "096514a2b602f654751c970ff88fccf2a569bd70ac9753d626fcfc60b678ee4b",
+      "bytes": 3657
+    },
+    {
+      "path": "integration/process_validation/scene_trace.py",
+      "sha256": "5047b53473d94fc3ae900233b7f36a8b00e5fe9080cf795614ada605535b4ad7",
+      "bytes": 8921
+    },
+    {
+      "path": "integration/process_validation/service.py",
+      "sha256": "2b4192cd410cf4e8081f0528dc86fa8eae4980f08a65c6a80cbd3a81e1093fbd",
+      "bytes": 3522
+    },
+    {
+      "path": "integration/process_validation/terminal_completion.py",
+      "sha256": "7fb7d947a61ee69dcfec00e32ce81d7b005cf924d45fab492333e2423574ee36",
+      "bytes": 2994
+    },
+    {
+      "path": "integration/process_validation/test_cable_checks.py",
+      "sha256": "a2545735bbce094de6f9fae5123a5c866d40da2eeb8017c12967c1db806345c3",
+      "bytes": 3512
+    },
+    {
+      "path": "integration/process_validation/test_chemistry_checks.py",
+      "sha256": "dfd98ac4ececf93f42291828ab09194f0cf7fdace6c569e5529ac55898acca8e",
+      "bytes": 10536
+    },
+    {
+      "path": "integration/process_validation/test_continuation.py",
+      "sha256": "35ab8c7796595119ea86f5b0b84135dabc4daecda1b3190f4748c5cf86aa6a22",
+      "bytes": 41022
+    },
+    {
+      "path": "integration/process_validation/test_correction.py",
+      "sha256": "a937d8d6a86dae84d5115b190ea3fb649f6b00a235553606320067d43e4f22bd",
+      "bytes": 18489
+    },
+    {
+      "path": "integration/process_validation/test_direct_lead_route.py",
+      "sha256": "00150241dd7a979de1f20bff77ee1b53d4b8f9b4fce0d6cf2054a08a4e8ea944",
+      "bytes": 2477
+    },
+    {
+      "path": "integration/process_validation/test_geometry_evidence.py",
+      "sha256": "bfdb7e7a7356bf4401a159f99eed659d5e6533d8de2816e2dd7e7b7f59c6f96a",
+      "bytes": 9667
+    },
+    {
+      "path": "integration/process_validation/test_preflight_collision.py",
+      "sha256": "e35b487b0d79ef240ba31422aa9502d515e9e998995f899bb31330dda3302d5b",
+      "bytes": 1726
+    },
+    {
+      "path": "integration/process_validation/test_process_validation.py",
+      "sha256": "f971bb4b0848cfc5615648430cc70d34b4dba624a0f5a6f3d4ba12f612320a46",
+      "bytes": 12055
+    },
+    {
+      "path": "integration/process_validation/test_repair_dependencies.py",
+      "sha256": "75ce64c9c7f2a843c660f7724021e0ebbd0632c3e8caa956c7c6e2a5cc0930dd",
+      "bytes": 6531
+    },
+    {
+      "path": "integration/process_validation/test_repair_effects.py",
+      "sha256": "24123300f2501ba42635ee5fa8915c7d79ad92559dae86fde5f8096934614942",
+      "bytes": 14356
+    },
+    {
+      "path": "integration/process_validation/test_repair_pipeline.py",
+      "sha256": "30215861236480775090ba6429c661c42b9cf7086f1d3186541c7e6ff6ea8a35",
+      "bytes": 12555
+    },
+    {
+      "path": "integration/process_validation/test_repair_sequence.py",
+      "sha256": "33975a82be043d9c447ff61eca120dad77c4b1c40b0b85fb4933ea830df2da0e",
+      "bytes": 5855
+    },
+    {
+      "path": "integration/process_validation/test_repair_version_retry.py",
+      "sha256": "11983445035c58b2b78b59f33c4ea7288bc7553bf123e6805d5d42d90d19739f",
+      "bytes": 18980
+    },
+    {
+      "path": "integration/process_validation/test_terminal_completion.py",
+      "sha256": "13dd5a6d7c7591d7852d9fcd7974b01fe943048786c81ca233b9aa496fca7242",
+      "bytes": 3712
+    },
+    {
+      "path": "integration/process_validation/test_top_down_grasp.py",
+      "sha256": "f9fa3b995c217fc14e230f7c26031094d65d570a9312c7320ffea6ae26b8f3ea",
+      "bytes": 19700
+    },
+    {
+      "path": "integration/process_validation/video_checks.py",
+      "sha256": "2c8263ba08e078983eec9d5057c520af983af3c173e698bdc7c79edde7d5c21a",
+      "bytes": 6683
+    },
+    {
+      "path": "integration/web/hmf_conditions.py",
+      "sha256": "ee9eccaf4791a3bfc641221f146eb3811cbd180de027221e1215d8d8e5ef647d",
+      "bytes": 2181
+    },
+    {
+      "path": "integration/web/hmf_history.py",
+      "sha256": "c6c5dee31e29f0ffcd1e05605bd6d696d60bd5ac49dd5b44d469c6a30b708457",
+      "bytes": 2713
+    },
+    {
+      "path": "integration/web/hmf_live.js",
+      "sha256": "0d2b8622d24eb88f6d6c662efc5682e5a491f73747f66dc6f94afe59df0ec58a",
+      "bytes": 13239
+    },
+    {
+      "path": "integration/web/hmf_local_server.py",
+      "sha256": "d1e8ca9c2f50cf8fab8c2edbc8d274e784981825a98b59f36fcaafe5d5d82f3c",
+      "bytes": 12372
+    },
+    {
+      "path": "integration/web/hmf_validation.py",
+      "sha256": "af05a8b8696baad4bfa01c64c325da95d485a9e23f4f8f783320dc68f3fe0ee1",
+      "bytes": 2789
+    },
+    {
+      "path": "integration/web/lab_workspace.css",
+      "sha256": "db2e970f4f1383a45d2c24def666a1a444e53177f33c9f239615539401d3450f",
+      "bytes": 15493
+    },
+    {
+      "path": "integration/web/lab_workspace.js",
+      "sha256": "44b8e67ebf9f3aefdf211d9ad2a1fdfe4d618c07c4161aef1102870e834e5560",
+      "bytes": 4332
+    },
+    {
+      "path": "integration/web/tests/test_hmf_local_server.py",
+      "sha256": "256438059ddb7ab15120e0edfdb644cd829e27b23f06e36e2f89a30157f74981",
+      "bytes": 8985
+    },
+    {
+      "path": "integration/web/tests/test_public_node_access.py",
+      "sha256": "bfd9ef4bcd36262980e063cc14200627994d95550fdc06c503e94814166d1edd",
+      "bytes": 2522
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "baaf73f702d194212e0d2dee4ae7a7757d1baada6abbf14942368d0aa6e7768c",
+      "bytes": 1072
+    },
+    {
+      "path": "README.md",
+      "sha256": "79e3064fb18157494ed5f429b831db74b8638345c1ec6a9075961a945c5731d6",
+      "bytes": 3765
+    },
+    {
+      "path": "scripts/build_site.py",
+      "sha256": "1a4fc6b8597747262378f21c51eb0a3241108ac9cfe99c61d7e259ac1ec679e6",
+      "bytes": 2003
+    },
+    {
+      "path": "scripts/start_local.py",
+      "sha256": "8218954d8bc881e5652674c101e2c8cd50b86a66e382f22d7190bfad59bcd3e4",
+      "bytes": 1320
+    },
+    {
+      "path": "电化学浓差电池_轻量可视化原型.html",
+      "sha256": "44572d2ceadaeca01d9d571e41e34c1b78606842d1e9759691a1dc8b78c90889",
+      "bytes": 278248
+    }
+  ]
+}

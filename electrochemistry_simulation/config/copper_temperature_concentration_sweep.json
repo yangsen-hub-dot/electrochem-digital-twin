@@ -1,0 +1,21 @@
+{
+  "sweep_id": "copper_temperature_concentration_sweep_v1",
+  "batch_name_zh": "铜离子浓差电池_温度与浓度扫描",
+  "batch_name_short_zh": "铜电池_温度浓度扫描",
+  "description": "固定右侧基础配置，扫描温度和左侧目标浓度。可选配置 right_concentrations_m 与 right_total_volume_ml 以同时扫描右侧浓度。纯仿真情景。",
+  "temperatures_k": [
+    293.15,
+    298.15,
+    303.15,
+    308.15,
+    313.15
+  ],
+  "left_concentrations_m": [
+    0.005,
+    0.01,
+    0.02
+  ],
+  "left_total_volume_ml": 1.0,
+  "stock_aspirate_step_id": "02_aspirate_low_stock",
+  "water_aspirate_step_id": "06_aspirate_water"
+}

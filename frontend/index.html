@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d141c"><meta name="description" content="自动化电化学实验数字孪生：连接虚拟预演与实验执行，追踪过程、状态与响应。"><title>实验数字孪生｜在虚实之间</title><link rel="stylesheet" href="assets/home.css"><script src="assets/home.js" defer></script></head><body>
+<div id="dark-research-refined">
+ <div class="dr-cosmos" aria-hidden="true"><div class="dr-grid-field"></div><div class="dr-orbit"></div><div class="dr-orbit dr-orbit-two"></div><div class="dr-orbit dr-orbit-three"></div><div class="dr-trace"></div><span class="dr-orbital-point"></span><span class="dr-orbital-point dr-point-two"></span><span class="dr-orbital-point dr-point-three"></span></div>
+ <div class="dr-wrap">
+  <header class="dr-header"><div class="dr-brand"><span class="home-mark" aria-hidden="true">◇</span>实验数字孪生</div><nav class="dr-nav" aria-label="平台导航"><a href="index.html">首页</a><a href="workbench.html">工作台</a><a href="workbench.html?view=validation">校验与修复</a><a href="workbench.html?view=analysis">结果分析</a><a href="workbench.html?view=batch">批量实验</a><a href="workbench.html?view=history">历史记录</a><button type="button" data-open-nodes>节点设置</button></nav></header>
+  <section class="dr-hero"><div aria-label="首页标题"><div class="dr-eyebrow">AUTOMATED ELECTROCHEMISTRY · DIGITAL TWIN</div><h1><span class="dr-title-first">实验，</span><em>在虚实之间。</em></h1><div class="dr-platform-name">自动化电化学实验数字孪生平台</div><p class="dr-platform-desc">连接虚拟预演与实验执行，追踪过程、状态与响应，<br>让每一轮实验的误差与反馈都有迹可循。</p></div><aside class="dr-researchchain dr-title-sidebar" aria-label="研究工作链"><div class="dr-english-title">Between the virtual<br>and the physical.</div><div class="dr-hero-meta">A CONTINUOUS EXPERIMENT</div><div><small>01</small><span>设计与预演</span></div><div><small>02</small><span>执行与状态</span></div><div><small>03</small><span>响应与观测</span></div><div><small>04</small><span>误差与反馈</span></div></aside></section>
+  <section aria-label="选择实验模型"><header class="dr-section-title"><h2>从一个实验模型开始</h2><span>EXPLORE EXPERIMENTS</span></header><div class="dr-models">
+   <article class="dr-model">
+    <div class="dr-image"><span class="dr-caption">双池装置 · 原理示意</span>
+     <svg class="dr-diagram" viewBox="0 0 380 164" role="img" aria-label="铜浓差电池原理图，两侧铜电极由盐桥和外电路连接">
+      <defs><linearGradient id="dr-liquid-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#387e93" stop-opacity=".45"/><stop offset="1" stop-color="#387e93" stop-opacity=".12"/></linearGradient><linearGradient id="dr-liquid-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55b4bf" stop-opacity=".55"/><stop offset="1" stop-color="#55b4bf" stop-opacity=".15"/></linearGradient><linearGradient id="dr-copper" x1="0" x2="1"><stop stop-color="#9c7159"/><stop offset=".5" stop-color="#dbb391"/><stop offset="1" stop-color="#a47759"/></linearGradient></defs>
+      <path d="M97 57 V23 Q97 16 104 16 H170 M210 16 H276 Q283 16 283 23 V57" fill="none" stroke="#8caca6" stroke-width="1.5"/>
+      <circle cx="190" cy="16" r="16" fill="#182b35" stroke="#93b9ab" stroke-width="1.3"/><text x="190" y="20" text-anchor="middle" class="dr-chem">V</text>
+      <path d="M52 56 V126 Q52 134 61 134 H141 Q150 134 150 126 V56 M230 56 V126 Q230 134 239 134 H319 Q328 134 328 126 V56" fill="none" stroke="#849fae" stroke-width="1.7"/>
+      <path d="M54 88 H148 V124 Q148 132 140 132 H62 Q54 132 54 124Z" fill="url(#dr-liquid-a)"/>
+      <path d="M232 88 H326 V124 Q326 132 318 132 H240 Q232 132 232 124Z" fill="url(#dr-liquid-b)"/>
+      <path d="M54 88 H148 M232 88 H326" stroke="#78b1c0" stroke-opacity=".65" stroke-width="1"/>
+      <rect x="90" y="51" width="14" height="67" rx="1" fill="url(#dr-copper)"/><rect x="276" y="51" width="14" height="67" rx="1" fill="url(#dr-copper)"/>
+      <path d="M131 102 V70 Q131 58 143 58 H238 Q250 58 250 70 V102" fill="none" stroke="#9dbdb5" stroke-opacity=".7" stroke-width="7"/>
+      <path d="M131 102 V70 Q131 58 143 58 H238 Q250 58 250 70 V102" fill="none" stroke="#182b35" stroke-width="3.5"/>
+      <text x="190" y="46" text-anchor="middle">盐桥</text><text x="70" y="73" class="dr-chem">Cu</text><text x="302" y="73" class="dr-chem">Cu</text>
+      <text x="101" y="155" text-anchor="middle">左侧溶液 · cₗ</text><text x="279" y="155" text-anchor="middle">右侧溶液 · cᵣ</text>
+     </svg>
+    </div>
+    <div class="dr-modelbody"><div class="dr-meta"><span>MODEL / 01</span><span>CONCENTRATION CELL</span></div><h3>浓差电池</h3><p>从配液、混匀到组装与电压观测，<br>追踪浓度差与实验过程对电势响应的影响。</p><div class="dr-access"><span>铜体系 · 双池实验</span><a class="home-entry" href="workbench.html?model=concentration">配置实验 ↗</a></div></div>
+   </article>
+   <article class="dr-model">
+    <div class="dr-image"><span class="dr-caption">反应路径 · 原理示意</span>
+     <svg class="dr-diagram" viewBox="0 0 380 164" role="img" aria-label="HMF在TEMPO介导的电催化氧化中转化为FDCA的反应示意，不表示配平反应式">
+      <g fill="none" stroke="#94cbbd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M78 45 L55 63 L66 98 H104 L115 63 L92 45 M61 67 L70 91 M109 68 L100 91 M55 63 L38 52 M115 63 L132 52"/><path d="M288 45 L265 63 L276 98 H314 L325 63 L302 45 M271 67 L280 91 M319 68 L310 91 M265 63 L248 52 M325 63 L342 52"/></g>
+      <text x="85" y="46" text-anchor="middle" class="dr-chem">O</text><text x="295" y="46" text-anchor="middle" class="dr-chem">O</text>
+      <text x="7" y="47" class="dr-chem">HOCH₂</text><text x="128" y="47" class="dr-chem">CHO</text><text x="215" y="47" class="dr-chem">HOOC</text><text x="334" y="47" class="dr-chem">COOH</text>
+      <path d="M162 76 H217 L212 72 M217 76 L212 80" fill="none" stroke="#b4d5c1" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="190" y="62" text-anchor="middle">TEMPO</text><text x="190" y="98" text-anchor="middle">电催化氧化</text>
+      <text x="85" y="129" text-anchor="middle" class="dr-chem">HMF</text><text x="295" y="129" text-anchor="middle" class="dr-chem">FDCA</text>
+      <text x="85" y="151" text-anchor="middle">反应物</text><text x="295" y="151" text-anchor="middle">目标产物</text>
+     </svg>
+    </div>
+    <div class="dr-modelbody"><div class="dr-meta"><span>MODEL / 02</span><span>ELECTROCATALYSIS</span></div><h3>电催化氧化</h3><p>配置 TEMPO–HMF 反应条件，<br>查看数值流程、模型预测与适用范围。</p><div class="dr-access"><span>HMF → FDCA · 数值原型</span><a class="home-entry" href="workbench.html?model=oxidation">配置实验 ↗</a></div></div>
+   </article>
+  </div><div class="dr-models-note"><span>更多实验模型，接入同一套工作空间。</span><a href="https://github.com/yangsen-hub-dot/electrochem-digital-twin/blob/main/docs/models.md">模型与适用范围 ↗</a></div></section>
+  <section class="dr-cycle" aria-label="统一实验工作空间"><div class="dr-cycle-title">ONE WORKSPACE<br>FOR EACH EXPERIMENT</div><div class="dr-stages"><span>条件配置</span><i aria-hidden="true">→</i><span>过程执行</span><i aria-hidden="true">→</i><span>状态追踪</span><i aria-hidden="true">→</i><span>结果分析</span></div></section>
+  <footer class="dr-footer"><span>实验数字孪生 / 自动化电化学实验</span><a href="https://github.com/yangsen-hub-dot/electrochem-digital-twin">GitHub · 源码与部署说明 ↗</a></footer>
+ </div>
+</div>
+<dialog id="node-dialog" aria-labelledby="node-dialog-title">
+ <div class="dialog-head"><div><small>YOUR COMPUTE / YOUR EXPERIMENTS</small><h2 id="node-dialog-title">连接你的实验节点</h2></div><button type="button" id="close-nodes" aria-label="关闭节点设置">×</button></div>
+ <p>保存自己的服务器地址，在同一工作台切换。地址保存在当前浏览器，访问码仅在本次会话使用。</p>
+ <div id="saved-nodes" aria-label="已保存节点"></div>
+ <form id="node-form"><label>节点名称<input name="name" maxlength="60" placeholder="例如：我的仿真服务器" required></label><label>实验服务地址<input name="endpoint" type="url" placeholder="https://simulation.example.org" required></label><label>支持的实验<select name="model"><option value="concentration">浓差电池</option><option value="oxidation">电催化氧化 · HMF</option><option value="both">两种实验</option></select></label><label>录像服务地址（可选）<input name="video" type="url" placeholder="https://video.example.org"></label><label>访问码（本次会话，可选）<input name="token" type="password" autocomplete="off"></label><button type="submit" class="node-primary">保存并选用</button></form>
+ <p id="node-message" role="status" aria-live="polite"></p><p class="node-help">公网 HTTPS 页面连接 HTTPS 节点。后端部署方法见 <a href="https://github.com/yangsen-hub-dot/electrochem-digital-twin/blob/main/docs/deployment.md">部署说明</a>。</p>
+</dialog>
+
+</body></html>

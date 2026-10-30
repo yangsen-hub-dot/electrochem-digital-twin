@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "templates": [
+    {"id": "copper_concentration_cell", "name": "Cu²⁺/Cu 浓差电池", "config": "copper_concentration_cell.json", "condition_adapter": "stock_dilution_concentration_cell", "workflow_adapter": "copper_matterix", "execution_modes": ["workflow_video", "numerical"]},
+    {"id": "zinc_concentration_cell", "name": "Zn²⁺/Zn 浓差电池（数值模型）", "config": "zinc_concentration_cell.json", "condition_adapter": "stock_dilution_concentration_cell", "workflow_adapter": null, "execution_modes": ["numerical"]}
+  ]
+}
