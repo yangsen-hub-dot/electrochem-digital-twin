@@ -19,8 +19,8 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "2bf1cfe12e9a702440f010461c88bdaffaccd088e4aa6574de3cb82aa17c54e5",
-      "bytes": 340
+      "sha256": "b3c53c789f2a75abdac851124565df911781acb499f5bab98e77a42ce7908e41",
+      "bytes": 380
     },
     {
       "path": "copper_cell_node.py",

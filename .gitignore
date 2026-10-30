@@ -10,6 +10,7 @@ work/
 integration/reference/
 integration/deployment/targets/
 integration/deployment/cloud_target.json
+integration/media_service/local_access/
 integration/first_transfer/validation/
 electrochemistry_simulation/results/
 *.mp4
