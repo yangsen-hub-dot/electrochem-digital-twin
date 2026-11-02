@@ -486,8 +486,8 @@
     },
     {
       "path": "frontend/assets/home.css",
-      "sha256": "597698582712bec230dcb5e02230854146aef80e370f7578e71b519be9d83827",
-      "bytes": 33651,
+      "sha256": "6caadf18f033da75f2f7ff742e9eabc4b3e1a4d104227c2df744c0d70bdc2c3f",
+      "bytes": 34076,
       "origin": "approved_public_homepage_20261102"
     },
     {
@@ -513,8 +513,8 @@
     },
     {
       "path": "frontend/index.html",
-      "sha256": "1e29dfde99c9d1db154236ca54d97bceebb1624dce1e6da9b840bcc0f824a701",
-      "bytes": 7676,
+      "sha256": "49d0203a225eadba2d1afefc4c88fc16bb20dfdf857790e7a0b9909ac6b33ebb",
+      "bytes": 7677,
       "origin": "approved_public_homepage_20261102"
     },
     {
