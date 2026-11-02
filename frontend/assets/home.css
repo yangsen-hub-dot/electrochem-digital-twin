@@ -366,18 +366,19 @@ html{color-scheme:dark;scroll-behavior:smooth}body{margin:0;background:#0b1523}
 #electrochem-home .dr-wrap{width:min(1280px,calc(100% - 112px))}#electrochem-home .dr-header{padding-right:0}
 @media(max-width:1180px){#electrochem-home .dr-wrap{width:calc(100% - 76px)}}@media(max-width:760px){#electrochem-home .dr-wrap{width:calc(100% - 40px)}}@media(max-width:390px){#electrochem-home .dr-wrap{width:calc(100% - 32px)}}
 
-/* Planetary sky for the hero; the model section retains its distinct Milky Way. */
-#electrochem-home .planet-sky{position:absolute;inset:0 0 auto;height:800px;pointer-events:none;z-index:0;background:url('planet-horizon.webp') 62% 35%/cover no-repeat;opacity:.97;mask-image:linear-gradient(180deg,#000 0%,#000 55%,#0009 77%,transparent 100%)}
-#electrochem-home .planet-sky:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07152b26,transparent 48%,#07182b1a),linear-gradient(180deg,#06142a70,transparent 32%,#0b152366 86%,#0b1523)}
-#electrochem-home .lab-scene{height:750px;mask-image:radial-gradient(ellipse 67% 62% at 88% 67%,#000 10%,#000d 41%,transparent 81%)}
-#electrochem-home .lab-scene-image{object-position:73% center;opacity:.86}
-#electrochem-home .lab-scene:after{background:linear-gradient(90deg,#09182bf5 0%,#09182bb3 35%,#09182b1a 65%,#09182b0d 100%),linear-gradient(180deg,#07142666,transparent 35%,#0b152340 72%,#0b1523 100%)}
-#electrochem-home .dr-header{border-bottom-color:#aacfe84d;background:linear-gradient(90deg,#07182a33,transparent)}
+/* Distinct composition: star cluster on the left, laboratory on the right. */
+#electrochem-home .cluster-sky{position:absolute;top:0;left:0;width:56%;height:800px;z-index:0;pointer-events:none;overflow:hidden;opacity:.95;mask-image:linear-gradient(90deg,#000 0%,#000 77%,transparent 100%)}
+#electrochem-home .cluster-sky:before{content:"";position:absolute;inset:0;background:url('star-cluster.webp') 70% 35%/cover no-repeat;transform:scaleX(-1)}
+#electrochem-home .cluster-sky:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#08172b33 0%,#08172b17 28%,#0b15234d 73%,#0b1523 100%)}
+#electrochem-home .lab-scene{height:750px;mask-image:linear-gradient(90deg,transparent 0%,transparent 56%,#000 66%,#000 100%)}
+#electrochem-home .lab-scene-image{object-position:73% center;opacity:.94}
+#electrochem-home .lab-scene:after{background:linear-gradient(180deg,#07142680 0%,#09182b17 30%,#0b15231a 65%,#0b1523 100%)}
+#electrochem-home .dr-header{border-bottom-color:#aacfe847;background:linear-gradient(90deg,#07182a1a,#07182a88)}
 #electrochem-home .dr-brand,#electrochem-home .dr-nav a{text-shadow:0 1px 10px #031127}
 #electrochem-home .dr-hero{padding-top:58px;padding-bottom:62px;min-height:495px}
 #electrochem-home .hero-copy{position:relative;z-index:1}
-#electrochem-home h1 em{color:#e3f1fc;text-shadow:0 2px 23px #031026cc}
+#electrochem-home h1 em{color:#e3f1fc;text-shadow:0 2px 22px #031026e0}
 #electrochem-home .dr-platform-name{color:#d0e4f2;text-shadow:0 1px 10px #061329}
-#electrochem-home .dr-platform-desc{color:#bdd3e7;text-shadow:0 1px 10px #051329}
+#electrochem-home .dr-platform-desc{color:#c2d7e8;text-shadow:0 1px 10px #051329}
 #electrochem-home .hero-english{color:#afd6ed}
-@media(max-width:760px){#electrochem-home .planet-sky{height:810px;background-size:auto 660px;background-position:72% top}#electrochem-home .lab-scene{height:790px;mask-image:radial-gradient(ellipse 95% 55% at 100% 56%,#0008 10%,transparent 89%)}#electrochem-home .lab-scene-image{object-position:69% center;opacity:.7}#electrochem-home .dr-hero{min-height:0;padding-top:41px;padding-bottom:39px}}
+@media(max-width:760px){#electrochem-home .cluster-sky{width:75%;height:790px;opacity:.86;mask-image:linear-gradient(90deg,#000 0%,#000 64%,transparent 100%)}#electrochem-home .cluster-sky:before{background-position:70% top;background-size:auto 660px}#electrochem-home .lab-scene{height:790px;mask-image:linear-gradient(90deg,transparent 0%,transparent 75%,#000 88%,#000 100%)}#electrochem-home .lab-scene-image{object-position:69% center;opacity:.75}#electrochem-home .dr-hero{min-height:0;padding-top:41px;padding-bottom:39px}}

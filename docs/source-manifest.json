@@ -85,6 +85,12 @@
       "origin": "planet_theme_public_site_20261102"
     },
     {
+      "path": "docs/star-cluster-layout.md",
+      "sha256": "68a4846e959843d5b72be036da7e5bfb9197160f7c6ee4009ac454b3eda2a13e",
+      "bytes": 860,
+      "origin": "left_star_cluster_site_20261103"
+    },
+    {
       "path": "electrochemistry_simulation/HMF电氧化模型_首版说明.md",
       "sha256": "142d255deeda4c0d170870bc74c35ce758d68a30e0155b9b4a49656cae7f8586",
       "bytes": 2090
@@ -516,9 +522,9 @@
     },
     {
       "path": "frontend/assets/home.css",
-      "sha256": "6a54f63b12c8bd4e748e98f10ad868d9aaa588f24bb50b7bb2ca187ccfb53206",
-      "bytes": 35723,
-      "origin": "planet_theme_public_site_20261102"
+      "sha256": "11be224c821ae3caae7d2233716328daacb096f6471a1cfd06fbb65d131310fe",
+      "bytes": 35821,
+      "origin": "left_star_cluster_site_20261103"
     },
     {
       "path": "frontend/assets/home.js",
@@ -543,10 +549,16 @@
       "bytes": 4794
     },
     {
+      "path": "frontend/assets/star-cluster.webp",
+      "sha256": "089816e53ec500bbd5717df791732843ec51b474a6b5b1137f356dd810d90132",
+      "bytes": 89752,
+      "origin": "left_star_cluster_site_20261103"
+    },
+    {
       "path": "frontend/assets/workbench-space.css",
-      "sha256": "39fffc2fc1be3d57bd00e6103bcea07a11bcf16f74089b7aa8fdc4639004adf7",
-      "bytes": 10007,
-      "origin": "planet_theme_public_site_20261102"
+      "sha256": "57ec8ac6c3c8bfae1e3114be8c256e3f6758abf86ca877e207a3450fc35bc110",
+      "bytes": 10108,
+      "origin": "left_star_cluster_site_20261103"
     },
     {
       "path": "frontend/assets/workbench.css",
@@ -555,9 +567,9 @@
     },
     {
       "path": "frontend/index.html",
-      "sha256": "635bc48af6d3c8b3aebf250a59146f176b9f3345aedc9818fc0941effa9bb564",
+      "sha256": "acc2ca04ebfc701696b50a04063b1fafdd4d512dbcfe41e71290f8721d06f0db",
       "bytes": 7730,
-      "origin": "planet_theme_public_site_20261102"
+      "origin": "left_star_cluster_site_20261103"
     },
     {
       "path": "integration/coordinator/batch_jobs.py",
@@ -1451,9 +1463,9 @@
     },
     {
       "path": "scripts/build_site.py",
-      "sha256": "255127207f8b7864ccfdc7c4e041e430ee00651d470cded39bbd9970571ab887",
-      "bytes": 2191,
-      "origin": "planet_theme_public_site_20261102"
+      "sha256": "826e1f22854baa5d4656efb55f49a09e16eeaaabed5e9142e56fa8156e63b2f9",
+      "bytes": 2190,
+      "origin": "left_star_cluster_site_20261103"
     },
     {
       "path": "scripts/start_local.py",
@@ -1467,8 +1479,8 @@
     }
   ],
   "frontend_revision": {
-    "date": "2026-11-02",
-    "source": "selected planet-horizon candidate",
-    "scope": "homepage_and_all_workspace_views"
+    "date": "2026-11-03",
+    "source": "selected third star-cluster candidate",
+    "scope": "left_cosmic_background_with_separate_laboratory"
   }
 }

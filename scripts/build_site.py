@@ -26,7 +26,7 @@ def build(output: Path):
         shutil.copy2(ROOT / "integration/web" / name, target)
     html = (ROOT / "电化学浓差电池_轻量可视化原型.html").read_text(encoding="utf-8")
     html = html.replace("<title>电化学浓差电池｜轻量可视化原型</title>", "<title>实验工作台｜实验数字孪生</title>")
-    html = html.replace("</head>", '<meta name="theme-color" content="#071426">\n<link rel="preload" as="image" href="assets/planet-horizon.webp">\n<link rel="stylesheet" href="assets/workbench.css">\n<link rel="stylesheet" href="assets/workbench-space.css?v=20261102planet">\n</head>')
+    html = html.replace("</head>", '<meta name="theme-color" content="#071426">\n<link rel="preload" as="image" href="assets/star-cluster.webp">\n<link rel="stylesheet" href="assets/workbench.css">\n<link rel="stylesheet" href="assets/workbench-space.css?v=20261103cluster">\n</head>')
     html = html.replace("<main>", '<main>\n<a class="public-home-link" href="index.html">← 实验数字孪生 / 平台首页</a>', 1)
     html = html.replace('<script src="integration/web/hmf_live.js">', '<script src="assets/public-connection.js"></script>\n<script src="integration/web/hmf_live.js">')
     (output / "workbench.html").write_text(html, encoding="utf-8")
