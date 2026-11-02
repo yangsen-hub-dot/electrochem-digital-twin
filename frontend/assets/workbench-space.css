@@ -1,0 +1,101 @@
+/* Public workspace theme only: experimental controllers own data and actions. */
+@import url('./fonts/home-fonts.css?v=20261102planet');
+:root{color-scheme:dark;--ink:#e0ecf5;--muted:#a1b8cd;--line:#8cb6d333;--paper:#071426;--panel:#102239ed;--blue:#99d8f0;--teal:#94d5c8;--workspace-navy:#b5e5f5;--copper:#e2b180}
+html{background:#071426}
+body{margin:0;background:#071426;color:var(--ink);font-family:"Inter","Noto Sans SC","Microsoft YaHei",sans-serif;position:relative;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#061326a6 0%,#0715297a 45%,#07152980 100%),url('planet-horizon.webp') center 35%/cover no-repeat}
+main{position:relative;max-width:1600px}
+a{color:#badff1}
+.public-home-link{display:inline-flex;gap:9px;align-items:center;margin:0 0 21px;color:#abc9df;text-decoration:none;font-size:12px;letter-spacing:.04em}
+.public-home-link:hover{color:#e7f6ff}
+body main>header{padding:4px 0 24px;border-bottom:1px solid #a6cee63b;margin-bottom:14px}
+body .workspace-eyebrow{font-family:"Space Grotesk","Noto Sans SC",sans-serif;color:#92bdd8;letter-spacing:.16em}
+body h1{font-weight:500;color:#edf6fc;text-shadow:0 2px 18px #03102780}
+body h2,body h3,body summary,body strong{color:var(--ink)}
+body h2,body h3{font-weight:500}
+body .subtitle,body .workspace-section-head p,body .workspace-section-label,body .conditions-note,body .condition-footnote,body .connection-hint,body .condition-range,body .junction-model-note,body .history-description,body .batch-description{color:#a6bfd3}
+body .workspace-mark{background:linear-gradient(140deg,#163b55c9,#102b43);color:#bde9fb;border:1px solid #83c6e557;border-radius:11px;box-shadow:0 0 22px #3a9dc51c}
+body .workspace-tabs{border-color:#a5c9e34d;gap:7px;scrollbar-color:#527da2 transparent}
+body .workspace-tab{background:transparent;color:#a8bfd2;font-weight:400}
+body .workspace-tab[aria-selected="true"]{color:#def4ff;font-weight:500}
+body .workspace-tab[aria-selected="true"]::after{background:#a0e0f5;height:2px;box-shadow:0 0 13px #78d2ed73}
+body .workspace-tab:hover:not(:disabled){background:#1d3d5b66;border-color:transparent;color:#e0f1fc}
+body .workspace-section-head{padding:3px 0}
+body .workspace-section-head h2{color:#e1f0fb;letter-spacing:.025em;text-shadow:0 2px 12px #031027}
+body button{color:#c5ddeb;background:#153149b8;border-color:#7aabc94d;font-weight:400;border-radius:6px}
+body button:hover:not(:disabled){background:#204962;border-color:#acd9ed80}
+body button.primary{background:#b9dfef;border-color:#b9dfef;color:#123247;font-weight:500;box-shadow:0 0 23px #53b7df17}
+body button.primary:hover:not(:disabled){background:#d3eff9;border-color:#d3eff9}
+body input,body select,body textarea,body .condition-field input,body .condition-field select,body .connection-box input,body .node-profile select,body .cloud-video-controls input,body .cloud-video-controls select,body .batch-type-control select,body .batch-config-field input,body .batch-config-field select,body .history-search{background:#091a2fe8;color:#e1edf7;border-color:#7aabc94d;border-radius:6px}
+body input::placeholder,body textarea::placeholder{color:#708eaa;opacity:1}
+body input:focus,body select:focus,body textarea:focus{border-color:#a3dcf1}
+body input[type="checkbox"],body input[type="radio"]{accent-color:#8cd1eb}
+body option{background:#0b2037;color:#e2eef7}
+body button:focus-visible,body summary:focus-visible,body a:focus-visible,body input:focus-visible,body select:focus-visible{outline:2px solid #9edcf1;outline-offset:3px}
+body .workspace-connection,body .conditions-panel,body .scene,body .details,body .batch-panel,body .history-panel,body .detail-card,body .workspace-view .panel,body .workspace-validation-intro,body #workspace-validation #process-validation-panel,body .workspace-analysis-grid .electrochem-panel{background:linear-gradient(140deg,#10263deb,#0b1c31ee);border-color:#91b9d342;box-shadow:0 12px 30px #020b1a21;backdrop-filter:blur(7px)}
+body .workspace-connection{background:#10263ddb}
+body .workspace-connection>summary{color:#c5ddec}
+body .workspace-connection>summary::after{color:#a8ddf1}
+body .workspace-connection .connection-box{background:transparent}
+body .workspace-disclosure,body .junction-model-panel,body .operation-error-levels,body .live-preview-panel,body .error-category,body .applicability-details,body .batch-config,body .history-model-scope{background:#10283fe0;border-color:#89b1ce33;color:var(--ink)}
+body .workspace-disclosure>summary,body .applicability-details>summary{color:#bcd5e8}
+body .junction-model-card,body .live-frame-data,body .electrochem-row,body .error-result,body .error-factor,body .error-planned,body .local-range-row,body .cloud-process-card,body .history-record{background:#132c44d9;border-color:#8bb3d033;color:#c2d7e6}
+body .electrochem-row.total{background:#183b54d9;border-color:#8bc5df54}
+body .electrochem-row strong,body .error-result strong,body .readout strong,body .workspace-voltage>strong{color:#c3e8f7}
+body .electrochem-panel,body .error-panel{background:#10263de0;border-color:#89b1ce33}
+body .workspace-analysis-grid .error-panel{background:transparent;border:0}
+body .workspace-voltage{border-color:#90b5d03b}
+body .workspace-voltage>span,body .workspace-voltage>small,body .readout span,body .readout small{color:#a1bad0}
+body .operation-error-levels .condition-field select:disabled{background:#10243a;color:#7994ac}
+body .tag{background:#1d40588c;color:#b7d8ea;border-color:#87b8d340}
+body .status{background:#0e253d88;color:#c6d9e7}
+body .dot{background:#d4ac6e;box-shadow:0 0 8px #d4ac6e33}
+body .electrochem-status,body .error-status{background:#18374f;color:#b8d4e5}
+body .electrochem-status.ready,body .error-status.enabled,body .condition-status.success{background:#163d3cb3;color:#a6ddcb}
+body .electrochem-status.warning,body .error-status.warning{background:#4d3a2399;color:#e8c491}
+body .condition-status.error,body .video-error{background:#4f2b3499;color:#f1b8b5;border-color:#b4787c66}
+body .progress{background:#7aa1bd2b}
+body .progress>span{background:linear-gradient(90deg,#6fa6cf,#a2dfef)}
+body .workspace-media-tabs{background:#07192dc9;border:1px solid #84acca26;padding:3px;border-radius:7px}
+body .workspace-media-tabs button{background:transparent;color:#90acc4;border-color:transparent;box-shadow:none}
+body .workspace-media-tabs button[aria-pressed="true"]{background:#20415a;color:#e0f3fc;box-shadow:0 2px 10px #03102730}
+body .workspace-preview-empty{background:linear-gradient(100deg,#0a1e36bf,#0a1b31ed),url('planet-horizon.webp') 68% center/cover;border-color:#8db8d247;color:#acc7da}
+body .workspace-preview-empty strong{color:#d7eaf6}
+body .workspace-preview-empty svg{color:#8ab7d3}
+body .workspace-preview-empty small{color:#91abc1}
+body .video-frame,body .simulation-video,body #live-preview-canvas{background:#071323;border-color:#85acc842}
+body .video-empty{background:#0b1b2dd9;color:#b4ccdf}
+body .video-empty strong{color:#d6e8f5}
+body .workspace-media-panel .live-preview-panel{background:transparent;border:0;backdrop-filter:none}
+body .cloud-action-current{background:#173b53cc;border-color:#91d2e6}
+body .cloud-action-current strong{color:#b8e6f5}
+body .cloud-workflow li{color:#94aec4}
+body .cloud-workflow li.current{background:#1b405a;color:#c4effa;font-weight:500}
+body .cloud-workflow li.done{color:#9bd4c7}
+body .workspace-validation-chain li{color:#b8cfdf}
+body .workspace-validation-chain span{background:#21485f;color:#c5edf7}
+body .batch-option{background:#10283f;border-color:#749bb94d;color:#bdd4e5}
+body .batch-axis-badge{background:#20435d;color:#bfdfef}
+body .batch-status,body .history-empty,body .batch-empty{color:#a0bbcf}
+body .history-record:hover{background:#1c3e59;border-color:#a6d0e77a}
+body .history-compare-summary{background:#12334bcc;border-color:#8dbdd54d}
+body .history-difference-tag{background:#4a3928b3;border-color:#c4a67566;color:#eccb99}
+body .history-difference-tag.output{background:#1a4059;border-color:#8ec8e266;color:#b8e5f5}
+body table,body th,body td{border-color:#86aac62e}
+body th,body thead,body .batch-table th,body .history-compare-table thead th{background:#17344e;color:#c8dce9;font-weight:500}
+body tr:nth-child(even){background:#10283f80}
+body .history-compare-table th:first-child,body .history-compare-table td:first-child{background:#10283f;color:#acc7dc}
+body .history-compare-table thead th:first-child{background:#17344e;color:#c8dce9}
+body .history-different-input-row td:not(:first-child){background:#3b3228;color:#e9cfac}
+body .history-different-output-row td:not(:first-child){background:#173950;color:#c0dfed}
+/* Preserve the contrast of the existing scientific canvas plots. */
+body .batch-chart-frame{--ink:#203347;--muted:#61798c;--line:#d4e0ea;--blue:#176b9a;background:linear-gradient(#f4f8fc,#edf4fa);border-color:#aac8df66;color:#203347;box-shadow:0 3px 16px #020b1a26}
+body .batch-chart-frame strong,body .batch-chart-frame span,body .batch-chart-frame label{color:#38556c}
+body .batch-chart-frame .batch-axis-badge{background:#dcecf7;color:#21658a}
+body .model-choice label{font-weight:500}
+body .model-choice span,body .history-description,body .batch-description,body .process-summary-note{color:#9eb9cf}
+body .hmf-events{color:#acc5d9}
+body .workspace-footer{border-color:#86aec73b;color:#90acc3}
+@media(max-width:820px){body main>header{padding-bottom:20px}body .workspace-tabs{gap:0}body .workspace-tab{padding-left:13px;padding-right:13px}body .scene,body .details,body .conditions-panel,body .batch-panel,body .history-panel{backdrop-filter:blur(4px)}}
+@media(max-width:480px){body::before{background-position:66% top;background-size:auto 900px;background-repeat:no-repeat}body .workspace-tabs{margin-bottom:18px}body input,body select,body textarea{font-size:16px}body .condition-field input,body .condition-field select{font-size:16px}body .workspace-mark{border-radius:8px}}
+@media(prefers-reduced-motion:reduce){body *{scroll-behavior:auto!important}}

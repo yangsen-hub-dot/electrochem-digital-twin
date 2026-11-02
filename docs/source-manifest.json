@@ -79,6 +79,12 @@
       "bytes": 1445
     },
     {
+      "path": "docs/planet-site-theme.md",
+      "sha256": "c1864bdd0eed4ec10087ceb0168ae4647e2651a0362566e4ec92929dc7c9dd21",
+      "bytes": 1845,
+      "origin": "planet_theme_public_site_20261102"
+    },
+    {
       "path": "electrochemistry_simulation/HMF电氧化模型_首版说明.md",
       "sha256": "142d255deeda4c0d170870bc74c35ce758d68a30e0155b9b4a49656cae7f8586",
       "bytes": 2090
@@ -450,9 +456,9 @@
     },
     {
       "path": "frontend/assets/fonts/home-fonts.css",
-      "sha256": "2a76b4620487f277ed5d9d2bca83b4f30ee0426b46c4708d77632a39c114f169",
-      "bytes": 12258,
-      "origin": "approved_public_homepage_20261102"
+      "sha256": "e0d9165ce34cb0db6b63b9908a95be86bca594be57326e0abcae06c662312054",
+      "bytes": 10324,
+      "origin": "planet_theme_public_site_20261102"
     },
     {
       "path": "frontend/assets/fonts/inter-OFL.txt",
@@ -465,6 +471,30 @@
       "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
       "bytes": 4388,
       "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/site-4e3817b6445d.woff2",
+      "sha256": "4e3817b6445d5ceb08bd47a2c61125de3f6f151a99f19c8fd671ecbf912dfe39",
+      "bytes": 33312,
+      "origin": "planet_theme_public_site_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/site-a64fb41f5b11.woff2",
+      "sha256": "a64fb41f5b110c36b22ec60e8d7e18c398f3a1507a5993f5f0816ca295cf753a",
+      "bytes": 54880,
+      "origin": "planet_theme_public_site_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/site-d51c7bb3f5a4.woff2",
+      "sha256": "d51c7bb3f5a4737deff7c16f6e6735d602ae66826bc9c090c2dcfbf9ba0b06ab",
+      "bytes": 105032,
+      "origin": "planet_theme_public_site_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/site-e84e1ac10cfe.woff2",
+      "sha256": "e84e1ac10cfe3cb2254897c9caa242eee3aa03e93bc3072444c99dc8245b35f8",
+      "bytes": 15768,
+      "origin": "planet_theme_public_site_20261102"
     },
     {
       "path": "frontend/assets/fonts/spacegrotesk-OFL.txt",
@@ -486,9 +516,9 @@
     },
     {
       "path": "frontend/assets/home.css",
-      "sha256": "6caadf18f033da75f2f7ff742e9eabc4b3e1a4d104227c2df744c0d70bdc2c3f",
-      "bytes": 34076,
-      "origin": "approved_public_homepage_20261102"
+      "sha256": "6a54f63b12c8bd4e748e98f10ad868d9aaa588f24bb50b7bb2ca187ccfb53206",
+      "bytes": 35723,
+      "origin": "planet_theme_public_site_20261102"
     },
     {
       "path": "frontend/assets/home.js",
@@ -502,9 +532,21 @@
       "origin": "approved_public_homepage_20261102"
     },
     {
+      "path": "frontend/assets/planet-horizon.webp",
+      "sha256": "f749c8a91eade536cd4c13b214bad245f99dfde31bd7f404671e2b812a32f32c",
+      "bytes": 58272,
+      "origin": "planet_theme_public_site_20261102"
+    },
+    {
       "path": "frontend/assets/public-connection.js",
       "sha256": "6cf2a93099adb7dd0e9a7bd3449136c236bd5fda459c02d795d003bcfdc6f61b",
       "bytes": 4794
+    },
+    {
+      "path": "frontend/assets/workbench-space.css",
+      "sha256": "39fffc2fc1be3d57bd00e6103bcea07a11bcf16f74089b7aa8fdc4639004adf7",
+      "bytes": 10007,
+      "origin": "planet_theme_public_site_20261102"
     },
     {
       "path": "frontend/assets/workbench.css",
@@ -513,9 +555,9 @@
     },
     {
       "path": "frontend/index.html",
-      "sha256": "49d0203a225eadba2d1afefc4c88fc16bb20dfdf857790e7a0b9909ac6b33ebb",
-      "bytes": 7677,
-      "origin": "approved_public_homepage_20261102"
+      "sha256": "635bc48af6d3c8b3aebf250a59146f176b9f3345aedc9818fc0941effa9bb564",
+      "bytes": 7730,
+      "origin": "planet_theme_public_site_20261102"
     },
     {
       "path": "integration/coordinator/batch_jobs.py",
@@ -1409,8 +1451,9 @@
     },
     {
       "path": "scripts/build_site.py",
-      "sha256": "1a4fc6b8597747262378f21c51eb0a3241108ac9cfe99c61d7e259ac1ec679e6",
-      "bytes": 2003
+      "sha256": "255127207f8b7864ccfdc7c4e041e430ee00651d470cded39bbd9970571ab887",
+      "bytes": 2191,
+      "origin": "planet_theme_public_site_20261102"
     },
     {
       "path": "scripts/start_local.py",
@@ -1425,7 +1468,7 @@
   ],
   "frontend_revision": {
     "date": "2026-11-02",
-    "source": "approved homepage-galaxy-models demo",
-    "scope": "homepage_and_static_assets"
+    "source": "selected planet-horizon candidate",
+    "scope": "homepage_and_all_workspace_views"
   }
 }
