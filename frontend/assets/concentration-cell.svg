@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" fill="none" role="img" aria-labelledby="concentration-cell-title concentration-cell-desc"><style>@media(max-width:380px){text{font-size:34px}}</style>
+ <title id="concentration-cell-title">铜浓差电池原理示意</title><desc id="concentration-cell-desc">两个含铜电极的溶液池经盐桥和外电路连接，左侧浓度低于右侧。该图不是实时仿真画面。</desc>
+ <defs>
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8cb6c8" stop-opacity=".06"/><stop offset="1" stop-color="#8cb6c8" stop-opacity=".02"/></linearGradient>
+  <linearGradient id="low" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#3e95af" stop-opacity=".25"/><stop offset="1" stop-color="#2a708a" stop-opacity=".1"/></linearGradient>
+  <linearGradient id="high" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#62b7c5" stop-opacity=".42"/><stop offset="1" stop-color="#438ca2" stop-opacity=".18"/></linearGradient>
+  <linearGradient id="cu" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#987158"/><stop offset=".45" stop-color="#e2bea0"/><stop offset="1" stop-color="#b08363"/></linearGradient>
+  <pattern id="ions" width="33" height="26" patternUnits="userSpaceOnUse"><circle cx="10" cy="9" r="1.35" fill="#91d1db" opacity=".32"/><circle cx="27" cy="22" r=".8" fill="#91d1db" opacity=".24"/></pattern>
+ </defs>
+ <g stroke="#496171" stroke-width=".7" opacity=".4"><path d="M48 282H712M74 48V282M686 48V282"/><path d="M70 77H78M70 130H78M70 183H78M70 236H78M682 77H690M682 130H690M682 183H690M682 236H690"/></g>
+ <ellipse cx="198" cy="271" rx="105" ry="10" fill="#08141e" opacity=".5"/><ellipse cx="562" cy="271" rx="105" ry="10" fill="#08141e" opacity=".5"/>
+ <g stroke="#89aebd" stroke-width="1.5"><path d="M103 122V250Q103 264 117 264H279Q293 264 293 250V122" fill="url(#glass)"/><path d="M467 122V250Q467 264 481 264H643Q657 264 657 250V122" fill="url(#glass)"/></g>
+ <path d="M105 184H291V249Q291 262 278 262H118Q105 262 105 249Z" fill="url(#low)"/><path d="M469 184H655V249Q655 262 642 262H482Q469 262 469 249Z" fill="url(#high)"/>
+ <path d="M105 184H291M469 184H655" stroke="#82c3d3" stroke-opacity=".7"/><path d="M473 188H651V249Q651 258 642 258H482Q473 258 473 249Z" fill="url(#ions)"/>
+ <g fill="#92c8d6" opacity=".4"><circle cx="141" cy="219" r="1.2"/><circle cx="237" cy="237" r="1.2"/><circle cx="258" cy="204" r="1"/><circle cx="160" cy="247" r=".9"/></g>
+ <rect x="165" y="117" width="19" height="118" rx="1.5" fill="url(#cu)"/><rect x="576" y="117" width="19" height="118" rx="1.5" fill="url(#cu)"/>
+ <path d="M175 117V65Q175 54 186 54H347M413 54H574Q585 54 585 65V117" stroke="#a5c0ba" stroke-width="1.5"/>
+ <circle cx="380" cy="54" r="27" fill="#132633" stroke="#a1c9bc" stroke-width="1.5"/><circle cx="380" cy="54" r="20" stroke="#446659" stroke-width=".7"/><text x="380" y="62" text-anchor="middle" fill="#d0e6df" font-family="Georgia,serif" font-size="30">V</text>
+ <path d="M253 216V135Q253 113 275 113H485Q507 113 507 135V216" stroke="#80a89c" stroke-opacity=".85" stroke-width="12"/><path d="M253 216V135Q253 113 275 113H485Q507 113 507 135V216" stroke="#142b34" stroke-width="7"/>
+ <path d="M379 101V88M191 132H215M564 132H540" stroke="#597d8c" stroke-width=".8"/>
+ <g fill="#a7bdc8" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="25" letter-spacing="1"><text x="380" y="101" text-anchor="middle">SALT BRIDGE</text><text x="207" y="151">Cu</text><text x="536" y="151">Cu</text></g>
+ <text x="380" y="246" text-anchor="middle" fill="#bbd6ce" font-family="Georgia,serif" font-style="italic" font-size="28">cₗ &lt; cᵣ</text>
+</svg>

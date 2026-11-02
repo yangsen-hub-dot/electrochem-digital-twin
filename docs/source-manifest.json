@@ -23,6 +23,16 @@
       "bytes": 380
     },
     {
+      "path": "LICENSE",
+      "sha256": "baaf73f702d194212e0d2dee4ae7a7757d1baada6abbf14942368d0aa6e7768c",
+      "bytes": 1072
+    },
+    {
+      "path": "README.md",
+      "sha256": "79e3064fb18157494ed5f429b831db74b8638345c1ec6a9075961a945c5731d6",
+      "bytes": 3765
+    },
+    {
       "path": "copper_cell_node.py",
       "sha256": "5940a522f8ff3a77fa11b9b2db068e7051ec5d12e910b8709091e503a6020a40",
       "bytes": 49485
@@ -33,14 +43,14 @@
       "bytes": 355
     },
     {
-      "path": "deployment/compose.yaml",
-      "sha256": "02365c9fdb232f1fbd1040f81167ab3226f4b11de5fe68a8035a0a000cc58d8a",
-      "bytes": 898
-    },
-    {
       "path": "deployment/Dockerfile.numeric",
       "sha256": "66ce1af6c5c32976a561485c548b1df2eb2da08734c15899bb96ed7e5151b8df",
       "bytes": 466
+    },
+    {
+      "path": "deployment/compose.yaml",
+      "sha256": "02365c9fdb232f1fbd1040f81167ab3226f4b11de5fe68a8035a0a000cc58d8a",
+      "bytes": 898
     },
     {
       "path": "docs/dependencies.md",
@@ -53,6 +63,12 @@
       "bytes": 3893
     },
     {
+      "path": "docs/frontend-homepage.md",
+      "sha256": "e59102f77323c7daeafd5b0f35765a32800459fee7797f582ebdf3ba87505c32",
+      "bytes": 2936,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
       "path": "docs/models.md",
       "sha256": "6b09dd8fe27c83040bd8685de41dbd77d55044b860b76ab1b468d98ddfd22e8d",
       "bytes": 1397
@@ -61,6 +77,16 @@
       "path": "docs/node-contract.md",
       "sha256": "1aeb773331414d9cee79eec6234770ef5f1b500cc807f0e0d54f5f09cddda1f9",
       "bytes": 1445
+    },
+    {
+      "path": "electrochemistry_simulation/HMF电氧化模型_首版说明.md",
+      "sha256": "142d255deeda4c0d170870bc74c35ce758d68a30e0155b9b4a49656cae7f8586",
+      "bytes": 2090
+    },
+    {
+      "path": "electrochemistry_simulation/README.md",
+      "sha256": "f79c360597d179320151c5c84d9f8e946eb687304028fe04f31558eee38733cd",
+      "bytes": 32725
     },
     {
       "path": "electrochemistry_simulation/config/activity/davies_debye_huckel_A_water_neA_v1.json",
@@ -93,6 +119,11 @@
       "bytes": 662
     },
     {
+      "path": "electrochemistry_simulation/config/error_profiles/README.md",
+      "sha256": "2104c8a97c25129c7cf6acc1b94e53abd3394bac539567cda3ebc5d6fc4914fa",
+      "bytes": 3877
+    },
+    {
       "path": "electrochemistry_simulation/config/error_profiles/copper_cell_aqueous_100_500_900ul_reference_v1.json",
       "sha256": "ebdf7bee38345797064c0eda0f642c20f43b369e9cccd7d57131bd1682477e77",
       "bytes": 23788
@@ -106,11 +137,6 @@
       "path": "electrochemistry_simulation/config/error_profiles/gilson_pipetman_p200_p1000_continuous_v1.json",
       "sha256": "30cd9cf64cc10f23793ad5f8d52bdb50f55841e0e0c2a9c86a004743426337a7",
       "bytes": 8853
-    },
-    {
-      "path": "electrochemistry_simulation/config/error_profiles/README.md",
-      "sha256": "2104c8a97c25129c7cf6acc1b94e53abd3394bac539567cda3ebc5d6fc4914fa",
-      "bytes": 3877
     },
     {
       "path": "electrochemistry_simulation/config/hmf_fdca_single_cell_workflow.json",
@@ -323,16 +349,6 @@
       "bytes": 7373
     },
     {
-      "path": "electrochemistry_simulation/HMF电氧化模型_首版说明.md",
-      "sha256": "142d255deeda4c0d170870bc74c35ce758d68a30e0155b9b4a49656cae7f8586",
-      "bytes": 2090
-    },
-    {
-      "path": "electrochemistry_simulation/README.md",
-      "sha256": "f79c360597d179320151c5c84d9f8e946eb687304028fe04f31558eee38733cd",
-      "bytes": 32725
-    },
-    {
       "path": "electrochemistry_simulation/tests/test_activity_temperature.py",
       "sha256": "d6f718e118fbc6a2b73b0db03d9fb53115f92d570c04243d96923afac0370552",
       "bytes": 1404
@@ -403,14 +419,87 @@
       "bytes": 3778
     },
     {
+      "path": "frontend/assets/concentration-cell.svg",
+      "sha256": "db2ce961856dc3ef5d1eb6fe05e6d2f654dbce49adf4ec7903cbb77d6287fbea",
+      "bytes": 3669,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/favicon.svg",
+      "sha256": "17fefce934771de7ab98e1108a6a741f1b976e7b4d9f5315bfe72417e9dcfd0d",
+      "bytes": 302,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/home-407382a2a5d5.woff2",
+      "sha256": "407382a2a5d543b41ae752c9f1ef8be44c1f946b3db3b0ade64973eae1766a64",
+      "bytes": 77512,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/home-cb2d49e79e75.woff2",
+      "sha256": "cb2d49e79e75bd51a104a067fe6e0d7d8dd054cde1bfcb809f0c1d2dfa2128c7",
+      "bytes": 24696,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/home-fbb8d283d8e4.woff2",
+      "sha256": "fbb8d283d8e442fb6d126c94df4eec81dc1edf854f7973034792498cc78db7a6",
+      "bytes": 11388,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/home-fonts.css",
+      "sha256": "2a76b4620487f277ed5d9d2bca83b4f30ee0426b46c4708d77632a39c114f169",
+      "bytes": 12258,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/inter-OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "bytes": 4377,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/notosanssc-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "bytes": 4388,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/spacegrotesk-OFL.txt",
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
+      "bytes": 4495,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/galaxy-field.webp",
+      "sha256": "84aa24acf60105fa48d63d4d9647d3511d014582cf939d2bd78d062c26a1ffe5",
+      "bytes": 207972,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/hmf-pathway.svg",
+      "sha256": "817207c5f6ff57f339a79296346bf3b14ebdb525fec6acc53d1683a6f9b6896f",
+      "bytes": 2131,
+      "origin": "approved_public_homepage_20261102"
+    },
+    {
       "path": "frontend/assets/home.css",
-      "sha256": "b0d2e3a9d1776ee9519fbff0153f132c9ec8d3d4f6d5f1147d302c25378d87ac",
-      "bytes": 15119
+      "sha256": "597698582712bec230dcb5e02230854146aef80e370f7578e71b519be9d83827",
+      "bytes": 33651,
+      "origin": "approved_public_homepage_20261102"
     },
     {
       "path": "frontend/assets/home.js",
       "sha256": "733536c605a65752a816dd76994fbe479fc93743a32de529e5366d33d77bfdf5",
       "bytes": 3307
+    },
+    {
+      "path": "frontend/assets/lab-digital-twin.jpg",
+      "sha256": "e5d435bd25073a4e59caf87c0bb75ff6684164738cea662974031e20c2b73f0d",
+      "bytes": 346759,
+      "origin": "approved_public_homepage_20261102"
     },
     {
       "path": "frontend/assets/public-connection.js",
@@ -424,8 +513,9 @@
     },
     {
       "path": "frontend/index.html",
-      "sha256": "67d83a507f2f772ca2ed4b1700683a95b22557af9ac33edf3ed071624f49012b",
-      "bytes": 9596
+      "sha256": "1e29dfde99c9d1db154236ca54d97bceebb1624dce1e6da9b840bcc0f824a701",
+      "bytes": 7676,
+      "origin": "approved_public_homepage_20261102"
     },
     {
       "path": "integration/coordinator/batch_jobs.py",
@@ -1318,16 +1408,6 @@
       "bytes": 2522
     },
     {
-      "path": "LICENSE",
-      "sha256": "baaf73f702d194212e0d2dee4ae7a7757d1baada6abbf14942368d0aa6e7768c",
-      "bytes": 1072
-    },
-    {
-      "path": "README.md",
-      "sha256": "79e3064fb18157494ed5f429b831db74b8638345c1ec6a9075961a945c5731d6",
-      "bytes": 3765
-    },
-    {
       "path": "scripts/build_site.py",
       "sha256": "1a4fc6b8597747262378f21c51eb0a3241108ac9cfe99c61d7e259ac1ec679e6",
       "bytes": 2003
@@ -1342,5 +1422,10 @@
       "sha256": "44572d2ceadaeca01d9d571e41e34c1b78606842d1e9759691a1dc8b78c90889",
       "bytes": 278248
     }
-  ]
+  ],
+  "frontend_revision": {
+    "date": "2026-11-02",
+    "source": "approved homepage-galaxy-models demo",
+    "scope": "homepage_and_static_assets"
+  }
 }

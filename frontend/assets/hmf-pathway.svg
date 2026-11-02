@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" fill="none" role="img" aria-labelledby="hmf-pathway-title hmf-pathway-desc"><style>@media(max-width:380px){text{font-size:34px}}</style>
+ <title id="hmf-pathway-title">TEMPO介导的HMF电氧化路径示意</title><desc id="hmf-pathway-desc">HMF的羟甲基和醛基转化为FDCA的两个羧基。此图为反应路径示意，不表示配平反应式。</desc>
+ <defs><radialGradient id="a"><stop stop-color="#5b9d92" stop-opacity=".1"/><stop offset="1" stop-color="#5b9d92" stop-opacity="0"/></radialGradient></defs>
+ <ellipse cx="166" cy="154" rx="139" ry="104" fill="url(#a)"/><ellipse cx="594" cy="154" rx="139" ry="104" fill="url(#a)"/>
+ <g stroke="#81b3a7" stroke-width=".7" opacity=".22"><circle cx="166" cy="153" r="97" stroke-dasharray="2 7"/><circle cx="594" cy="153" r="97" stroke-dasharray="2 7"/><path d="M34 282H726"/></g>
+ <g stroke="#add4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M154 100L126 121L140 168H192L207 121L179 100M133 126L144 159M185 159L199 126M126 121L100 104M207 121L232 104"/>
+  <path d="M582 100L554 121L568 168H620L635 121L607 100M561 126L572 159M613 159L627 126M554 121L528 104M635 121L660 104"/>
+ </g>
+ <g fill="#cce3db" font-family="Arial,sans-serif" font-size="30"><text x="166" y="101" text-anchor="middle">O</text><text x="594" y="101" text-anchor="middle">O</text><text x="91" y="104" text-anchor="end">HOCH₂</text><text x="238" y="104">CHO</text><text x="519" y="104" text-anchor="end">HOOC</text><text x="666" y="104">COOH</text></g>
+ <path d="M307 143H453L444 138M453 143L444 148" stroke="#a9c8c0" stroke-width="1.5" stroke-linecap="round"/>
+ <text x="380" y="125" text-anchor="middle" fill="#c4ddd2" font-family="Arial,sans-serif" font-size="24" letter-spacing="2">TEMPO</text>
+ 
+ <g font-family="Georgia,serif" fill="#e0eae4" font-size="30"><text x="166" y="227" text-anchor="middle">HMF</text><text x="594" y="227" text-anchor="middle">FDCA</text></g>
+ <g font-family="Arial,'Microsoft YaHei',sans-serif" fill="#92aeb5" font-size="11" letter-spacing="1.3"></g>
+</svg>
