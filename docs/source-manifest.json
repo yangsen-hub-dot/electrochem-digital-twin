@@ -75,6 +75,12 @@
       "origin": "approved_model_entry_typography_20261103"
     },
     {
+      "path": "docs/home-title-typography.md",
+      "sha256": "87ddd3a7504864b7cb2dc2a4c40a968c5d3fd86878fd017cbe18f26afd660cc2",
+      "bytes": 585,
+      "origin": "approved_home_title_typography_20261103"
+    },
+    {
       "path": "docs/models.md",
       "sha256": "6b09dd8fe27c83040bd8685de41dbd77d55044b860b76ab1b468d98ddfd22e8d",
       "bytes": 1397
@@ -563,6 +569,12 @@
       "origin": "approved_model_entry_typography_20261103"
     },
     {
+      "path": "frontend/assets/home-title.css",
+      "sha256": "2989d2d845ec165095d1a3503b7b06638e5fa32759969d20706475d430bd97bd",
+      "bytes": 3601,
+      "origin": "approved_home_title_typography_20261103"
+    },
+    {
       "path": "frontend/assets/home.css",
       "sha256": "804fe133c50b8fffb4fe82b0fe8bbb050e3fbaba5b91303946614baea9af6907",
       "bytes": 36650,
@@ -609,9 +621,9 @@
     },
     {
       "path": "frontend/index.html",
-      "sha256": "e6401b10ce22591b133343d74388f77cdd6f9d59ecade5957f49afe09ec991f0",
-      "bytes": 14056,
-      "origin": "approved_model_entry_typography_20261103"
+      "sha256": "f2a4043a781487dd4e8292373f3a51717aed2142f0705938d742ab4b7256e058",
+      "bytes": 14125,
+      "origin": "approved_home_title_typography_20261103"
     },
     {
       "path": "integration/coordinator/batch_jobs.py",
@@ -1522,7 +1534,7 @@
   ],
   "frontend_revision": {
     "date": "2026-11-03",
-    "source": "user-approved model-entry-typography preview",
-    "scope": "homepage_model_entries_and_self_hosted_fonts"
+    "source": "user-approved home-title-coordinated preview",
+    "scope": "homepage_title_typography"
   }
 }

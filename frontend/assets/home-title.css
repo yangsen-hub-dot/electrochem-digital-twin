@@ -1,0 +1,19 @@
+#electrochem-home{--hero-type-size:62px;--hero-type-weight:500;--hero-first-ratio:.70;--hero-type-spacing:-.035em;font-family:"Inter","Noto Sans SC","Microsoft YaHei",sans-serif}
+#electrochem-home .dr-brand{font-family:"Noto Sans SC",sans-serif;font-size:15px;line-height:1.55;font-weight:500;letter-spacing:.015em}
+#electrochem-home .dr-brand small{font-family:"IBM Plex Sans",sans-serif;font-size:8.5px;font-weight:400;line-height:1.8;letter-spacing:.12em;color:#91adc1}
+#electrochem-home .dr-nav{font-family:"Noto Sans SC",sans-serif;font-weight:400;letter-spacing:.005em}
+#electrochem-home .hero-copy{max-width:600px}
+#electrochem-home .dr-eyebrow{font-family:"IBM Plex Sans",sans-serif;font-weight:500;font-size:11px;line-height:1.8;letter-spacing:.16em;color:#95b7d2}
+#electrochem-home h1{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;font-size:var(--hero-type-size);line-height:1.28;font-weight:var(--hero-type-weight);letter-spacing:var(--hero-type-spacing);margin:30px 0 18px;white-space:normal}
+#electrochem-home h1 .dr-title-first{font-family:inherit;font-size:calc(1em * var(--hero-first-ratio));font-weight:400;line-height:1.45;letter-spacing:.005em;margin-bottom:9px;color:#c9dbea}
+#electrochem-home h1 em{font-family:inherit;font-size:1em;font-style:normal;font-weight:var(--hero-type-weight);line-height:1.28;letter-spacing:var(--hero-type-spacing);color:#edf5fb;text-shadow:0 2px 18px #031026a6}
+#electrochem-home .hero-english{font-family:"IBM Plex Sans",sans-serif;font-weight:500;font-style:normal;font-size:12px;line-height:1.85;letter-spacing:.16em;color:#a0bfd5;margin:0 0 28px;text-transform:uppercase}
+#electrochem-home .dr-platform-name{font-family:"Noto Sans SC",sans-serif;font-size:14px;font-weight:500;line-height:1.8;letter-spacing:.035em;color:#d0e1ed;margin:0 0 11px}
+#electrochem-home .dr-platform-desc{font-family:"Noto Sans SC",sans-serif;font-size:13px;font-weight:400;line-height:2;letter-spacing:.018em;color:#aec3d7;max-width:475px;margin:0}
+#electrochem-home .hero-actions{margin-top:28px;gap:27px}
+#electrochem-home .primary-link{font-family:"Noto Sans SC",sans-serif;font-size:13px;font-weight:500;line-height:1.8;letter-spacing:.025em}
+#electrochem-home .text-link{font-family:"Noto Sans SC",sans-serif;font-size:12px;font-weight:400;line-height:1.8;letter-spacing:.01em}
+#electrochem-home .hero-footnote{font-family:"IBM Plex Sans",sans-serif;font-size:10px;line-height:1.9;font-weight:400;letter-spacing:.015em;color:#89a8bf}
+@media(max-width:980px){#electrochem-home h1{font-size:calc(var(--hero-type-size) - 3px)}}
+@media(max-width:760px){#electrochem-home h1{font-size:min(calc(var(--hero-type-size) - 7px),10.8vw);margin-top:27px;margin-bottom:18px}#electrochem-home .hero-english{font-size:11px;letter-spacing:.12em;margin-bottom:24px}#electrochem-home .dr-platform-name{font-size:13px;letter-spacing:.025em}#electrochem-home .dr-platform-desc{font-size:12px;line-height:2}#electrochem-home .hero-copy{max-width:100%}#electrochem-home .hero-actions{gap:24px}#electrochem-home .dr-hero{padding-top:36px;padding-bottom:38px}#electrochem-home .hero-footnote{max-width:340px}}
+@media(max-width:420px){#electrochem-home .dr-eyebrow{font-size:10px;letter-spacing:.11em}#electrochem-home h1 .dr-title-first{margin-bottom:8px}#electrochem-home .hero-english{font-size:10px;letter-spacing:.095em}#electrochem-home .dr-platform-name{font-size:12px;letter-spacing:.01em}#electrochem-home .primary-link{font-size:12px}#electrochem-home .hero-actions{gap:22px}#electrochem-home .hero-footnote{font-size:10px}#electrochem-home .dr-brand{font-size:14px}}
