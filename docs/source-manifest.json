@@ -86,9 +86,9 @@
     },
     {
       "path": "docs/star-cluster-layout.md",
-      "sha256": "68a4846e959843d5b72be036da7e5bfb9197160f7c6ee4009ac454b3eda2a13e",
-      "bytes": 860,
-      "origin": "left_star_cluster_site_20261103"
+      "sha256": "9532bcf0a18426c0304ea5b9a3341ce4070b7b3214239c08272f3b44e3d0db65",
+      "bytes": 816,
+      "origin": "soft_background_transition_20261103"
     },
     {
       "path": "electrochemistry_simulation/HMF电氧化模型_首版说明.md",
@@ -522,9 +522,9 @@
     },
     {
       "path": "frontend/assets/home.css",
-      "sha256": "11be224c821ae3caae7d2233716328daacb096f6471a1cfd06fbb65d131310fe",
-      "bytes": 35821,
-      "origin": "left_star_cluster_site_20261103"
+      "sha256": "804fe133c50b8fffb4fe82b0fe8bbb050e3fbaba5b91303946614baea9af6907",
+      "bytes": 36650,
+      "origin": "soft_background_transition_20261103"
     },
     {
       "path": "frontend/assets/home.js",
@@ -567,9 +567,9 @@
     },
     {
       "path": "frontend/index.html",
-      "sha256": "acc2ca04ebfc701696b50a04063b1fafdd4d512dbcfe41e71290f8721d06f0db",
-      "bytes": 7730,
-      "origin": "left_star_cluster_site_20261103"
+      "sha256": "be2fb832af8483025d421492fbb31664d7b2be2e515a80577dd04aa218d3985f",
+      "bytes": 7728,
+      "origin": "soft_background_transition_20261103"
     },
     {
       "path": "integration/coordinator/batch_jobs.py",
@@ -1480,7 +1480,7 @@
   ],
   "frontend_revision": {
     "date": "2026-11-03",
-    "source": "selected third star-cluster candidate",
-    "scope": "left_cosmic_background_with_separate_laboratory"
+    "source": "user screenshot feedback",
+    "scope": "soft_horizontal_transition_and_equal_background_width"
   }
 }
