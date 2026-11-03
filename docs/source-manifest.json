@@ -69,6 +69,12 @@
       "origin": "approved_public_homepage_20261102"
     },
     {
+      "path": "docs/home-model-entries.md",
+      "sha256": "c58813df9aebc2a354f20419c20becf438cc3b1ca8fdf831a86e337918d67937",
+      "bytes": 795,
+      "origin": "approved_model_entry_typography_20261103"
+    },
+    {
       "path": "docs/models.md",
       "sha256": "6b09dd8fe27c83040bd8685de41dbd77d55044b860b76ab1b468d98ddfd22e8d",
       "bytes": 1397
@@ -443,6 +449,18 @@
       "origin": "approved_public_homepage_20261102"
     },
     {
+      "path": "frontend/assets/fonts/IBM-Plex-Sans-OFL.txt",
+      "sha256": "37784b44044a4ffd9256702b7c0982c37e5c8887ba90c6dca0479aea93dc898d",
+      "bytes": 4363,
+      "origin": "self_hosted_font_license"
+    },
+    {
+      "path": "frontend/assets/fonts/Noto-Sans-SC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "bytes": 4388,
+      "origin": "self_hosted_font_license"
+    },
+    {
       "path": "frontend/assets/fonts/home-407382a2a5d5.woff2",
       "sha256": "407382a2a5d543b41ae752c9f1ef8be44c1f946b3db3b0ade64973eae1766a64",
       "bytes": 77512,
@@ -471,6 +489,24 @@
       "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
       "bytes": 4377,
       "origin": "approved_public_homepage_20261102"
+    },
+    {
+      "path": "frontend/assets/fonts/model-10ee5bf9db7b.woff2",
+      "sha256": "10ee5bf9db7ba42720456d57234f1eefc35383e61d654b8d6a41b1b587fe110a",
+      "bytes": 30856,
+      "origin": "approved_model_entry_typography_20261103"
+    },
+    {
+      "path": "frontend/assets/fonts/model-75b8f5e69ee8.woff2",
+      "sha256": "75b8f5e69ee8d9cdb9c48d043bc4f2a13bcac9224f58dc81325e90bc223fa9bd",
+      "bytes": 6596,
+      "origin": "approved_model_entry_typography_20261103"
+    },
+    {
+      "path": "frontend/assets/fonts/model-fonts.css",
+      "sha256": "0fb08b4a8a17bb3d408ca1f2a73939dda067b023a3d04691dcb01ba09a62dcea",
+      "bytes": 758,
+      "origin": "approved_model_entry_typography_20261103"
     },
     {
       "path": "frontend/assets/fonts/notosanssc-OFL.txt",
@@ -521,6 +557,12 @@
       "origin": "approved_public_homepage_20261102"
     },
     {
+      "path": "frontend/assets/home-models.css",
+      "sha256": "38893c6603b07b361470f4ab9f7babc5fdb067f4c709c592ef1802e2024eb2a1",
+      "bytes": 15288,
+      "origin": "approved_model_entry_typography_20261103"
+    },
+    {
       "path": "frontend/assets/home.css",
       "sha256": "804fe133c50b8fffb4fe82b0fe8bbb050e3fbaba5b91303946614baea9af6907",
       "bytes": 36650,
@@ -567,9 +609,9 @@
     },
     {
       "path": "frontend/index.html",
-      "sha256": "be2fb832af8483025d421492fbb31664d7b2be2e515a80577dd04aa218d3985f",
-      "bytes": 7728,
-      "origin": "soft_background_transition_20261103"
+      "sha256": "e6401b10ce22591b133343d74388f77cdd6f9d59ecade5957f49afe09ec991f0",
+      "bytes": 14056,
+      "origin": "approved_model_entry_typography_20261103"
     },
     {
       "path": "integration/coordinator/batch_jobs.py",
@@ -1480,7 +1522,7 @@
   ],
   "frontend_revision": {
     "date": "2026-11-03",
-    "source": "user screenshot feedback",
-    "scope": "soft_horizontal_transition_and_equal_background_width"
+    "source": "user-approved model-entry-typography preview",
+    "scope": "homepage_model_entries_and_self_hosted_fonts"
   }
 }

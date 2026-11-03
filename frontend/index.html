@@ -7,6 +7,7 @@
 <link rel="preload" as="image" href="assets/star-cluster.webp">
 <link rel="preload" as="image" href="assets/lab-digital-twin.jpg">
 <link rel="stylesheet" href="assets/home.css?v=20261103blend">
+<link rel="stylesheet" href="assets/home-models.css?v=20261103models">
 <script src="assets/home.js?v=20261102" defer></script>
 </head><body>
 <div id="electrochem-home">
@@ -34,22 +35,61 @@
 
    </section>
    <section id="experiments" class="experiments-section" aria-labelledby="experiments-title">
-<div class="models-galaxy" aria-hidden="true"><img alt="" src="assets/galaxy-field.webp"></div>
-    <header class="section-heading"><div><span class="section-kicker">01 / EXPERIMENTAL SYSTEMS</span><h2 id="experiments-title">选择一个体系，开始探索</h2></div><p>不同的实验模型，<br>进入同一套研究工作空间。</p></header>
-    <div class="dr-models">
-     <article class="dr-model">
-      <div class="model-art"><div class="art-caption"><span>MODEL 01</span><span>PRINCIPLE ILLUSTRATION</span></div><img src="assets/concentration-cell.svg" width="760" height="330" alt="铜浓差电池原理示意">
-</div>
-      <div class="dr-modelbody"><div class="model-type">CONCENTRATION CELL <span>Cu²⁺ / Cu</span></div><h3>浓差电池</h3><p>从配液、混匀到电池组装与电压观测，<br>研究实验过程如何改变溶液状态与电势响应。</p><div class="model-tags"><span>双池体系</span><span>数值计算</span><span>Matterix 原型</span></div><a class="model-entry" href="workbench.html?model=concentration"><span>进入浓差电池工作台</span><span class="entry-arrow" aria-hidden="true">↗</span></a></div>
-     </article>
-     <article class="dr-model">
-      <div class="model-art"><div class="art-caption"><span>MODEL 02</span><span>REACTION PATHWAY</span></div><img src="assets/hmf-pathway.svg" width="760" height="330" alt="TEMPO介导的HMF电氧化路径示意">
-</div>
-      <div class="dr-modelbody"><div class="model-type">ELECTROCATALYTIC OXIDATION <span>HMF → FDCA</span></div><h3>电催化氧化</h3><p>配置 TEMPO–HMF 反应条件，<br>探索数值流程、文献条件下的终点预测与适用范围。</p><div class="model-tags"><span>TEMPO 介导</span><span>独立数值模型</span><span>反应条件分析</span></div><a class="model-entry" href="workbench.html?model=oxidation"><span>进入电催化氧化工作台</span><span class="entry-arrow" aria-hidden="true">↗</span></a></div>
-     </article>
-    </div>
-    <div class="models-note"><span>更多实验模型，将沿用条件、过程、状态与结果的共同结构。</span><a class="text-link" href="https://github.com/yangsen-hub-dot/electrochem-digital-twin/blob/main/docs/models.md">模型与适用范围 <span aria-hidden="true">↗</span></a></div>
-   </section>
+ <div class="models-galaxy" aria-hidden="true"><img alt="" src="assets/galaxy-field.webp"></div>
+ <div class="entry-wrap">
+  <header class="entry-section-head"><div><span class="entry-eyebrow">01 / EXPERIMENTAL SYSTEMS</span><h2 id="experiments-title">选择一个体系，开始探索</h2></div><p>不同的实验模型<br>进入同一套研究工作空间</p></header>
+  <div class="entry-grid">
+   <article class="entry-card" data-experiment="浓差电池">
+    <div class="entry-card-head"><div class="entry-meta"><span>EXPERIMENT 01</span><span class="entry-kind">数值 · 三维原型</span></div><div class="entry-title"><h3>浓差电池</h3><span class="entry-reaction">Cu<sup>2+</sup> / Cu</span></div><p class="entry-subtitle" lang="en">CONCENTRATION CELL</p><p class="entry-desc">从配液到电压观测，追踪浓度梯度与操作误差<br>如何共同影响电势响应</p></div>
+    <figure class="entry-figure">
+     <svg viewBox="0 0 520 250" fill="none" role="img" aria-labelledby="refined-cell-title refined-cell-desc">
+      <title id="refined-cell-title">铜浓差电池原理示意</title><desc id="refined-cell-desc">两侧铜电极分别浸入不同浓度的溶液，经盐桥和电压表连接。</desc>
+      <defs><linearGradient id="refined-cu" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#9b7254"/><stop offset=".45" stop-color="#dbba97"/><stop offset="1" stop-color="#a67c5d"/></linearGradient><linearGradient id="refined-low" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4692ad" stop-opacity=".22"/><stop offset="1" stop-color="#31778e" stop-opacity=".08"/></linearGradient><linearGradient id="refined-high" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#72bdc9" stop-opacity=".34"/><stop offset="1" stop-color="#3c8c9e" stop-opacity=".12"/></linearGradient></defs>
+      <path d="M34 214H486" stroke="#6d94af" stroke-opacity=".18" stroke-width=".8"/>
+      <ellipse cx="137" cy="207" rx="83" ry="6" fill="#050f1e" fill-opacity=".45"/><ellipse cx="383" cy="207" rx="83" ry="6" fill="#050f1e" fill-opacity=".45"/>
+      <path d="M62 104V192Q62 204 74 204H200Q212 204 212 192V104M308 104V192Q308 204 320 204H446Q458 204 458 192V104" fill="#8fb8cb" fill-opacity=".025" stroke="#88afbf" stroke-width="1.3"/>
+      <path d="M64 151H210V191Q210 202 199 202H75Q64 202 64 191Z" fill="url(#refined-low)"/><path d="M310 151H456V191Q456 202 445 202H321Q310 202 310 191Z" fill="url(#refined-high)"/>
+      <path d="M64 151H210M310 151H456" stroke="#81bdcb" stroke-opacity=".6" stroke-width=".8"/>
+      <path d="M68 124H75M68 144H75M68 164H75M68 184H75M445 124H452M445 144H452M445 164H452M445 184H452" stroke="#7196ab" stroke-opacity=".4" stroke-width=".7"/>
+      <rect x="118" y="95" width="12" height="91" rx="1" fill="url(#refined-cu)"/><rect x="390" y="95" width="12" height="91" rx="1" fill="url(#refined-cu)"/>
+      <path d="M124 95V49Q124 42 131 42H239M281 42H389Q396 42 396 49V95" stroke="#9eb8bc" stroke-width="1.1"/>
+      <circle cx="260" cy="42" r="17" fill="#142b3c" stroke="#a0c7c3" stroke-width="1.1"/><text x="260" y="48" text-anchor="middle" class="schema-chem">V</text>
+      <path d="M183 178V106Q183 94 195 94H324Q336 94 336 106V178" stroke="#91b9b8" stroke-opacity=".8" stroke-width="6"/><path d="M183 178V106Q183 94 195 94H324Q336 94 336 106V178" stroke="#122c3b" stroke-width="2.8"/>
+      <path d="M260 82V90" stroke="#6b94a6" stroke-width=".7"/>
+      <text x="260" y="77" text-anchor="middle" class="schema-label">盐桥</text><text x="145" y="101" class="schema-chem">Cu</text><text x="355" y="101" class="schema-chem">Cu</text>
+      <g fill="#90c9d4" fill-opacity=".38"><circle cx="91" cy="179" r="1.3"/><circle cx="156" cy="190" r="1.1"/><circle cx="345" cy="164" r="1.2"/><circle cx="420" cy="176" r="1.3"/><circle cx="365" cy="190" r="1.3"/><circle cx="438" cy="195" r="1.1"/><circle cx="327" cy="187" r="1"/><circle cx="411" cy="195" r="1.2"/></g>
+      <text x="260" y="185" text-anchor="middle" class="math-label">c<tspan class="chem-sub" baseline-shift="sub">L</tspan><tspan baseline-shift="baseline"> &lt; c</tspan><tspan class="chem-sub" baseline-shift="sub">R</tspan></text><text x="137" y="233" text-anchor="middle" class="schema-label">低浓度</text><text x="383" y="233" text-anchor="middle" class="schema-label">高浓度</text>
+     </svg>
+    </figure>
+    <div class="figure-scope"><span>双池装置 · 原理示意</span><span>浓度梯度 → 电势响应</span></div>
+    <div class="entry-details"><div class="entry-detail"><span>研究对象</span><strong>溶液状态、电势响应与误差传播</strong></div><div class="entry-detail"><span>可用流程</span><strong>数值计算 · Matterix 执行原型</strong></div></div>
+    <a class="entry-button" href="workbench.html?model=concentration" aria-label="进入浓差电池工作台"><span>配置浓差电池实验</span><span class="entry-chevron" aria-hidden="true">↗</span></a>
+   </article>
+   <article class="entry-card" data-experiment="电催化氧化">
+    <div class="entry-card-head"><div class="entry-meta"><span>EXPERIMENT 02</span><span class="entry-kind">数值模型</span></div><div class="entry-title"><h3>电催化氧化</h3><span class="entry-reaction">HMF → FDCA</span></div><p class="entry-subtitle" lang="en">ELECTROCATALYTIC OXIDATION</p><p class="entry-desc">围绕 TEMPO–HMF 反应设置实验条件<br>查看数值流程与文献条件下的终点预测</p></div>
+    <figure class="entry-figure">
+     <svg viewBox="0 0 520 250" fill="none" role="img" aria-labelledby="refined-hmf-title refined-hmf-desc">
+      <title id="refined-hmf-title">HMF电催化氧化路径示意</title><desc id="refined-hmf-desc">TEMPO介导的电氧化中，HMF的羟甲基和醛基转化为FDCA的羧基。这是反应路径示意，不表示配平反应式。</desc>
+      <defs><radialGradient id="refined-mol-light"><stop stop-color="#73baaf" stop-opacity=".07"/><stop offset="1" stop-color="#73baaf" stop-opacity="0"/></radialGradient></defs>
+      <ellipse cx="125" cy="126" rx="105" ry="80" fill="url(#refined-mol-light)"/><ellipse cx="402" cy="126" rx="105" ry="80" fill="url(#refined-mol-light)"/>
+      <path d="M34 214H486" stroke="#6d94af" stroke-opacity=".18" stroke-width=".8"/>
+      <g stroke="#9fcabd" stroke-width="1.65" stroke-linejoin="round" stroke-linecap="round"><path d="M115 80L90 99L103 140H147L160 99L135 80M97 104L108 133M142 133L153 104M90 99L78 91M160 99L176 89"/><path d="M392 80L367 99L380 140H424L437 99L412 80M374 104L385 133M419 133L430 104M367 99L350 89M437 99L452 89"/></g>
+      <text x="125" y="84" text-anchor="middle" class="molecule-group">O</text><text x="402" y="84" text-anchor="middle" class="molecule-group">O</text>
+      <text x="73" y="88" text-anchor="end" class="molecule-group">HOCH<tspan class="chem-sub" baseline-shift="sub">2</tspan></text><text x="181" y="88" class="molecule-group">CHO</text><text x="345" y="88" text-anchor="end" class="molecule-group">HOOC</text><text x="458" y="88" class="molecule-group">COOH</text>
+      <path d="M230 116H288L282 112M288 116L282 120" stroke="#a9c9ce" stroke-width="1.2" stroke-linecap="round"/>
+      <text x="259" y="99" text-anchor="middle" class="schema-chem-label">TEMPO</text><text x="259" y="141" text-anchor="middle" class="schema-label">电氧化</text>
+      <text x="125" y="186" text-anchor="middle" class="compound-name">HMF</text><text x="402" y="186" text-anchor="middle" class="compound-name">FDCA</text>
+      <text x="125" y="233" text-anchor="middle" class="schema-label">反应物</text><text x="402" y="233" text-anchor="middle" class="schema-label">目标产物</text>
+     </svg>
+    </figure>
+    <div class="figure-scope"><span>反应路径 · 原理示意</span><span>羟甲基 / 醛基 → 羧基</span></div>
+    <div class="entry-details"><div class="entry-detail"><span>研究对象</span><strong>反应条件与文献终点预测</strong></div><div class="entry-detail"><span>可用流程</span><strong>HMF 数值流程 · 条件适用性分析</strong></div></div>
+    <a class="entry-button" href="workbench.html?model=oxidation" aria-label="进入电催化氧化工作台"><span>配置电催化氧化实验</span><span class="entry-chevron" aria-hidden="true">↗</span></a>
+   </article>
+  </div>
+  <div class="entry-bottom"><p>更多实验模型，沿用条件、过程、状态与结果的共同结构</p><a href="https://github.com/yangsen-hub-dot/electrochem-digital-twin/blob/main/docs/models.md">模型与适用范围 <span aria-hidden="true">↗</span></a></div>
+ </div>
+</section>
    <section class="compact-workflow" aria-labelledby="compact-workflow-title">
  <h2 id="compact-workflow-title">一条连续的实验链路</h2>
  <ol><li>条件设计</li><li>过程执行</li><li>响应分析</li><li>历史比较</li></ol>

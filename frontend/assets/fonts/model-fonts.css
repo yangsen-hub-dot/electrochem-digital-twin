@@ -1,0 +1,18 @@
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400 500;font-stretch:100%;font-display:swap;src:url(model-10ee5bf9db7b.woff2) format('woff2');unicode-range:U+21-7e;}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(model-75b8f5e69ee8.woff2) format('woff2');
+  unicode-range: U+4ea7, U+5f84, U+68af, U+6d78, U+7532, U+7ecf, U+7ed5, U+7f9f, U+7fa7, U+8c61, U+8e2a, U+8f6c, U+919b;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(model-75b8f5e69ee8.woff2) format('woff2');
+  unicode-range: U+4ea7, U+5f84, U+68af, U+6d78, U+7532, U+7ecf, U+7ed5, U+7f9f, U+7fa7, U+8c61, U+8e2a, U+8f6c, U+919b;
+}
+
