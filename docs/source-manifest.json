@@ -103,6 +103,12 @@
       "origin": "soft_background_transition_20261103"
     },
     {
+      "path": "docs/workbench-cosmic-background.md",
+      "sha256": "444e71baf6fc1eaa28d503103c25aa425df865a1098535f43ac3c01a4f3d444e",
+      "bytes": 558,
+      "origin": "approved_workbench_star_background_20261104"
+    },
+    {
       "path": "electrochemistry_simulation/HMF电氧化模型_首版说明.md",
       "sha256": "142d255deeda4c0d170870bc74c35ce758d68a30e0155b9b4a49656cae7f8586",
       "bytes": 2090
@@ -610,9 +616,9 @@
     },
     {
       "path": "frontend/assets/workbench-space.css",
-      "sha256": "57ec8ac6c3c8bfae1e3114be8c256e3f6758abf86ca877e207a3450fc35bc110",
-      "bytes": 10108,
-      "origin": "left_star_cluster_site_20261103"
+      "sha256": "a632788a182afa6b63df4b595cfac3899231d230f08ccae9111f26bcf8c0c1b3",
+      "bytes": 10226,
+      "origin": "approved_workbench_star_background_20261104"
     },
     {
       "path": "frontend/assets/workbench.css",
@@ -1517,9 +1523,9 @@
     },
     {
       "path": "scripts/build_site.py",
-      "sha256": "826e1f22854baa5d4656efb55f49a09e16eeaaabed5e9142e56fa8156e63b2f9",
-      "bytes": 2190,
-      "origin": "left_star_cluster_site_20261103"
+      "sha256": "e97ed916ca18b21973a77ac9ed70bf9abb036c97780a55e7b9782a03387b987b",
+      "bytes": 2189,
+      "origin": "approved_workbench_star_background_20261104"
     },
     {
       "path": "scripts/start_local.py",
@@ -1533,8 +1539,8 @@
     }
   ],
   "frontend_revision": {
-    "date": "2026-11-03",
-    "source": "user-approved home-title-coordinated preview",
-    "scope": "homepage_title_typography"
+    "date": "2026-11-04",
+    "source": "user-approved stellar workbench background preview",
+    "scope": "workbench_background_only"
   }
 }
